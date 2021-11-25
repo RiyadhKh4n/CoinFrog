@@ -14,17 +14,31 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 # User Experience (UX) 
 
 * ## Vision
+    My vision for CoinFrog is to be an application people go to if they want to quickly find out information about a certain cryptocurrency. The program is meant to be simple yet effective and provide a real use case to people intrested in crypto. Not only is the program useful if you want to find information about a coin or token but it also lets users to quickly see how much USD is needed to buy the coin of their choice. As the program also allows users to see how much of a certain coin or token they can buy with x amount of USD the program should cater for all user needs.        
 
 * ## Aims
+    To provide users an application they can go to when they want to find out more about a coin and also allow them to quickly calculate the coin or USD amount needed in order to successfully purchase the coin of their choice.
 
 * ## Target Audience
+    Crypto is for everyone so there is no specific target audience. However, the program does require you to have a basic understanding about crypto as it does ask users to enter a coin of their choice so it may not be suitable for someone who knows absolutely nothing about cryptocurrencies as they will not be able to get the most out of the program.
 
 * ## User Stories
     * #### First Time Visitor Goals:
+        1. As a First Time Visitor, I want to easily understand the purpose of the site and learn how to use the program.
+
+        2. As a First Time Visitor, I want to be able to find out information of any cryptocurrency of my choice.
+
+        3. As a First Time Visitor, I want to be able to calculate the USD / Coin amount needed to purchase the coin of my choice 
 
     * #### Returning Visitor Goals:
+        1. As a Returning Visitor, I want to see if my coin description has been added.
+
+        2. As a Returning Visitor I want to see if there are new features added to the site 
 
     * #### Frequent Visitor Goals:
+        1. As a Frequent Visitor, I want to be able to see if my coin description has been added to the webiste 
+
+        2. As a Frequent Visitor, I want to be able to select different currencies to trade with 
 
 * ## Design 
 
@@ -33,6 +47,10 @@ The final option will navigate them to the 'Crypto Converter' where users will h
     * When creating CoinFrog I will take a waterfall approach when developing. That is, creating sections of the program at a time and ensuring they work as intended before going onto the next section. I will be able to break up development by choosing small elements to work on daily, ensuring the website can be built and published in a timely fashion. As this project Python only all my time will be spent on developing and testing the logic behind the program. So I will work on developing each class and function within each class and getting them working before I move onto the next section of development. 
 
 * ## Structure 
+    
+    * The mock terminal has been created for me by using the Code Institute template so all the file apart from any python files created were not made by me
+
+    * run.py is what Heroku will run when the site is published so this is will act as my 'main' file and is responsible for running the game. Any other python files created will contain the relevant functions needed to run the game which will be imported and called in run.py 
 
 * ## Flowcharts
 
@@ -90,6 +108,24 @@ Due to the size of the testing section for CoinFrog I have created [TESTING.md](
    
 # Deployment 
 
+Deploying the project using Heroku:
+* Visit the [Heroku](https://dashboard.heroku.com/login) site and create an account
+* Click the "New" Button
+* Click the "Create new app" button
+* Provide a name for the app in the App name input field
+* Select your region from the choose region dropdown menu 
+* Click the "Create App" button
+* Once redirected, proceed to the settings tab
+* Click on the "config vars" button
+* Supply a KEY of PORT and it's value of 8000. The click the "add" button
+* Next step is to add Buildpacks, click the "Add Buildpack" button
+* The python buildpack needs to be added first then the nodejs buildpack
+* Once the buildpacks have completed, go to the deploy screen, once in the deploy screen, select GitHub as the deployment method and connect your GitHub profile
+* Search for the repository that you wish to deploy to Heroku and click "connect"
+* Once your repository is connected to Heroku you can choose to either manually or automatically deploy your app.
+* By selecting automatic deploys, Heroku will build a new version of the app each time a change has been pushed to the repository
+* Manual deploys allow you to build a new version of your app whenever you click manual deploy
+* If your build is successful you will then be able to visit the live site by clicking the link that is provided to you by Heroku
 
 ## Making a Local Clone
 
