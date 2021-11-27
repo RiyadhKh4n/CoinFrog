@@ -22,8 +22,6 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 * ## Target Audience
     Crypto is for everyone so there is no specific target audience. However, the program does require you to have a basic understanding about crypto as it does ask users to enter a coin of their choice so it may not be suitable for someone who knows absolutely nothing about cryptocurrencies as they will not be able to get the most out of the program.
 
-# UX
-
 * ## User Stories
 
 1. I want to easily understand the purpose of the site and learn how to use the program.
@@ -66,15 +64,15 @@ Features to be included:
 
 ### Program Flow Charts:
 
-![MainFunction](images/readme/flowcharts/mainfunctions.png)
+![MainFunction](assets/images/flowcharts/mainfunctions.png)
 
 Crypto Converter:
 
-![CryptoConverter](images/readme/flowcharts/cryptoconverter.png)
+![CryptoConverter](assets/images/flowcharts/cryptoconverter.png)
 
 Get Coin Information:
 
-![GetCoinInfo](images/readme/flowcharts/getcoininfo.png)
+![GetCoinInfo](assets/images/flowcharts/getcoininfo.png)
 
 * ## Design 
 
