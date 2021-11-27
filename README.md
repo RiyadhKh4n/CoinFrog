@@ -22,6 +22,8 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 * ## Target Audience
     Crypto is for everyone so there is no specific target audience. However, the program does require you to have a basic understanding about crypto as it does ask users to enter a coin of their choice so it may not be suitable for someone who knows absolutely nothing about cryptocurrencies as they will not be able to get the most out of the program.
 
+# UX
+
 * ## User Stories
 
 1. I want to easily understand the purpose of the site and learn how to use the program.
@@ -36,11 +38,21 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 
 6. As a Frequent Visitor, I want to be able to select different fiat currencies to trade with 
 
-* ## Design 
-
-* ## Scope 
+* ## Development Method 
 
     * When creating CoinFrog I will take a waterfall approach when developing. That is, creating sections of the program at a time and ensuring they work as intended before going onto the next section. I will be able to break up development by choosing small elements to work on daily, ensuring the website can be built and published in a timely fashion. As this project Python only all my time will be spent on developing and testing the logic behind the program. So I will work on developing each class and function within each class and getting them working before I move onto the next section of development. 
+
+* ## Scope
+
+Features to be included:
+
+* The main title screen which will display when the user runs the program. The title screen displays the options available to the user allowing them to navigate through the program and use the different functionalities.
+
+* The first option they can select will be the 'What is CoinFrog' section where they can learn what the program is about and the different functions of it thus allowing them to understand how the program works and what you can do with it. This is mainly for people who are not familiar with crypto as at first the program may be confusing however if you are familiar with cryptocurrencies then the program should be very simple to understand.  
+
+* The next option they can select will be the 'Get Coin Information' section where users are able to enter a ticker of the coin they wish to know more about and a brief description will be outputted to them. As well as this, they are able to see the coins live data by selecting from the options available.
+
+* The final option the user can select will be the 'Crypto Converter' section where users can enter the USD amount of a coin they are looking to buy and the program will calculate how much of that coin they are able to purchase with the USD available. Additionally, users can enter the amount of a certain coin they wish to purchase and the program will calculate the USD amout needed in order to purchase it. 
 
 * ## Structure 
     
@@ -51,6 +63,20 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 * ## Flowcharts
 
 * I used [LucidChart](lucidchart.com) to help design the project and create the following flowcharts.
+
+### Program Flow Charts:
+
+![MainFunction](images/readme/flowcharts/mainfunctions.png)
+
+Crypto Converter:
+
+![CryptoConverter](images/readme/flowcharts/cryptoconverter.png)
+
+Get Coin Information:
+
+![GetCoinInfo](images/readme/flowcharts/getcoininfo.png)
+
+* ## Design 
 
 # Features 
 
