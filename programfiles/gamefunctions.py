@@ -1,7 +1,10 @@
-from programfiles.setup import *
+# from programfiles.setup import *
+from programfiles.coinmarketcap import *
+
+
 
 def displayInfo():
-    print("hello World")
+    print("CoinFrog is...")
 
 def getCoinData():
     print("hello World")

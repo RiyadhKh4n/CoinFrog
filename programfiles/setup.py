@@ -20,12 +20,12 @@ def title_screen():
 
 def mainMenu():
     print("""
-    -   What is CoinFrog?       -
-    -   Get Coin Information    -
-    -   Crypto Converter        -
-    -   Quit Program            -    
+    -   (1) What is CoinFrog?       -
+    -   (2) Get Coin Information    -
+    -   (3) Crypto Converter        -
+    -   (4) Quit Program            -    
 
-    Type 'info', 'data', 'convert' or 'quit'""")
+    Type '1', '2', '3' or '4'""")
 
     menu_selections()
 
@@ -36,24 +36,25 @@ def menu_selections():
     The Menu the user can interact with
     """
     screen_choice = ''
-    while screen_choice not in ['info', 'data', 'convert', 'quit']:
+    while screen_choice not in ['1', '2', '3', '4']:
         screen_choice = input('> ').lower().strip()
-        if screen_choice == 'info':
+
+        if screen_choice == '1':
             displayInfo()
             break
 
-        elif screen_choice == 'data':
+        elif screen_choice == '2':
             getCoinData()
             break
 
-        elif screen_choice == 'convert':
+        elif screen_choice == '3':
             ConvertPage()
             break
 
-        elif screen_choice == 'quit':
+        elif screen_choice == '4':
             mainMenu()
             break
 
         else:
-            print("\nInvalid Choice. Please type 'info', 'data', 'convert' or 'quit'")
+            print(f"> {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
 
