@@ -124,7 +124,7 @@ Here describes the main features of the website and what the user can expect whe
 
 Due to the size of the testing section for CoinFrog I have created [TESTING.md](TESTING.md). It also shows all tested screenshots, any errors/bugs I encountered, and how I fixed them when creating this project. This is also where you can find any responsiveness screenshots, and browser compatibility tests.
 
-[Link To Testing.md](TESTING.md)
+[Link To Testing.md]()
    
 # Deployment 
 
