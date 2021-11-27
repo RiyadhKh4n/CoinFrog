@@ -23,22 +23,18 @@ The final option will navigate them to the 'Crypto Converter' where users will h
     Crypto is for everyone so there is no specific target audience. However, the program does require you to have a basic understanding about crypto as it does ask users to enter a coin of their choice so it may not be suitable for someone who knows absolutely nothing about cryptocurrencies as they will not be able to get the most out of the program.
 
 * ## User Stories
-    * #### First Time Visitor Goals:
-        1. As a First Time Visitor, I want to easily understand the purpose of the site and learn how to use the program.
 
-        2. As a First Time Visitor, I want to be able to find out information of any cryptocurrency of my choice.
+1. I want to easily understand the purpose of the site and learn how to use the program.
 
-        3. As a First Time Visitor, I want to be able to calculate the USD / Coin amount needed to purchase the coin of my choice 
+2. I want to be able to find out information of any cryptocurrency of my choice.
 
-    * #### Returning Visitor Goals:
-        1. As a Returning Visitor, I want to see if my coin description has been added.
+3. I want to be able to calculate the USD / Coin amount needed to purchase the coin of my choice 
 
-        2. As a Returning Visitor I want to see if there are new features added to the site 
+4. As a returning visitor, I want to see if my coin description has been added.
 
-    * #### Frequent Visitor Goals:
-        1. As a Frequent Visitor, I want to be able to see if my coin description has been added to the webiste 
+5. As a Returning Visitor I want to see if there are new features added to the site 
 
-        2. As a Frequent Visitor, I want to be able to select different currencies to trade with 
+6. As a Frequent Visitor, I want to be able to select different fiat currencies to trade with 
 
 * ## Design 
 
