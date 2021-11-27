@@ -8,12 +8,12 @@ url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
 params = {
     'start': '1',
-    'limit': '100',
+    'limit': '250',
     'convert' : 'USD'
 }
 
 headers = {
-    'X-CMC_PRO_API_KEY': key.key,
+    'X-CMC_PRO_API_KEY': key.api,
     'Accepts': 'application/json'
 }
 
@@ -27,21 +27,25 @@ try:
 
 
 except (ConnectionError, Timeout, TooManyRedirects) as e:
-  print( e)
+  print(e)
 
+def validateTicker(ticker):
+    """
+    Will validate if the users ticker exits in 'coins'
+    """
+    
+def calculateUSDAmount(amount, ticker):
+    """
+    Will calculate amount of USD needed for user to purchase their coin
+    """
 
-def getSHIBprice():
-    for d in data['data']:
-        if d['symbol'] == 'SHIB':
-            symbol = d['symbol']
-            price = float((d['quote']['USD']['price']))
-            print(symbol + format(price, '.20f'))
+def calculateCoinAmount(USD, ticker):
+    """
+    Will calculate amount of coins can be purchased with USD amount given
+    """
 
-def getBTCprice():
-    for x in coins:
-        if x['symbol'] == 'BTC':
-            x['quote']['USD']['price']
-            print(x['symbol'],  x['quote']['USD']['price']) 
+def displayCoinData(ticker, data):
+    """
+    Will display relevant data that user asks for
+    """
 
-# getSHIBprice()
-# getBTCprice()
