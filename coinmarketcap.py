@@ -33,14 +33,15 @@ except (ConnectionError, Timeout, TooManyRedirects) as e:
 def getSHIBprice():
     for d in data['data']:
         if d['symbol'] == 'SHIB':
+            symbol = d['symbol']
             price = float((d['quote']['USD']['price']))
-            print(format(price, '.20f'))
+            print(symbol + format(price, '.20f'))
 
 def getBTCprice():
     for x in coins:
-        if x['symbol'] == 'ETH':
+        if x['symbol'] == 'BTC':
             x['quote']['USD']['price']
             print(x['symbol'],  x['quote']['USD']['price']) 
 
-getSHIBprice()
-getBTCprice()
+# getSHIBprice()
+# getBTCprice()
