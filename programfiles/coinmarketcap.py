@@ -1,15 +1,15 @@
-import key
+import json
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-import json
-# import requests
+import key
 
-url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
+
+URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
 params = {
     'start': '1',
     'limit': '250',
-    'convert' : 'USD'
+    'convert': 'USD'
 }
 
 headers = {
@@ -21,30 +21,40 @@ session = Session()
 session.headers.update(headers)
 
 try:
-  response = session.get(url, params=params)
-  data = json.loads(response.text)
-  coins = data['data']
+    response = session.get(URL, params=params)
+    data = json.loads(response.text)
+    coins = data['data']
 
 
 except (ConnectionError, Timeout, TooManyRedirects) as e:
-  print(e)
+    print(e)
 
-def validateTicker(ticker):
+
+def validate_ticker(ticker):
     """
     Will validate if the users ticker exits in 'coins'
     """
-    
-def calculateUSDAmount(amount, ticker):
+
+
+def validate_amount(amount):
+    """
+    Will validate is the users coin amount to ensure only contains numbers
+    """
+
+
+def calculate_usd_amount(amount, ticker):
     """
     Will calculate amount of USD needed for user to purchase their coin
     """
 
-def calculateCoinAmount(USD, ticker):
+
+def calculate_coin_amount(usd, ticker):
     """
     Will calculate amount of coins can be purchased with USD amount given
     """
+  
 
-def displayCoinData(ticker, data):
+def display_coin_data(ticker, data):
     """
     Will display relevant data that user asks for
     """

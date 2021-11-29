@@ -1,4 +1,6 @@
 import time
+import sys
+import os
 from programfiles.gamefunctions import *
 
 def title_screen():
@@ -14,21 +16,22 @@ def title_screen():
 
     time.sleep(1)
 
-    mainMenu()
-    
-    
+    main_menu()
 
-def mainMenu():
+
+def main_menu():
+    """
+    Displays the menu for the user to interact with
+    """
     print("""
-    -   (1) What is CoinFrog?       -
-    -   (2) Get Coin Information    -
-    -   (3) Crypto Converter        -
-    -   (4) Quit Program            -    
+    -  (1) What is CoinFrog?    -
+    -  (2) Get Coin Information -
+    -  (3) Crypto Converter     -
+    -  (4) Quit Program         -    
 
     Type '1', '2', '3' or '4'""")
 
     menu_selections()
-
 
 
 def menu_selections():
@@ -37,24 +40,102 @@ def menu_selections():
     """
     screen_choice = ''
     while screen_choice not in ['1', '2', '3', '4']:
-        screen_choice = input('> ').lower().strip()
+        screen_choice = input(' > ').lower().strip()
 
         if screen_choice == '1':
-            displayInfo()
+            display_info()
             break
 
         elif screen_choice == '2':
-            getCoinData()
+            get_coin_data()
             break
 
         elif screen_choice == '3':
-            ConvertPage()
+            convert_page()
             break
 
         elif screen_choice == '4':
-            mainMenu()
+            main_menu()
             break
 
         else:
             print(f"> {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
 
+def display_info():
+    """
+    Outputs what the program is about and how to use each function
+    """
+    time.sleep(1)
+    print("||---------------------------------------------------------------------------------------||")
+    typewriter(message)
+    print("||---------------------------------------------------------------------------------------||")
+
+    main_menu()
+  
+
+message = "         CoinFrog aims to make cryptocurrency research that little bit easier\n\
+                            It has two main functions:\n\
+\nThe first function allows the user to retrieve all types of live coin data \n\
+Simply enter the coins ticker (e.g BTC) and a brief description of the coin will appear\n\
+Additionally, you can chose data that you would like to see and the program will output it\n\
+\nThe second being a cryptocurrency converter function ~\n\
+Simply chose between USD available or an Amount of coins you would like purchase\n\
+Enter the ticker of the coin you are looking to buy\n\
+2And CoinFrog will display the relevant information to you\n"
+
+
+def typewriter(message):
+    for char in message:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+
+        if char != "\n":
+            time.sleep(0.08)
+        
+        elif char == " ":
+            time.sleep(0)
+
+        else:
+            time.sleep(1)
+
+
+def get_coin_data():
+    """
+    Function which allows users to enter coin they wish to know more about
+    and enables them to go through list of options
+    """
+
+    ticker = ''
+    option = ''
+    while option not in ['y', 'n']:
+        print("Enter the ticker of the coin you would like to research")
+        ticker = input(' > ').upper()
+
+        if ticker == "":
+            print("Ticker cannot be blank!")
+
+        else:
+            print(f"You chose {ticker} is this correct?")
+            print("Enter 'Y' for Yes and 'N' for No")
+            choice = input(' > ').lower().strip()
+        
+            if choice == ("y"):
+                print(ticker)
+                #add validate_ticker() to check if asked ticker exists in CMC
+                print("Do something...")
+                break
+
+            elif choice == ("n"):
+                print("Nevermind, try again...")
+                time.sleep(0.5)
+
+            else:
+                time.sleep(0.5)
+                print(f"{choice} is an invalid option")
+
+
+def convert_page():
+    """
+    Function which handles the crypto conversion feature
+    """
+    print("hello World")
