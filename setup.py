@@ -81,10 +81,13 @@ message = "         CoinFrog aims to make cryptocurrency research that little bi
 Simply enter the coins ticker (e.g BTC) and a brief description of the coin will appear\n\
 Additionally, you can chose data that you would like to see and the program will output it\n\
 \nThe second being a cryptocurrency converter function ~\n\
-Simply chose between USD available or an Amount of coins you would like purchase\n\
-Enter the ticker of the coin you are looking to buy\n\
-2And CoinFrog will display the relevant information to you\n"
-
+Simply chose between Convert FIAT or Convert CRYPTO\n\
+\nIf FIAT: Enter the amount of $dollars available\n\
+         Enter the ticker of the coin to buy\n\
+         And CoinFrog will calc how many coins you can purchase\n\
+\nIf CRYPTO: Enter the ticker of the coin to buy\n\
+           Enter amount of coins you wish to purchase\n\
+           And CoinFrog will calculate how much $dollars in needed\n"            
 
 def typewriter(message):
     for char in message:
@@ -138,7 +141,7 @@ def get_coin_data():
                 time.sleep(1)
                 true_or_false = validate_ticker(ticker)
 
-                if true_or_false == True: 
+                if true_or_false: 
                     break
 
                 else:           
@@ -159,4 +162,98 @@ def convert_page():
     """
     Function which handles the crypto conversion feature
     """
-    print("hello World")
+
+    print("""
+
+          Would you like to:
+      -  (1) Convert FIAT   -
+      -  (2) Convert CRYPTO -  
+
+      ENTER '1' or '2'\n""")
+
+    true_or_false = False
+    amount_validated = False
+    screen_choice = ''
+
+    while screen_choice not in ['1', '2']:
+        screen_choice = input('     > ').strip()
+
+        if screen_choice == '1':
+            while amount_validated == False:
+                print("-------------------------------------")
+                time.sleep(1)
+                print("Enter dollar amount available: ")
+                USDamount = input('> $').strip()
+                amount_validated = validate_amount(USDamount)
+
+                if amount_validated:
+                    amount_validated = True
+                    time.sleep(1)
+
+            while true_or_false == False:
+                print("-------------------------------------")
+                time.sleep(1)
+                print("Enter ticker of coin to purchase: ")
+                ticker = input('> $').upper()
+
+                tickerLength = 0
+                for x in ticker:
+                    tickerLength = tickerLength + 1
+
+                if tickerLength == 0:
+                    time.sleep(1)
+                    print("Ticker cannot be blank!")
+
+                elif tickerLength < 3:
+                    time.sleep(1)
+                    print("Ticker must have 3 characters minimum")
+
+                else:
+                    true_or_false = validate_ticker(ticker)
+                    print(f"You have ${USDamount} available")
+                    print(f"You want to buy ${ticker}")
+
+                    if true_or_false:
+                        true_or_false = True
+                        time.sleep(1)
+
+        elif screen_choice == '2':
+            while true_or_false == False:
+                print("-------------------------------------")
+                time.sleep(1)
+                print("Enter ticker of coin to purchase: ")
+                ticker = input('> $').upper()
+
+                tickerLength = 0
+                for x in ticker:
+                    tickerLength = tickerLength + 1
+
+                if tickerLength == 0:
+                    time.sleep(1)
+                    print("Ticker cannot be blank!")
+
+                elif tickerLength < 3:
+                    time.sleep(1)
+                    print("Ticker must have 3 characters minimum")
+
+                else:
+                    true_or_false = validate_ticker(ticker)
+
+                    if true_or_false:
+                        true_or_false = True
+                        time.sleep(1)
+           
+            while amount_validated == False:
+                print("-------------------------------------")
+                time.sleep(1)
+                print("Enter amount of coins to buy: ")
+                amount = input('> ').strip()
+                amount_validated = validate_amount(amount)
+
+                if amount_validated:
+                    amount_validated = True
+                    print(f"You want to buy {amount} ${ticker}")
+                    time.sleep(1)
+
+        else:
+            print(f"{screen_choice} is an Invalid option")
