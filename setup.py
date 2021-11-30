@@ -210,11 +210,11 @@ def convert_page():
 
                 else:
                     true_or_false = validate_ticker(ticker)
-                    print(f"You have ${USDamount} available")
-                    print(f"You want to buy ${ticker}")
 
                     if true_or_false:
                         true_or_false = True
+                        print(f"You have ${USDamount} available")
+                        print(f"You want to buy ${ticker}")
                         time.sleep(1)
 
         elif screen_choice == '2':
