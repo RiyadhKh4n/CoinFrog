@@ -35,18 +35,23 @@ tickerList = []
 
 def get_ticker_list():
     for d in data['data']:
-        ticker = d['symbol']
-        tickerList.append(ticker)
-
-
-get_ticker_list()
-print(tickerList)
+        tickerFromAPI = d['symbol']
+        tickerList.append(tickerFromAPI)
 
 
 def validate_ticker(ticker):
     """
-    Will validate if the users ticker exits in 'coins'
+    Will validate if the users ticker exits in tickerList
     """
+    for x in tickerList:
+        if ticker in tickerList:
+            print(f"{ticker} exists in CoinMarketCap")
+            return True
+            break
+        else:
+            print(f"{ticker} does not exist in CoinMarketCap")
+            return False
+            break
 
 
 def validate_amount(amount):
@@ -77,3 +82,14 @@ def display_coin_data(ticker, data):
     Will display relevant data that user asks for
     """
 
+
+ticker = input("Enter a ticker: ").strip().upper()
+
+
+def main():
+    get_ticker_list()
+    tOrf = validate_ticker(ticker)
+    print(tOrf)
+
+
+main()
