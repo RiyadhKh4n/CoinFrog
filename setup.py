@@ -11,9 +11,9 @@ def title_screen():
     time.sleep(0.5)
 
     print("""
-    #######################
-    + Welcome to CoinFrog +
-    #######################""")
+        #######################
+        + Welcome to CoinFrog +
+        #######################""")
 
     time.sleep(1)
 
@@ -25,12 +25,12 @@ def main_menu():
     Displays the menu for the user to interact with
     """
     print("""
-    -  (1) What is CoinFrog?    -
-    -  (2) Get Coin Information -
-    -  (3) Crypto Converter     -
-    -  (4) Quit Program         -    
+      -  (1) What is CoinFrog?    -
+      -  (2) Get Coin Information -
+      -  (3) Crypto Converter     -
+      -  (4) Quit Program         -    
 
-    Type '1', '2', '3' or '4'""")
+      Type '1', '2', '3' or '4'\n""")
 
     menu_selections()
 
@@ -41,7 +41,7 @@ def menu_selections():
     """
     screen_choice = ''
     while screen_choice not in ['1', '2', '3', '4']:
-        screen_choice = input(' > ').lower().strip()
+        screen_choice = input('     > ').lower().strip()
 
         if screen_choice == '1':
             display_info()
@@ -61,6 +61,7 @@ def menu_selections():
 
         else:
             print(f"> {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
+
 
 def display_info():
     """
@@ -92,9 +93,6 @@ def typewriter(message):
 
         if char != "\n":
             time.sleep(0.07)
-        
-        elif char == " ":
-            time.sleep(0)
 
         else:
             time.sleep(1)
@@ -109,22 +107,44 @@ def get_coin_data():
     ticker = ''
     option = ''
     while option not in ['y', 'n']:
-        print("Enter the ticker of the coin you would like to research")
-        ticker = input(' > ').upper()
+        true_or_false = None
+        print("Enter the ticker of the coin you would like to research:")
+        ticker = input('> ').upper()
+        print("----------------------------------------------------------")
 
-        if ticker == "":
+        tickerLength = 0
+        for x in ticker:
+            tickerLength = tickerLength + 1
+
+        if tickerLength == 0:
+            time.sleep(0.5)
             print("Ticker cannot be blank!")
+            print("----------------------------------------------------------")
+
+        elif tickerLength < 3:
+            time.sleep(0.5)
+            print("Ticker must have 3 characters minimum")
+            print("----------------------------------------------------------")
 
         else:
             print(f"You chose {ticker} is this correct?")
             print("Enter 'Y' for Yes and 'N' for No")
-            choice = input(' > ').lower().strip()
+            choice = input('> ').lower().strip()
+            time.sleep(1)
+            print("----------------------------------------------------------")
         
             if choice == ("y"):
-                print(ticker)
-                #add validate_ticker() to check if asked ticker exists in CMC
-                print("Do something...")
-                break
+                print("Validating Ticker...")
+                time.sleep(1)
+                true_or_false = validate_ticker(ticker)
+
+                if true_or_false == True: 
+                    break
+
+                else:           
+                    time.sleep(0.5)
+                    print("Please try again...")
+                    print("----------------------------------------------------------")
 
             elif choice == ("n"):
                 print("Nevermind, try again...")

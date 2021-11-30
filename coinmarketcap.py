@@ -8,7 +8,7 @@ URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
 params = {
     'start': '1',
-    'limit': '250',
+    'limit': '2000',
     'convert': 'USD'
 }
 
@@ -82,14 +82,10 @@ def display_coin_data(ticker, data):
     Will display relevant data that user asks for
     """
 
-
-ticker = input("Enter a ticker: ").strip().upper()
-
-
 def main():
     get_ticker_list()
-    tOrf = validate_ticker(ticker)
-    print(tOrf)
+    # tOrf = validate_ticker(ticker)
+    # print(tOrf)
 
 
 main()

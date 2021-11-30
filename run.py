@@ -12,3 +12,4 @@ def clear_terminal():
     """
     os.system('clear')
 
+
