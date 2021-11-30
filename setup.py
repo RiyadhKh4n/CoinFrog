@@ -1,7 +1,8 @@
 import time
 import sys
 import os
-from programfiles.gamefunctions import *
+from coinmarketcap import *
+
 
 def title_screen():
     """
@@ -90,7 +91,7 @@ def typewriter(message):
         sys.stdout.flush()
 
         if char != "\n":
-            time.sleep(0.08)
+            time.sleep(0.07)
         
         elif char == " ":
             time.sleep(0)

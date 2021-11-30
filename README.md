@@ -5,6 +5,7 @@
 The purpose of CoinFrog is to allow users to gain an insight into all cryptocurrencies available on CoinMarketCap. They will be able to enter a coin they want to know more about and the programme will output the relevant information. CoinFrog also has a price converter function where users can calculate how much USD or coins to buy given what they want to find out.
 
 CoinFrog is a Python only programme which is run on a mock terminal. Once Run users will be navigated to the Main Menu where they can chose what they would like to do. The first option will allow them to view the 'Program Info' which will provide a description of what the program is and the features it has. The second option will allow them to 'Get Coin Info' where users enter a ticker and a description of the coin will appear. As well as this, users will be able to view the coins data e.g price, market cap, TVL etc.  
+
 The final option will navigate them to the 'Crypto Converter' where users will have two options. The first will ask the user to enter the USD amount they would like to spend and then the coin they would like to buy. The program will then calculate the amount of that coin they can buy with the USD available. The second option will allow the user to enter a coin and the amount they wish to buy and the program will calculate the USD needed to purchase it.    
 
 ---

@@ -30,6 +30,19 @@ except (ConnectionError, Timeout, TooManyRedirects) as e:
     print(e)
 
 
+tickerList = []
+
+
+def get_ticker_list():
+    for d in data['data']:
+        ticker = d['symbol']
+        tickerList.append(ticker)
+
+
+get_ticker_list()
+print(tickerList)
+
+
 def validate_ticker(ticker):
     """
     Will validate if the users ticker exits in 'coins'
@@ -40,6 +53,11 @@ def validate_amount(amount):
     """
     Will validate is the users coin amount to ensure only contains numbers
     """
+    if amount.isnumeric() == True:
+        print("Amount entered is valid")
+
+    else:
+        print("Amount must be a number!")
 
 
 def calculate_usd_amount(amount, ticker):
