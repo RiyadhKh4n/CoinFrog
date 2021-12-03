@@ -1,6 +1,6 @@
 import time
 import sys
-import os
+# import os
 from coinmarketcap import *
 
 
@@ -69,13 +69,13 @@ def display_info():
     """
     time.sleep(1)
     print("||---------------------------------------------------------------------------------------||")
-    typewriter(message)
+    typewriter(MESSAGE)
     print("||---------------------------------------------------------------------------------------||")
 
     main_menu()
   
 
-message = "         CoinFrog aims to make cryptocurrency research that little bit easier\n\
+MESSAGE = "         CoinFrog aims to make cryptocurrency research that little bit easier\n\
                             It has two main functions:\n\
 \nThe first function allows the user to retrieve all types of live coin data \n\
 Simply enter the coins ticker (e.g BTC) and a brief description of the coin will appear\n\
@@ -115,16 +115,16 @@ def get_coin_data():
         ticker = input('> ').upper()
         print("----------------------------------------------------------")
 
-        tickerLength = 0
+        ticker_length = 0
         for x in ticker:
-            tickerLength = tickerLength + 1
+            ticker_length = ticker_length + 1
 
-        if tickerLength == 0:
+        if ticker_length == 0:
             time.sleep(0.5)
             print("Ticker cannot be blank!")
             print("----------------------------------------------------------")
 
-        elif tickerLength < 2:
+        elif ticker_length < 2:
             time.sleep(0.5)
             print("Ticker must have 2 characters minimum")
             print("----------------------------------------------------------")
@@ -135,7 +135,7 @@ def get_coin_data():
             choice = input('> ').lower().strip()
             time.sleep(1)
             print("----------------------------------------------------------")
-        
+     
             if choice == ("y"):
                 print("Validating Ticker...")
                 time.sleep(1)
@@ -179,32 +179,32 @@ def convert_page():
         screen_choice = input('     > ').strip()
 
         if screen_choice == '1':
-            while amount_validated == False:
+            while amount_validated is False:
                 print("-------------------------------------")
                 time.sleep(1)
                 print("Enter dollar amount available: ")
-                USDamount = input('> $').strip()
-                amount_validated = validate_amount(USDamount)
+                usd_amount = input('> $').strip()
+                amount_validated = validate_amount(usd_amount)
 
                 if amount_validated:
                     amount_validated = True
                     time.sleep(1)
 
-            while true_or_false == False:
+            while true_or_false is False:
                 print("-------------------------------------")
                 time.sleep(1)
                 print("Enter ticker of coin to purchase: ")
                 ticker = input('> $').upper()
 
-                tickerLength = 0
+                ticker_length = 0
                 for x in ticker:
-                    tickerLength = tickerLength + 1
+                    ticker_length = ticker_length + 1
 
-                if tickerLength == 0:
+                if ticker_length == 0:
                     time.sleep(1)
                     print("Ticker cannot be blank!")
 
-                elif tickerLength < 2:
+                elif ticker_length < 2:
                     time.sleep(1)
                     print("Ticker must have 2 characters minimum")
 
@@ -213,26 +213,26 @@ def convert_page():
 
                     if true_or_false:
                         true_or_false = True
-                        print(f"You have ${USDamount} available")
+                        print(f"You have ${usd_amount} available")
                         print(f"You want to buy ${ticker}")
                         time.sleep(1)
 
         elif screen_choice == '2':
-            while true_or_false == False:
+            while true_or_false is False:
                 print("-------------------------------------")
                 time.sleep(1)
                 print("Enter ticker of coin to purchase: ")
                 ticker = input('> $').upper()
 
-                tickerLength = 0
+                ticker_length = 0
                 for x in ticker:
-                    tickerLength = tickerLength + 1
+                    ticker_length = ticker_length + 1
 
-                if tickerLength == 0:
+                if ticker_length == 0:
                     time.sleep(1)
                     print("Ticker cannot be blank!")
 
-                elif tickerLength < 2:
+                elif ticker_length < 2:
                     time.sleep(1)
                     print("Ticker must have 2 characters minimum")
 
@@ -243,7 +243,7 @@ def convert_page():
                         true_or_false = True
                         time.sleep(1)
            
-            while amount_validated == False:
+            while amount_validated is False:
                 print("-------------------------------------")
                 time.sleep(1)
                 print("Enter amount of coins to buy: ")
