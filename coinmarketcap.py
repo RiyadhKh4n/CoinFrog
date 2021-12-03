@@ -1,8 +1,10 @@
+import os
 import json
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
-import key
 import time
+if os.path.exists("env.py"):
+    import env  # noqa
 
 tickerList = []
 URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
@@ -14,7 +16,7 @@ params = {
 }
 
 headers = {
-    'X-CMC_PRO_API_KEY': key.api,
+    'X-CMC_PRO_API_KEY': os.environ.get("CMC"),
     'Accepts': 'application/json'
 }
 
