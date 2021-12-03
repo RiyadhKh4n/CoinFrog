@@ -35,7 +35,7 @@ RUN mkdir -p ~/.pg_ctl/bin ~/.pg_ctl/sockets \
     && chmod +x ~/.pg_ctl/bin/*
 
 # ENV DATABASE_URL="postgresql://gitpod@localhost"
-# ENV PGHOSTADDR="127.0.0.1"
+ENV PGHOSTADDR="127.0.0.1"
 ENV PGDATABASE="postgres"
 
 # Upgrade Node
@@ -59,28 +59,12 @@ COPY .vscode/start_mysql.sh /etc/mysql/mysql-bashrc-launch.sh
 # Start MySQL when we log in
 # Add aliases
 
-ENV pyver=3.8.12
-
 RUN echo 'alias run="python3 $GITPOD_REPO_ROOT/manage.py runserver 0.0.0.0:8000"' >> ~/.bashrc && \
     echo 'alias heroku_config=". $GITPOD_REPO_ROOT/.vscode/heroku_config.sh"' >> ~/.bashrc && \
-    echo 'alias rmdep=". $GITPOD_REPO_ROOT/.vscode/rmdep.sh"' >> ~/.bashrc && \
     echo 'alias python=python3' >> ~/.bashrc && \
     echo 'alias pip=pip3' >> ~/.bashrc && \
-    echo 'alias arctictern="python3 $GITPOD_REPO_ROOT/.vscode/arctictern.py"' >> ~/.bashrc && \
     echo 'alias font_fix="python3 $GITPOD_REPO_ROOT/.vscode/font_fix.py"' >> ~/.bashrc && \
-    echo 'alias set_pg="export PGHOSTADDR=127.0.0.1"' >> ~/.bashrc && \
-    echo 'alias mongosh=mongo' >> ~/.bashrc && \
-    echo 'alias make_url="python3 $GITPOD_REPO_ROOT/.vscode/make_url.py "' >> ~/.bashrc && \
-    echo ". /etc/mysql/mysql-bashrc-launch.sh" >> ~/.bashrc && \
-    echo 'FILE="$GITPOD_REPO_ROOT/.vscode/post_upgrade.sh"' >> ~/.bashrc && \
-    echo 'if [ -z "$POST_UPGRADE_RUN" ]; then' >> ~/.bashrc && \
-    echo '  if [[ -f "$FILE" ]]; then' >> ~/.bashrc && \
-    echo '    . "$GITPOD_REPO_ROOT/.vscode/post_upgrade.sh"' >> ~/.bashrc && \
-    echo "  fi" >> ~/.bashrc && \
-    echo "fi" >> ~/.bashrc && \
-    echo "export pyver=`python3 --version`" >> ~/.bashrc && \
-    echo 'pip3 uninstall -y -r "$GITPOD_REPO_ROOT/.vscode/deps.txt" > /dev/null' >> ~/.bashrc && \
-    echo "ln -s /home/gitpod/.pyenv/versions/3.8.12/ /workspace/.pip-modules" >> ~/.bashrc
+    echo ". /etc/mysql/mysql-bashrc-launch.sh" >> ~/.bashrc
 
 # Local environment variables
 # C9USER is temporary to allow the MySQL Gist to run
