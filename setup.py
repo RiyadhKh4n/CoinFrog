@@ -124,9 +124,9 @@ def get_coin_data():
             print("Ticker cannot be blank!")
             print("----------------------------------------------------------")
 
-        elif tickerLength < 3:
+        elif tickerLength < 2:
             time.sleep(0.5)
-            print("Ticker must have 3 characters minimum")
+            print("Ticker must have 2 characters minimum")
             print("----------------------------------------------------------")
 
         else:
@@ -204,9 +204,9 @@ def convert_page():
                     time.sleep(1)
                     print("Ticker cannot be blank!")
 
-                elif tickerLength < 3:
+                elif tickerLength < 2:
                     time.sleep(1)
-                    print("Ticker must have 3 characters minimum")
+                    print("Ticker must have 2 characters minimum")
 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -232,9 +232,9 @@ def convert_page():
                     time.sleep(1)
                     print("Ticker cannot be blank!")
 
-                elif tickerLength < 3:
+                elif tickerLength < 2:
                     time.sleep(1)
-                    print("Ticker must have 3 characters minimum")
+                    print("Ticker must have 2 characters minimum")
 
                 else:
                     true_or_false = validate_ticker(ticker)

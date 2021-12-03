@@ -4,7 +4,7 @@ from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import key
 import time
 
-
+tickerList = []
 URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
 params = {
@@ -29,9 +29,6 @@ try:
 
 except (ConnectionError, Timeout, TooManyRedirects) as e:
     print(e)
-
-
-tickerList = []
 
 
 def get_ticker_list():
@@ -92,8 +89,5 @@ def display_coin_data(ticker, data):
 
 def main():
     get_ticker_list()
-    # tOrf = validate_ticker(ticker)
-    # print(tOrf)
-
 
 main()
