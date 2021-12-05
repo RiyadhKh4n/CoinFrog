@@ -118,7 +118,9 @@ Here is shows what outputs when the users inputs are invalid:
 
 ![ValidInput3](assets/images/testing/validinput3.png)
 
-The next issue I had to solve was I needed to be able pass the user input (ticker) to the api in order be able to retrieve the appropriate data that the user wanted to view. I first began with the demo function that I used in order to call the api with the ticker hard coded.
+--- 
+
+The next issue I had to solve was I needed to be able pass the user input (ticker) to the API in order be able to retrieve the appropriate data that the user wanted to view. I first began with the demo function that I used in order to call the api with the ticker hard coded.
 
 ```
 def getSHIBprice():
@@ -139,7 +141,7 @@ def display_coin_data(ticker):
             print(x['symbol'],  price)
 ```
 
-Now the function will take in the ticker and assign it to the 'symbol' which is needed in order get the correct data in the API. The variable price will now store the price of the ticker that the user entered which will then be printed to the console.
+Now the function takes in the ticker and assigns it to the 'symbol' which is needed in order get the correct data in the API. The variable price will now store the price of the ticker that the user entered which will then be printed to the console. The working function output can be seen below:
 
 ![WorkingPriceFunctionality](assets/images/testing/workingpricefunction.png)
  
@@ -182,7 +184,7 @@ def prompt_toolkit_function():
             print("----------------------------------------------------------")
 ```
 
-By returning 'text' this can then be stored in a variable in setup.py which can then be passed to display_coin_data(ticker) which will now have ticker and data_to_view as parameters. Now that I am able to ensure the data the user wants to view matches the JSON format. The data the user wants to view can be passed to the function instead of 'price' which was hard coded to only get the price of the coin. This way the user is now able to view all data in 'answers' where the one function (display_coin_data(ticker, data)) will print whatever the user wants to see. The updated function is below:
+By returning 'text' this can then be stored in a variable in setup.py which can then be passed to display_coin_data(ticker) which will now have ticker and data as parameters. As I am able to ensure the data the user wants to view matches the JSON format, this can be passed to the function instead of 'price' which was hard coded to only get the price of the coin. This way the user is now able to view all data in 'answers' where the one function (display_coin_data(ticker, data)) will print whatever the user wants to see. The updated function is below:
 
 ```
 
