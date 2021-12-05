@@ -117,3 +117,86 @@ Below is an example of another valid input but where the user decided to change 
 Here is shows what outputs when the users inputs are invalid:
 
 ![ValidInput3](assets/images/testing/validinput3.png)
+
+The next issue I had to solve was I needed to be able pass the user input (ticker) to the api in order be able to retrieve the appropriate data that the user wanted to view. I first began with the demo function that I used in order to call the api with the ticker hard coded.
+
+```
+def getSHIBprice():
+    for d in data['data']:
+        if d['symbol'] == 'SHIB':
+            price = float((d['quote']['USD']['price']))
+            print(format(price, '.20f'))
+
+```
+
+I knew I had to modify this function by passing in a parameter and changing the route the function takes when going through the JSON file. I began by changing the 'if' statement so instead of checking against a hard coded ticker like SHIB I would check it against the parameter which would be the ticker the user wanted to know about. The function now looks like this:
+
+```
+def display_coin_data(ticker):
+ for d in data['data']:
+        if d['symbol'] == ticker:
+            price = float((d['quote']['USD']['price']))
+            print(x['symbol'],  price)
+```
+
+Now the function will take in the ticker and assign it to the 'symbol' which is needed in order get the correct data in the API. The variable price will now store the price of the ticker that the user entered which will then be printed to the console.
+
+![WorkingPriceFunctionality](assets/images/testing/workingpricefunction.png)
+ 
+However as a extra validation step I want the function to ensure that the ticker the user entered also exists within tickerList in order to minimise the posibility of an invalid ticker being passed to the API which would result in an error. Therefore before the function iterates through data in order to retrieve the price I have implemented an if statement which would check if the ticker exists in tickerList. The function now looks like this:
+
+```
+def display_coin_data(ticker):
+    if ticker in tickerList:
+        for x in coins:
+            if x['symbol'] == ticker:
+                print(x['symbol'],  x['quote']['USD']['price'])
+    else:
+        print("Ticker not in List") 
+```
+
+The function will now output "Ticker not in List" if the user manages to break the previous validation and tries to pass in an invalid ticker to the API, helping to minimise an error. I have also removed the price variable as eventually I want this function to be able to output all the available data in the API. 
+
+The next step was to create the prompt_toolkit_function() which makes use of prompt_toolkit and WordCompleter. This is because when asking the user the data they would like to view, I have to ensure the input matches the API JSON file exactly. Which can be seen below:
+ 
+![JSONFile](assets/images/testing/apijson.png)
+
+The input must match exactly otherwise I wont be able to call the appropriate data. Thus by using WordCompleter I can ensure the correct input is passed to display_coin_data(ticker). I begin by creating a variable called 'answers' which holds a list of all the data the user is able to view. Then this same list is passed to WordCompleter which is stored in a variable called api_data. A while loop is created in order to validate that the users input conforms with the list in 'answers'. If not a message will appear telling them that their entry is invalid and will then ask the user the question again. The variable 'text' uses prompt_toolkit which asks the user a question and provides a list of potential data values they can chose from. If 'text' is in 'answers' then their input will be shown to them and 'text' is returned. The function is provided below:
+
+```
+def prompt_toolkit_function():
+    text = ''
+    answers = ['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h','percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap']
+    api_data = WordCompleter(['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap'])
+    while text not in answers:
+        text = prompt('Enter data to research: ', completer=api_data)
+
+        if text in answers:
+            print(f'Data: {text}')
+            return text
+
+        else:
+            time.sleep(0.5)
+            print("----------------------------------------------------------")
+            print(f"{text} is an invalid data entry")
+            print("----------------------------------------------------------")
+```
+
+By returning 'text' this can then be stored in a variable in setup.py which can then be passed to display_coin_data(ticker) which will now have ticker and data_to_view as parameters. Now that I am able to ensure the data the user wants to view matches the JSON format. The data the user wants to view can be passed to the function instead of 'price' which was hard coded to only get the price of the coin. This way the user is now able to view all data in 'answers' where the one function (display_coin_data(ticker, data)) will print whatever the user wants to see. The updated function is below:
+
+```
+
+def display_coin_data(ticker, data):
+    """
+    Will display relevant data that user asks for
+    """
+
+    if ticker in tickerList:
+        for x in coins:
+            if x['symbol'] == ticker:
+                x['quote']['USD']['price']
+                print(x['symbol'],  x['quote']['USD'][data])
+    else:
+        print("Ticker not in List") 
+```
+

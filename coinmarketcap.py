@@ -3,6 +3,8 @@ import json
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import time
+from prompt_toolkit import prompt
+from prompt_toolkit.completion import WordCompleter
 if os.path.exists("env.py"):
     import env  # noqa
 
@@ -69,6 +71,38 @@ def validate_amount(amount):
         return False
 
 
+def display_coin_data(ticker, data):
+    """
+    Will display relevant data that user asks for
+    """
+
+    if ticker in tickerList:
+        for x in coins:
+            if x['symbol'] == ticker:
+                x['quote']['USD']['price']
+                print(x['symbol'],  x['quote']['USD'][data])
+    else:
+        print("Ticker not in List") 
+
+
+def prompt_toolkit_function():
+    text = ''
+    answers = ['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h','percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap']
+    api_data = WordCompleter(['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap'])
+    while text not in answers:
+        text = prompt('Enter data to research: ', completer=api_data)
+
+        if text in answers:
+            print(f'Data: {text}')
+            return text
+
+        else:
+            time.sleep(0.5)
+            print("----------------------------------------------------------")
+            print(f"{text} is an invalid data entry")
+            print("----------------------------------------------------------")
+
+
 def calculate_usd_amount(amount, ticker):
     """
     Will calculate amount of USD needed for user to purchase their coin
@@ -81,13 +115,10 @@ def calculate_coin_amount(usd, ticker):
     """
 
 
-def display_coin_data(ticker, data):
-    """
-    Will display relevant data that user asks for
-    """
-
-
 def main():
     get_ticker_list()
 
+
 main()
+
+

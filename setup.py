@@ -3,7 +3,13 @@ import sys
 # import os
 from coinmarketcap import *
 
-C = '{:^80}'.format
+
+def clear_terminal():
+    """
+    When called will clear the terminal
+    """
+    os.system('clear')
+
 
 def title_screen():
     """
@@ -11,10 +17,10 @@ def title_screen():
     """
     time.sleep(0.5)
 
-    print(C("""
+    print("""
         #######################
         + Welcome to CoinFrog +
-        #######################"""))
+        #######################""")
 
     time.sleep(1)
 
@@ -45,18 +51,22 @@ def menu_selections():
         screen_choice = input('     > ').lower().strip()
 
         if screen_choice == '1':
+            clear_terminal()
             display_info()
             break
 
         elif screen_choice == '2':
+            clear_terminal()
             get_coin_data()
             break
 
         elif screen_choice == '3':
+            clear_terminal()
             convert_page()
             break
 
         elif screen_choice == '4':
+            clear_terminal()
             main_menu()
             break
 
@@ -69,15 +79,15 @@ def display_info():
     Outputs what the program is about and how to use each function
     """
     time.sleep(1)
-    print("||-------------------------------------------------------------------||")
+    print("||----------------------------------------------------------------------||")
     typewriter(MESSAGE)
-    print("||-------------------------------------------------------------------||")
+    print("||----------------------------------------------------------------------||")
 
     main_menu()
   
 
-MESSAGE = "       CoinFrog aims to make cryptocurrency research that little bit easier\n\
-                            It has two main functions:\n\
+MESSAGE = "CoinFrog aims to make cryptocurrency research that little bit easier\n\
+                    It has two main functions:\n\
 \nThe first function allows the user to retrieve all types of live coin data \n\
 Simply enter the coins ticker (e.g BTC) and a brief description of the coin will appear\n\
 Additionally, you can chose data that you would like to see and the program will output it\n\
@@ -143,9 +153,30 @@ def get_coin_data():
                 true_or_false = validate_ticker(ticker)
 
                 if true_or_false: 
+                    clear_terminal()
+                    time.sleep(1)
+                    print("----------------------------------------------------------")
+                    print("Available Data:")                   
+                    print("- Price: latest average trade price across markets")
+                    print("- Volume_24h: rolling 24 hour adjusted trading volume")
+                    print("- Volume_change_24h: rolling 24 hour adjusted trading volume")
+                    print("- Percent_change_1h: 1 hour trading price percentage change for each currency")
+                    print("- Percent_change_24h: 24 hour trading price percentage change for each currency")
+                    print("- Percent_change_7d: 7 day trading price percentage change for each currency")
+                    print("- Market_cap: Crypto market capitalization is the total value of a cryptocurrency")  
+                    print("- Market_cap_dominance: Dominance is a measure of how much of the total market cap of crypto is comprised of the coin")
+                    print("- Fully_diluted_market_cap: total value of the coin at today's price if the entire supply of coins were in circulation")
+                    print("----------------------------------------------------------")
+                    
+                    time.sleep(2)
+                    data_to_view = prompt_toolkit_function()
+                    
+                    time.sleep(1)
+                    display_coin_data(ticker, data_to_view)
+
                     break
 
-                else:           
+                else:
                     time.sleep(0.5)
                     print("Please try again...")
                     print("----------------------------------------------------------")
