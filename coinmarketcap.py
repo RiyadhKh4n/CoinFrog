@@ -49,13 +49,11 @@ def validate_ticker(ticker):
             time.sleep(1)
             print(f"{ticker} exists in CoinMarketCap")
             return True
-            break
 
         else:
             time.sleep(1)
             print(f"{ticker} does not exist in CoinMarketCap")
             return False
-            break
 
 
 def validate_amount(amount):

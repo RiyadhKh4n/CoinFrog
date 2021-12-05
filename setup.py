@@ -3,6 +3,7 @@ import sys
 # import os
 from coinmarketcap import *
 
+C = '{:^80}'.format
 
 def title_screen():
     """
@@ -10,10 +11,10 @@ def title_screen():
     """
     time.sleep(0.5)
 
-    print("""
+    print(C("""
         #######################
         + Welcome to CoinFrog +
-        #######################""")
+        #######################"""))
 
     time.sleep(1)
 
@@ -68,14 +69,14 @@ def display_info():
     Outputs what the program is about and how to use each function
     """
     time.sleep(1)
-    print("||---------------------------------------------------------------------------------------||")
+    print("||-------------------------------------------------------------------||")
     typewriter(MESSAGE)
-    print("||---------------------------------------------------------------------------------------||")
+    print("||-------------------------------------------------------------------||")
 
     main_menu()
   
 
-MESSAGE = "         CoinFrog aims to make cryptocurrency research that little bit easier\n\
+MESSAGE = "       CoinFrog aims to make cryptocurrency research that little bit easier\n\
                             It has two main functions:\n\
 \nThe first function allows the user to retrieve all types of live coin data \n\
 Simply enter the coins ticker (e.g BTC) and a brief description of the coin will appear\n\
