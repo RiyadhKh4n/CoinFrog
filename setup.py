@@ -245,8 +245,10 @@ def convert_page():
 
                     if true_or_false:
                         true_or_false = True
-                        print(f"You have ${usd_amount} available")
-                        print(f"You want to buy ${ticker}")
+                        print(f"You have ${usd_amount} available and you want to buy {ticker}")
+                        print("-------------------------------------")
+                        time.sleep(1)
+                        calculate_coin_amount(usd_amount, ticker)
                         time.sleep(1)
 
         elif screen_choice == '2':
@@ -285,6 +287,9 @@ def convert_page():
                 if amount_validated:
                     amount_validated = True
                     print(f"You want to buy {amount} ${ticker}")
+                    print("-------------------------------------")
+                    time.sleep(1)
+                    calculate_usd_amount(amount, ticker)
                     time.sleep(1)
 
         else:

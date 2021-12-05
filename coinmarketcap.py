@@ -107,12 +107,38 @@ def calculate_usd_amount(amount, ticker):
     """
     Will calculate amount of USD needed for user to purchase their coin
     """
+    usd_amount = 0
+    price = 0
+    for x in coins:
+        if x['symbol'] == ticker:
+            price = float((x['quote']['USD']['price']))               
+            
+
+    usd_amount =int(amount) * price
+    print("Calculating...")
+    time.sleep(2)
+    print(f"You need ${usd_amount} in order to purchase {amount} ${ticker}")
 
 
 def calculate_coin_amount(usd, ticker):
     """
-    Will calculate amount of coins can be purchased with USD amount given
+    Will calculate amount of coins that can be purchased with USD amount given
     """
+    amount_of_coins = 0
+    price = 0
+    for x in coins:
+        if x['symbol'] == ticker:
+            price = float((x['quote']['USD']['price']))      
+
+    #work out % of the total price of the coin
+    amount_of_coins = (float(usd) / price) 
+
+    #divide that % of the coin the want 
+
+    print("Calculating...")
+    time.sleep(2)
+    print(f"You can purchase {amount_of_coins} ${ticker} with ${usd}")
+
 
 
 def main():
