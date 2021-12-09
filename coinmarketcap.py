@@ -56,7 +56,7 @@ def validate_ticker(ticker):
 
         else:
             time.sleep(2)
-            print(f"{ticker} does not exist in CoinMarketCap")
+            print(f"{ticker} is not a valid ticker")
             
             return False
 
