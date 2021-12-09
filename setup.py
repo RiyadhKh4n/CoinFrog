@@ -52,12 +52,15 @@ def main_menu():
     Displays the menu for the user to interact with
     """
     print(f"""
+               
                           {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
-                -  (1) What is CoinFrog?    -
-                -  (2) Get Coin Information -
-                -  (3) Crypto Converter     -   
-
-                Type '1', '2', '3'\n""")
+                -  (1) What is CoinFrog?    -                           
+                -  (2) Get Coin Information -                          
+                -  (3) Crypto Converter     -                           
+                                                                        
+            |Type '1', '2', '3'\n                                    
+                
+                """)
 
     menu_selections()
 
