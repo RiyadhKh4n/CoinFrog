@@ -53,7 +53,7 @@ def main_menu():
     """
     print(f"""
                
-                                {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
+                                    {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
                         -  (1) What is CoinFrog?    -                           
                         -  (2) Get Coin Information -                          
                         -  (3) Crypto Converter     -                           
@@ -232,9 +232,9 @@ def convert_page():
     Function which handles the crypto conversion feature
     """
 
-    print("""
+    print(f"""
 
-                        Select An Option:
+                        {Style.BRIGHT}{Fore.CYAN}Select An Option:
                     -  (1) Calculate Amount of Coins  -
                     -  (2) Calculate USD needed       -
                     -  (3) Convert Crypto             -  

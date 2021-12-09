@@ -91,7 +91,6 @@ What is CoinFrog:
 
 Get Coin Information:
 - This is page the user is navigated to if the want to retrieve live coin data
-
 ![LiveData](assets/images/readme/validate.png)
 
 
