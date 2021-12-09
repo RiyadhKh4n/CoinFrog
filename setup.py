@@ -104,7 +104,7 @@ def display_info():
     main_menu()
   
 
-MESSAGE = f"CoinFrog aims to make cryptocurrency research that little bit easier\n\
+MESSAGE = " CoinFrog aims to make cryptocurrency research that little bit easier\n\
                     It has two main functions:\n\
 \n'Get Coin Information' allows you to retrieve all types of live coin data\n\
 Enter the coins ticker (e.g. BTC) and select the data you would like to view.\n\
@@ -152,12 +152,12 @@ def get_coin_data():
 
         if ticker_length == 0:
             time.sleep(0.5)
-            print("Ticker cannot be blank!")
+            print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
             print("----------------------------------------------------------")
 
         elif ticker_length < 2:
             time.sleep(0.5)
-            print("Ticker must have 2 characters minimum")
+            print(Fore.RED + Style.BRIGHT + "Ticker must have 2 characters minimum")
             print("----------------------------------------------------------")
 
         else:
@@ -168,7 +168,7 @@ def get_coin_data():
             print("----------------------------------------------------------")
      
             if choice == ("y"):
-                print(Fore.YELLOW + "Validating Ticker...")
+                print(Fore.YELLOW + Style.BRIGHT +  "Validating Ticker...")
                 time.sleep(1)
                 true_or_false = validate_ticker(ticker)
 
@@ -179,15 +179,15 @@ def get_coin_data():
                     while exit_data is False:
                         time.sleep(1)
                         print("                 Available Data:")                   
-                        print(f"- {Fore.BLUE}price{Fore.RESET}: latest average trade price across markets")
-                        print(f"- {Fore.BLUE}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                        print(f"- {Fore.BLUE}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                        print(f"- {Fore.BLUE}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
-                        print(f"- {Fore.BLUE}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
-                        print(f"- {Fore.BLUE}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
-                        print(f"- {Fore.BLUE}market_cap{Fore.RESET}: market cap is the total value of a cryptocurrency")  
-                        print(f"- {Fore.BLUE}market_cap_dominance{Fore.RESET}: Measure of how much of the total market cap of crypto is made of the coin")
-                        print(f"- {Fore.BLUE}fully_diluted_market_cap{Fore.RESET}: value of coin at live price if entire supply of coins were in circulation")
+                        print(f"- {Fore.CYAN}price{Fore.RESET}: latest average trade price across markets")
+                        print(f"- {Fore.CYAN}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                        print(f"- {Fore.CYAN}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                        print(f"- {Fore.CYAN}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
+                        print(f"- {Fore.CYAN}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
+                        print(f"- {Fore.CYAN}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
+                        print(f"- {Fore.CYAN}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")  
+                        print(f"- {Fore.CYAN}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")
+                        print(f"- {Fore.CYAN}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")
                         print(f"- Enter {Fore.RED}'Quit'{Fore.RESET} to be redirected to the Main Menu")
                         print("--------------------------------------------------------------")
                         

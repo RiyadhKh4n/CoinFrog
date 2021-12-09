@@ -5,6 +5,9 @@ from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import time
 from prompt_toolkit import prompt
 from prompt_toolkit.completion import WordCompleter
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 if os.path.exists("env.py"):
     import env  # noqa
 
@@ -49,14 +52,14 @@ def validate_ticker(ticker):
 
         if ticker in tickerList:
             time.sleep(2)
-            print(f"{ticker} exists in CoinMarketCap")
+            print(f"{Fore.GREEN}{ticker} exists in CoinMarketCap")
             time.sleep(1)
             print("-------------------------------------")
             return True
 
         else:
             time.sleep(2)
-            print(f"{ticker} is not a valid ticker")
+            print(f"{Fore.RED}{ticker} is not a valid ticker")
             
             return False
 
@@ -66,11 +69,11 @@ def validate_amount(amount):
     Will validate is the users coin amount to ensure only contains numbers
     """
     if amount.isnumeric():
-        print("Amount entered is valid")
+        print(f"{Fore.GREEN}Amount entered is valid")
         return True
 
     else:
-        print("Amount must be a number!")
+        print(f"{Fore.RED}Amount must be a number!")
         return False
 
 
@@ -100,8 +103,8 @@ def prompt_toolkit_function():
         elif ((text not in answers) and ((text == "quit") or (text == "exit") or (text == "EXIT") or (text == "QUIT"))):
             time.sleep(2)
             print("----------------------------------------------------------")
-            print("You have chosen to quit")
-            print("Redirecting...")
+            print(f"{Fore.GREEN}You have chosen to quit")
+            print(f"{Fore.GREEN}Redirecting...")
             print("----------------------------------------------------------")
             time.sleep(1)
             return text 
@@ -109,7 +112,7 @@ def prompt_toolkit_function():
         else:
             time.sleep(0.75)
             print("----------------------------------------------------------")
-            print(f"{text} is an invalid data entry")
+            print(f"{Fore.RED}{text} is an invalid data entry")
             print("----------------------------------------------------------")
 
 
@@ -130,7 +133,7 @@ def calculate_usd_amount(amount, ticker):
     time.sleep(2.5)
     print(f"Amount: {amount}")
     print(f"Token: ${ticker}")
-    print(f"USD Needed: ${usd_amount}")
+    print(f"USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}")
 
 
 def calculate_coin_amount(usd, ticker):
@@ -151,7 +154,7 @@ def calculate_coin_amount(usd, ticker):
     time.sleep(3)
     print(f"Balance: ${usd}")
     print(f"Token: ${ticker}")
-    print(f"Amount Able to Buy: {amount_of_coins}")
+    print(f"Amount Able to Buy: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}")
 
 
 def convert_two_cryptos(amount, coin_one, coin_two):
@@ -178,7 +181,7 @@ def convert_two_cryptos(amount, coin_one, coin_two):
     print("Calculating...")
     print("-------------------------------------")
     time.sleep(3)
-    print(f"{amount} ${coin_one} --> {amount_of_coins} ${coin_two}")
+    print(f"{amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins} ${coin_two}")
 
 
 def main():
