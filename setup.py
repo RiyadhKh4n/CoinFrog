@@ -26,20 +26,20 @@ def title_screen():
                             #######################\n""")
 
 
-    print("                                   _____-----_____              ")
-    print("                               ...;;;--'~~~`--;;;...            ")
-    print("                             /;-~IN CRYPTO WE TRUST~-.\         ")
-    print("                            //      ,;;;;;;;;          \        ")
-    print("                          .//       ;;;;;    \          \       ")
-    print("                          ||        ;;;;(   /.|         ||      ")
-    print("                          ||        ;;;;;;;   _\        ||      ")
-    print("                          ||        ';;  ;;;;=          ||      ")
-    print("                          || RIYADH  | ''\;;;;;;        ||      ")
-    print("                           \      ,| '\  '|><| 2021    //       ")
-    print("                            \     |     |      \  K   //        ")
-    print("                             `;.,|.    |      '\.-'  /          ")
-    print("                                ~~;;;,._|___.,-;;;~'            ")
-    print("                                     ''=--'''''''               ") 
+    print("                                  _____-----_____              ")
+    print("                              o...;;;--'~~~`--;;;..o          ")
+    print("                            /;-~IN CRYPTO WE TRUST~-.\         ")
+    print("                           //      ,;;;;;;;;          \        ")
+    print("                         .//       ;;;;;    \          \       ")
+    print("                         ||        ;;;;(   /.|         ||      ")
+    print("                         ||        ;;;;;;;   _\        ||      ")
+    print("                         ||        ';;  ;;;;=          ||      ")
+    print("                         || RIYADH  | ''\;;;;;;        ||      ")
+    print("                          \      ,| '\  '|><| 2021    //       ")
+    print("                           \     |     |      \  K   //        ")
+    print("                            `;.,|.    |      '\.-'  /          ")
+    print("                               ~~;;;,._|___.,-;;;~'            ")
+    print("                                    ''=--'''''''               ") 
 
     time.sleep(5)
     clear_terminal()
@@ -69,7 +69,7 @@ def menu_selections():
     """
     screen_choice = ''
     while screen_choice not in ['1', '2', '3', '4']:
-        screen_choice = input('                     > ').lower().strip()
+        screen_choice = input('                             > ').lower().strip()
 
         if screen_choice == '1':
             clear_terminal()
@@ -234,13 +234,13 @@ def convert_page():
 
     print("""
 
-          Select An Option:
-      -  (1) Calculate Amount of Coins  -
-      -  (2) Calculate USD needed       -
-      -  (3) Convert Crypto             -  
-      -  (4) Exit to Main Menu          -
+                        Select An Option:
+                    -  (1) Calculate Amount of Coins  -
+                    -  (2) Calculate USD needed       -
+                    -  (3) Convert Crypto             -  
+                    -  (4) Exit to Main Menu          -
 
-      ENTER '1' / '2' / '3' / '4'\n""")
+                    ENTER '1' / '2' / '3' / '4'\n""")
 
     true_or_false = False
     true_or_false1 = False
@@ -293,7 +293,7 @@ def convert_page():
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
                         print("-------------------------------------")
-                        print(f"{Fore.GREEN}Redirecting you to Convert Page...")
+                        print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting you to Convert Page...")
                         time.sleep(5)
                         clear_terminal()
                         convert_page()
@@ -342,7 +342,7 @@ def convert_page():
                     calculate_usd_amount(amount, ticker)
                     print("-------------------------------------")
                     time.sleep(2)
-                    print(f"{Fore.GREEN}Redirecting you to Convert Page...")
+                    print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting you to Convert Page...")
                     time.sleep(5)
                     clear_terminal()
                     convert_page()
@@ -415,7 +415,7 @@ def convert_page():
                                             convert_two_cryptos(amount, ticker, ticker1)
                                             print("-------------------------------------")
                                             time.sleep(2)
-                                            print(f"{Fore.GREEN}Redirecting you to Convert Page...")
+                                            print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting you to Convert Page...")
                                             time.sleep(5)
                                             clear_terminal()
                                             convert_page()
