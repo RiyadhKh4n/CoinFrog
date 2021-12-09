@@ -26,20 +26,20 @@ def title_screen():
                             #######################\n""")
 
 
-    print("                              ___-----___                  ")
-    print("                          ...;;;--'~~~`--;;;...            ")
-    print("                        /;-~IN CRYPTO WE TRUST~-.\         ")
-    print("                       //      ,;;;;;;;;          \        ")
-    print("                     .//       ;;;;;    \          \       ")
-    print("                     ||        ;;;;(   /.|         ||      ")
-    print("                     ||        ;;;;;;;   _\        ||      ")
-    print("                     ||        ';;  ;;;;=          ||      ")
-    print("                     || LIBERTY | ''\;;;;;;        ||      ")
-    print("                      \      ,| '\  '|><| 2021    //       ")
-    print("                       \     |     |      \  R   //        ")
-    print("                        `;.,|.    |      '\.-'  /         ")
-    print("                           ~~;;;,._|___.,-;;;~'            ")
-    print("                                ''=--'                      ") 
+    print("                                   _____-----_____              ")
+    print("                               ...;;;--'~~~`--;;;...            ")
+    print("                             /;-~IN CRYPTO WE TRUST~-.\         ")
+    print("                            //      ,;;;;;;;;          \        ")
+    print("                          .//       ;;;;;    \          \       ")
+    print("                          ||        ;;;;(   /.|         ||      ")
+    print("                          ||        ;;;;;;;   _\        ||      ")
+    print("                          ||        ';;  ;;;;=          ||      ")
+    print("                          || RIYADH  | ''\;;;;;;        ||      ")
+    print("                           \      ,| '\  '|><| 2021    //       ")
+    print("                            \     |     |      \  K   //        ")
+    print("                             `;.,|.    |      '\.-'  /          ")
+    print("                                ~~;;;,._|___.,-;;;~'            ")
+    print("                                     ''=--'''''''               ") 
 
     time.sleep(5)
     clear_terminal()
@@ -53,12 +53,12 @@ def main_menu():
     """
     print(f"""
                
-                            {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
-                    -  (1) What is CoinFrog?    -                           
-                    -  (2) Get Coin Information -                          
-                    -  (3) Crypto Converter     -                           
+                                    {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
+                            -  (1) What is CoinFrog?    -                           
+                            -  (2) Get Coin Information -                          
+                            -  (3) Crypto Converter     -                           
                                                                         
-                    Type '1', '2', '3'\n""")
+                            Type '1', '2', '3'\n""")
 
     menu_selections()
 
@@ -178,7 +178,7 @@ def get_coin_data():
 
                     while exit_data is False:
                         time.sleep(1)
-                        print("                 Available Data:")                   
+                        print(" Available Data:")                   
                         print(f"- {Fore.CYAN}price{Fore.RESET}: latest average trade price across markets")
                         print(f"- {Fore.CYAN}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
                         print(f"- {Fore.CYAN}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
@@ -214,9 +214,11 @@ def get_coin_data():
                 time.sleep(0.5)
 
             elif choice == ('EXIT' or 'exit' or 'quit' or 'QUIT'):
-                print("Taking you to Main Menu...")
+                time.sleep(1.5)
+                print("-------------------------------------")
+                print(f"{Fore.GREEN}Redirecting to Main Menu...")
+                print("-------------------------------------")
                 time.sleep(2)
-                print("----------------------------------------------------------")
                 clear_terminal()
                 main_menu()
 
