@@ -52,14 +52,14 @@ def validate_ticker(ticker):
 
         if ticker in tickerList:
             time.sleep(2)
-            print(f"{Fore.GREEN}{ticker} exists in CoinMarketCap")
+            print(f"{Fore.GREEN}{Style.BRIGHT}{ticker} exists in CoinMarketCap")
             time.sleep(1)
             print("-------------------------------------")
             return True
 
         else:
             time.sleep(2)
-            print(f"{Fore.RED}{ticker} is not a valid ticker")
+            print(f"{Fore.RED}{Style.BRIGHT}{ticker} is not a valid ticker")
             
             return False
 
@@ -69,11 +69,11 @@ def validate_amount(amount):
     Will validate is the users coin amount to ensure only contains numbers
     """
     if amount.isnumeric():
-        print(f"{Fore.GREEN}Amount entered is valid")
+        print(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid")
         return True
 
     else:
-        print(f"{Fore.RED}Amount must be a number!")
+        print(f"{Fore.RED}{Style.BRIGHT}Amount must be a number!")
         return False
 
 
@@ -103,8 +103,8 @@ def prompt_toolkit_function():
         elif ((text not in answers) and ((text == "quit") or (text == "exit") or (text == "EXIT") or (text == "QUIT"))):
             time.sleep(2)
             print("----------------------------------------------------------")
-            print(f"{Fore.GREEN}You have chosen to quit")
-            print(f"{Fore.GREEN}Redirecting...")
+            print(f"{Fore.GREEN}{Style.BRIGHT}You have chosen to quit")
+            print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting...")
             print("----------------------------------------------------------")
             time.sleep(1)
             return text 
@@ -112,7 +112,7 @@ def prompt_toolkit_function():
         else:
             time.sleep(0.75)
             print("----------------------------------------------------------")
-            print(f"{Fore.RED}{text} is an invalid data entry")
+            print(f"{Fore.RED}{Style.BRIGHT}{text} is an invalid data entry")
             print("----------------------------------------------------------")
 
 
@@ -131,8 +131,8 @@ def calculate_usd_amount(amount, ticker):
     print("Calculating...")
     print("-------------------------------------")
     time.sleep(2.5)
-    print(f"Amount: {amount}")
-    print(f"Token: ${ticker}")
+    print(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount}")
+    print(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}")
     print(f"USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}")
 
 
@@ -152,8 +152,8 @@ def calculate_coin_amount(usd, ticker):
     print("Calculating...")
     print("-------------------------------------")
     time.sleep(3)
-    print(f"Balance: ${usd}")
-    print(f"Token: ${ticker}")
+    print(f"Balance: {Fore.MAGENTA}{Style.BRIGHT}${usd}")
+    print(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}")
     print(f"Amount Able to Buy: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}")
 
 

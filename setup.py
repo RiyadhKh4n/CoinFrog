@@ -26,20 +26,20 @@ def title_screen():
                             #######################\n""")
 
 
-    print("                         ___-----___                  ")
-    print("                     ...;;;--'~~~`--;;;...            ")
-    print("                   /;-~IN CRYPTO WE TRUST~-.\         ")
-    print("                  //      ,;;;;;;;;          \        ")
-    print("                .//       ;;;;;    \          \       ")
-    print("                ||        ;;;;(   /.|         ||      ")
-    print("                ||        ;;;;;;;   _\        ||      ")
-    print("                ||        ';;  ;;;;=          ||      ")
-    print("                || LIBERTY | ''\;;;;;;        ||      ")
-    print("                 \      ,| '\  '|><| 2021    //       ")
-    print("                  \     |     |      \  R   //        ")
-    print("                   `;.,|.    |      '\.-'  /         ")
-    print("                      ~~;;;,._|___.,-;;;~'            ")
-    print("                           ''=--'                      ") 
+    print("                              ___-----___                  ")
+    print("                          ...;;;--'~~~`--;;;...            ")
+    print("                        /;-~IN CRYPTO WE TRUST~-.\         ")
+    print("                       //      ,;;;;;;;;          \        ")
+    print("                     .//       ;;;;;    \          \       ")
+    print("                     ||        ;;;;(   /.|         ||      ")
+    print("                     ||        ;;;;;;;   _\        ||      ")
+    print("                     ||        ';;  ;;;;=          ||      ")
+    print("                     || LIBERTY | ''\;;;;;;        ||      ")
+    print("                      \      ,| '\  '|><| 2021    //       ")
+    print("                       \     |     |      \  R   //        ")
+    print("                        `;.,|.    |      '\.-'  /         ")
+    print("                           ~~;;;,._|___.,-;;;~'            ")
+    print("                                ''=--'                      ") 
 
     time.sleep(5)
     clear_terminal()
@@ -69,7 +69,7 @@ def menu_selections():
     """
     screen_choice = ''
     while screen_choice not in ['1', '2', '3', '4']:
-        screen_choice = input('     > ').lower().strip()
+        screen_choice = input('                     > ').lower().strip()
 
         if screen_choice == '1':
             clear_terminal()
@@ -87,7 +87,7 @@ def menu_selections():
             break
 
         else:
-            print(f">{Fore.RED} {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
+            print(f"                     >{Fore.RED} {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
 
 
 def display_info():
@@ -292,7 +292,7 @@ def convert_page():
                         time.sleep(2)
                         print("-------------------------------------")
                         print(f"{Fore.GREEN}Redirecting you to Convert Page...")
-                        time.sleep(3)
+                        time.sleep(5)
                         clear_terminal()
                         convert_page()
 
@@ -339,9 +339,9 @@ def convert_page():
                     print("-------------------------------------")
                     calculate_usd_amount(amount, ticker)
                     print("-------------------------------------")
-                    time.sleep(1)
+                    time.sleep(2)
                     print(f"{Fore.GREEN}Redirecting you to Convert Page...")
-                    time.sleep(3)
+                    time.sleep(5)
                     clear_terminal()
                     convert_page()
 
@@ -414,7 +414,7 @@ def convert_page():
                                             print("-------------------------------------")
                                             time.sleep(2)
                                             print(f"{Fore.GREEN}Redirecting you to Convert Page...")
-                                            time.sleep(3)
+                                            time.sleep(5)
                                             clear_terminal()
                                             convert_page()
 
@@ -424,7 +424,7 @@ def convert_page():
             print("-------------------------------------")
             print(f"{Fore.GREEN}Redirecting to Main Menu...")
             print("-------------------------------------")
-            time.sleep(1.5)
+            time.sleep(2)
             clear_terminal()
             main_menu()
     
