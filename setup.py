@@ -53,12 +53,12 @@ def main_menu():
     """
     print(f"""
                
-                                    {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
-                            -  (1) What is CoinFrog?    -                           
-                            -  (2) Get Coin Information -                          
-                            -  (3) Crypto Converter     -                           
+                                {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
+                        -  (1) What is CoinFrog?    -                           
+                        -  (2) Get Coin Information -                          
+                        -  (3) Crypto Converter     -                           
                                                                         
-                            Type '1', '2', '3'\n""")
+                        Type '1', '2', '3'\n""")
 
     menu_selections()
 
@@ -248,7 +248,7 @@ def convert_page():
     screen_choice = ''
 
     while screen_choice not in ['1', '2', '3', 'exit', 'quit', 'QUIT', 'EXIT']:
-        screen_choice = input('     > ').strip()
+        screen_choice = input('                     > ').strip()
 
         if screen_choice == '1':
             clear_terminal()
@@ -422,9 +422,10 @@ def convert_page():
 
 
         elif screen_choice == '4':
+            print("\n")
             time.sleep(1.5)
             print("-------------------------------------")
-            print(f"{Fore.GREEN}Redirecting to Main Menu...")
+            print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu...")
             print("-------------------------------------")
             time.sleep(2)
             clear_terminal()
