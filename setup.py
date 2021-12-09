@@ -53,14 +53,12 @@ def main_menu():
     """
     print(f"""
                
-                          {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
-                -  (1) What is CoinFrog?    -                           
-                -  (2) Get Coin Information -                          
-                -  (3) Crypto Converter     -                           
+                            {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
+                    -  (1) What is CoinFrog?    -                           
+                    -  (2) Get Coin Information -                          
+                    -  (3) Crypto Converter     -                           
                                                                         
-            |Type '1', '2', '3'\n                                    
-                
-                """)
+                    Type '1', '2', '3'\n""")
 
     menu_selections()
 
@@ -106,7 +104,7 @@ def display_info():
     main_menu()
   
 
-MESSAGE = " CoinFrog aims to make cryptocurrency research that little bit easier\n\
+MESSAGE = f"CoinFrog aims to make cryptocurrency research that little bit easier\n\
                     It has two main functions:\n\
 \n'Get Coin Information' allows you to retrieve all types of live coin data\n\
 Enter the coins ticker (e.g. BTC) and select the data you would like to view.\n\
@@ -190,7 +188,7 @@ def get_coin_data():
                         print(f"- {Fore.BLUE}market_cap{Fore.RESET}: market cap is the total value of a cryptocurrency")  
                         print(f"- {Fore.BLUE}market_cap_dominance{Fore.RESET}: Measure of how much of the total market cap of crypto is made of the coin")
                         print(f"- {Fore.BLUE}fully_diluted_market_cap{Fore.RESET}: value of coin at live price if entire supply of coins were in circulation")
-                        print(f"- Enter {Fore.RED}'quit'{Fore.RESET} to be redirected to the Main Menu")
+                        print(f"- Enter {Fore.RED}'Quit'{Fore.RESET} to be redirected to the Main Menu")
                         print("--------------------------------------------------------------")
                         
                         time.sleep(2)
@@ -255,7 +253,7 @@ def convert_page():
             while amount_validated is False:
                 print("-------------------------------------")
                 time.sleep(1)
-                print("Enter dollar amount available: ")
+                print(Fore.CYAN + Style.BRIGHT +"Enter dollar amount available: ")
                 usd_amount = input('> $').strip()
                 amount_validated = validate_amount(usd_amount)
 
@@ -266,7 +264,7 @@ def convert_page():
             while true_or_false is False:
                 print("-------------------------------------")
                 time.sleep(1)
-                print("Enter ticker of coin to purchase: ")
+                print(Fore.CYAN + Style.BRIGHT + "Enter ticker of coin to purchase: ")
                 ticker = input('> $').upper()
 
                 ticker_length = 0
@@ -275,11 +273,11 @@ def convert_page():
 
                 if ticker_length == 0:
                     time.sleep(1)
-                    print("Ticker cannot be blank!")
+                    print(Fore.RED + Style.BRIGHT +"Ticker cannot be blank!")
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print("Ticker must have 2 characters minimum")
+                    print(Fore.RED + Style.BRIGHT +"Ticker must have 2 characters minimum")
 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -303,7 +301,7 @@ def convert_page():
             while true_or_false is False:
                 print("-------------------------------------")
                 time.sleep(1)
-                print("Enter ticker of coin to purchase: ")
+                print(Fore.CYAN + Style.BRIGHT +"Enter ticker of coin to purchase: ")
                 ticker = input('> $').upper()
 
                 ticker_length = 0
@@ -312,11 +310,11 @@ def convert_page():
 
                 if ticker_length == 0:
                     time.sleep(1)
-                    print("Ticker cannot be blank!")
+                    print(Fore.RED + Style.BRIGHT +"Ticker cannot be blank!")
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print("Ticker must have 2 characters minimum")
+                    print(Fore.RED + Style.BRIGHT + "Ticker must have 2 characters minimum")
                 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -327,7 +325,7 @@ def convert_page():
            
             while amount_validated is False:
                 time.sleep(1)
-                print("Enter amount of coins to buy: ")
+                print(Fore.CYAN + Style.BRIGHT +"Enter amount of coins to buy: ")
                 amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
@@ -336,7 +334,7 @@ def convert_page():
                     time.sleep(2)
                     print("-------------------------------------")
                     print(f"Amount to Purchase: {amount}")
-                    print(f"Token Of Interest: {ticker}")
+                    print(f"Token Of Interest: ${ticker}")
                     time.sleep(2)
                     print("-------------------------------------")
                     calculate_usd_amount(amount, ticker)
@@ -352,7 +350,7 @@ def convert_page():
             while amount_validated is False:
                 print("-------------------------------------")
                 time.sleep(1)
-                print("Enter Amount to Convert: ")
+                print(Fore.CYAN + Style.BRIGHT + "Enter Amount to Convert: ")
                 amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
@@ -363,7 +361,7 @@ def convert_page():
                     while true_or_false is False:
                         print("-------------------------------------")
                         time.sleep(1)
-                        print("Enter Ticker: ")
+                        print(Fore.CYAN + Style.BRIGHT +"Enter Ticker: ")
                         ticker = input('> $').upper()
 
                         ticker_length = 0
@@ -372,11 +370,11 @@ def convert_page():
 
                         if ticker_length == 0:
                             time.sleep(1)
-                            print("Ticker cannot be blank!")
+                            print(Fore.RED + Style.BRIGHT +"Ticker cannot be blank!")
 
                         elif ticker_length < 2:
                             time.sleep(1)
-                            print("Ticker must have 2 characters minimum")
+                            print(Fore.RED + Style.BRIGHT +"Ticker must have 2 characters minimum")
                         
                         else:
                             true_or_false = validate_ticker(ticker)
@@ -389,7 +387,7 @@ def convert_page():
                                 while true_or_false1 is False:
                                     print("-------------------------------------")
                                     time.sleep(1)
-                                    print(f"Enter Coin to Convert {amount} ${ticker} into: ")
+                                    print(f"{Fore.CYAN}{Style.BRIGHT}Enter Coin to Convert {amount} ${ticker} into: ")
                                     ticker1 = input('> $').upper()
 
                                     ticker_length = 0
@@ -398,11 +396,11 @@ def convert_page():
 
                                     if ticker_length == 0:
                                         time.sleep(1)
-                                        print("Ticker cannot be blank!")
+                                        print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
 
                                     elif ticker_length < 2:
                                         time.sleep(1)
-                                        print("Ticker must have 2 characters minimum")
+                                        print(Fore.RED + Style.BRIGHT +"Ticker must have 2 characters minimum")
                                     
                                     else:
                                         true_or_false = validate_ticker(ticker1)
@@ -431,7 +429,7 @@ def convert_page():
             main_menu()
     
         else:
-            print(f"{screen_choice} is an Invalid option")
+            print(f"{Fore.RED}{screen_choice} is an Invalid option")
 
 
             #   if ticker == 'EXIT' or 'QUIT':
