@@ -1,6 +1,9 @@
 import time
 import sys
 import os
+import colorama
+from colorama import Fore, Back, Style
+colorama.init(autoreset=True)
 from coinmarketcap import *
 
 
@@ -18,28 +21,28 @@ def title_screen():
     time.sleep(0.5)
 
     print("""
-                    #######################
-                    + Welcome to CoinFrog +
-                    #######################\n""")
+                            #######################
+                            + Welcome to CoinFrog +
+                            #######################\n""")
 
 
-    print("           ___-----___                  ")
-    print("       ...;;;--'~~~`--;;;...            ")
-    print("     /;-~IN CRYPTO WE TRUST~-.\         ")
-    print("    //      ,;;;;;;;;          \        ")
-    print("  .//       ;;;;;    \          \       ")
-    print("  ||        ;;;;(   /.|         ||      ")
-    print("  ||        ;;;;;;;   _\        ||      ")
-    print("  ||        ';;  ;;;;=          ||      ")
-    print("  || LIBERTY | ''\;;;;;;        ||      ")
-    print("   \      ,| '\  '|><| 2021    //       ")
-    print("    \     |     |      \  R   //        ")
-    print("      `;.,|.    |      '\.-'  /         ")
-    print("       ~~;;;,._|___.,-;;;~'            ")
-    print("           ''=--'                      ") 
+    print("                         ___-----___                  ")
+    print("                     ...;;;--'~~~`--;;;...            ")
+    print("                   /;-~IN CRYPTO WE TRUST~-.\         ")
+    print("                  //      ,;;;;;;;;          \        ")
+    print("                .//       ;;;;;    \          \       ")
+    print("                ||        ;;;;(   /.|         ||      ")
+    print("                ||        ;;;;;;;   _\        ||      ")
+    print("                ||        ';;  ;;;;=          ||      ")
+    print("                || LIBERTY | ''\;;;;;;        ||      ")
+    print("                 \      ,| '\  '|><| 2021    //       ")
+    print("                  \     |     |      \  R   //        ")
+    print("                   `;.,|.    |      '\.-'  /         ")
+    print("                      ~~;;;,._|___.,-;;;~'            ")
+    print("                           ''=--'                      ") 
 
     time.sleep(5)
-
+    clear_terminal()
 
     main_menu()
 
@@ -48,13 +51,13 @@ def main_menu():
     """
     Displays the menu for the user to interact with
     """
-    print("""
-                CoinFrog
-      -  (1) What is CoinFrog?    -
-      -  (2) Get Coin Information -
-      -  (3) Crypto Converter     -   
+    print(f"""
+                          {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
+                -  (1) What is CoinFrog?    -
+                -  (2) Get Coin Information -
+                -  (3) Crypto Converter     -   
 
-      Type '1', '2', '3'\n""")
+                Type '1', '2', '3'\n""")
 
     menu_selections()
 
@@ -83,7 +86,7 @@ def menu_selections():
             break
 
         else:
-            print(f"> {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
+            print(f">{Fore.RED} {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
 
 
 def display_info():
@@ -91,11 +94,11 @@ def display_info():
     Outputs what the program is about and how to use each function
     """
     time.sleep(1)
-    print("|-----------------------------------------------------------------------------|")
+    print("|------------------------------------------------------------------------------|")
     typewriter(MESSAGE)
-    print("|-----------------------------------------------------------------------------|")
+    print("|------------------------------------------------------------------------------|")
 
-    time.sleep(4)
+    time.sleep(6)
     clear_terminal()
     main_menu()
   
@@ -107,14 +110,14 @@ Enter the coins ticker (e.g. BTC) and select the data you would like to view.\n\
 \nThe second being a Crypto Converter function:\n\
 Chose between 'Calculate Amount of Coins', 'Calculate USD' or 'Convert Crypto':\n\
 \nCalculate Amount of Coins: Enter the amount of dollars available\n\
-        Enter the ticker of the coin you wish to buy\n\
-        And CoinFrog will calculate how many coins you can purchase\n\
+            Enter the ticker of the coin you wish to buy\n\
+            And CoinFrog will calculate how many coins you can purchase\n\
 \nCalculate USD: Enter the ticker of the coin to buy\n\
-        Enter amount of coins you wish to purchase\n\
-        And CoinFrog will calculate how much money is needed\n\
+            Enter amount of coins you wish to purchase\n\
+            And CoinFrog will calculate how much money is needed\n\
 \nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)\n\
-        along with the coin you would like to convert it into (e.g. ETH)\n\
-        and CoinFrog will calculate the conversion between the two\n"            
+            along with the coin you would like to convert it into (e.g. ETH)\n\
+            and CoinFrog will calculate the conversion between the two\n"            
 
 def typewriter(message):
     for char in message:
@@ -138,7 +141,7 @@ def get_coin_data():
     option = ''
     while option not in ['y', 'n']:
         true_or_false = None
-        print("Enter the ticker of the coin you would like to research:")
+        print(Fore.CYAN + Style.BRIGHT + "Enter the ticker of the coin you would like to research:")
         ticker = input('> ').upper()
         print("----------------------------------------------------------")
 
@@ -164,7 +167,7 @@ def get_coin_data():
             print("----------------------------------------------------------")
      
             if choice == ("y"):
-                print("Validating Ticker...")
+                print(Fore.YELLOW + "Validating Ticker...")
                 time.sleep(1)
                 true_or_false = validate_ticker(ticker)
 
@@ -174,17 +177,17 @@ def get_coin_data():
 
                     while exit_data is False:
                         time.sleep(1)
-                        print("Available Data:")                   
-                        print("- price: latest average trade price across markets")
-                        print("- volume_24h: rolling 24 hour adjusted trading volume")
-                        print("- volume_change_24h: rolling 24 hour adjusted trading volume")
-                        print("- percent_change_1h: 1 hour trading price percentage change for each currency")
-                        print("- percent_change_24h: 24 hour trading price percentage change for each currency")
-                        print("- percent_change_7d: 7 day trading price percentage change for each currency")
-                        print("- market_cap: market cap is the total value of a cryptocurrency")  
-                        print("- market_cap_dominance: Measure of how much of the total market cap of crypto is comprised of the coin")
-                        print("- fully_diluted_market_cap: value of the coin at today's price if the entire supply of coins were in circulation")
-                        print("Enter 'quit' to be redirected to the Main Menu")
+                        print("                 Available Data:")                   
+                        print(f"- {Fore.BLUE}price{Fore.RESET}: latest average trade price across markets")
+                        print(f"- {Fore.BLUE}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                        print(f"- {Fore.BLUE}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                        print(f"- {Fore.BLUE}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
+                        print(f"- {Fore.BLUE}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
+                        print(f"- {Fore.BLUE}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
+                        print(f"- {Fore.BLUE}market_cap{Fore.RESET}: market cap is the total value of a cryptocurrency")  
+                        print(f"- {Fore.BLUE}market_cap_dominance{Fore.RESET}: Measure of how much of the total market cap of crypto is made of the coin")
+                        print(f"- {Fore.BLUE}fully_diluted_market_cap{Fore.RESET}: value of coin at live price if entire supply of coins were in circulation")
+                        print(f"- Enter {Fore.RED}'quit'{Fore.RESET} to be redirected to the Main Menu")
                         print("--------------------------------------------------------------")
                         
                         time.sleep(2)
@@ -287,7 +290,7 @@ def convert_page():
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
                         print("-------------------------------------")
-                        print("Redirecting you to Convert Page...")
+                        print(f"{Fore.GREEN}Redirecting you to Convert Page...")
                         time.sleep(3)
                         clear_terminal()
                         convert_page()
@@ -336,7 +339,7 @@ def convert_page():
                     calculate_usd_amount(amount, ticker)
                     print("-------------------------------------")
                     time.sleep(1)
-                    print("Redirecting you to Convert Page...")
+                    print(f"{Fore.GREEN}Redirecting you to Convert Page...")
                     time.sleep(3)
                     clear_terminal()
                     convert_page()
@@ -409,7 +412,7 @@ def convert_page():
                                             convert_two_cryptos(amount, ticker, ticker1)
                                             print("-------------------------------------")
                                             time.sleep(2)
-                                            print("Redirecting you to Convert Page...")
+                                            print(f"{Fore.GREEN}Redirecting you to Convert Page...")
                                             time.sleep(3)
                                             clear_terminal()
                                             convert_page()
@@ -418,7 +421,7 @@ def convert_page():
         elif screen_choice == '4':
             time.sleep(1.5)
             print("-------------------------------------")
-            print("Redirecting to Main Menu...")
+            print(f"{Fore.GREEN}Redirecting to Main Menu...")
             print("-------------------------------------")
             time.sleep(1.5)
             clear_terminal()
