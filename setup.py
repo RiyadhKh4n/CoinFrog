@@ -22,6 +22,38 @@ def title_screen():
         + Welcome to CoinFrog +
         #######################""")
 
+
+    print("""                .-----.
+                            /7  .  (
+                           /   .-.  \
+                          /   /   \  \
+                         / `  )   (   )
+                        / `   )   ).  \
+                      .'  _.   \_/  . |
+     .--.           .' _.' )`.        |
+    (    `---...._.'   `---.'_)    ..  \
+     \            `----....___    `. \  |
+      `.           _ ----- _   `._  )/  |
+        `.       /"  \   /"  \`.  `._   |
+          `.    ((O)` ) ((O)` ) `.   `._\
+            `-- '`---'   `---' )  `.    `-.
+               /                  ` \      `-.
+             .'                      `.       `.
+            /                     `  ` `.       `-.
+     .--.   \ ===._____.======. `    `   `. .___.--`     .''''.
+    ' .` `-. `.                )`. `   ` ` \          .' . '  8)
+   (8  .  ` `-.`.               ( .  ` `  .`\      .'  '    ' /
+    \  `. `    `-.               ) ` .   ` ` \  .'   ' .  '  /
+     \ ` `.  ` . \`.    .--.     |  ` ) `   .``/   '  // .  /
+      `.  ``. .   \ \   .-- `.  (  ` /_   ` . / ' .  '/   .'
+        `. ` \  `  \ \  '-.   `-'  .'  `-.  `   .  .'/  .'
+          \ `.`.  ` \ \    ) /`._.`       `.  ` .  .'  /
+    LGB    |  `.`. . \ \  (.'               `.   .'  .'
+        __/  .. \ \ ` ) \                     \.' .. \__
+ .-._.-'     '"  ) .-'   `.                   (  '"     `-._.--.
+(_________.-====' / .' /\_)`--..__________..-- `====-. _________)
+                 (.'(.'                                             """)
+
     time.sleep(1)
 
     main_menu()
@@ -64,11 +96,6 @@ def menu_selections():
             convert_page()
             break
 
-        # elif screen_choice == '4':
-        #     clear_terminal()
-        #     main_menu()
-        #     break
-
         else:
             print(f"> {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
 
@@ -78,9 +105,9 @@ def display_info():
     Outputs what the program is about and how to use each function
     """
     time.sleep(1)
-    print("|--------------------------------------------------------------------------|")
+    print("|-----------------------------------------------------------------------------|")
     typewriter(MESSAGE)
-    print("|--------------------------------------------------------------------------|")
+    print("|-----------------------------------------------------------------------------|")
 
     time.sleep(4)
     clear_terminal()
@@ -89,9 +116,9 @@ def display_info():
 
 MESSAGE = " CoinFrog aims to make cryptocurrency research that little bit easier\n\
                     It has two main functions:\n\
-\nThe 'Get Coin Information' function allows you to retrieve all types of live coin data\n\
-Simply enter the coins ticker (e.g. BTC) and select the data you would like to view.\n\
-\nThe second being a Crypto Converter function ~\n\
+\n'Get Coin Information' allows you to retrieve all types of live coin data\n\
+Enter the coins ticker (e.g. BTC) and select the data you would like to view.\n\
+\nThe second being a Crypto Converter function:\n\
 Chose between 'Calculate Amount of Coins', 'Calculate USD' or 'Convert Crypto':\n\
 \nCalculate Amount of Coins: Enter the amount of dollars available\n\
         Enter the ticker of the coin you wish to buy\n\

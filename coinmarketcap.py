@@ -181,7 +181,6 @@ def convert_two_cryptos(amount, coin_one, coin_two):
     print(f"{amount} ${coin_one} --> {amount_of_coins} ${coin_two}")
 
 
-
 def main():
     get_ticker_list()
 
