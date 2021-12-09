@@ -48,13 +48,16 @@ def validate_ticker(ticker):
     for x in tickerList:
 
         if ticker in tickerList:
-            time.sleep(1)
+            time.sleep(2)
             print(f"{ticker} exists in CoinMarketCap")
+            time.sleep(1)
+            print("-------------------------------------")
             return True
 
         else:
-            time.sleep(1)
+            time.sleep(2)
             print(f"{ticker} does not exist in CoinMarketCap")
+            
             return False
 
 
@@ -79,8 +82,7 @@ def display_coin_data(ticker, data):
     if ticker in tickerList:
         for x in coins:
             if x['symbol'] == ticker:
-                x['quote']['USD']['price']
-                print(x['symbol'],  x['quote']['USD'][data])
+                print(x['symbol'], x['quote']['USD'][data])
     else:
         print("Ticker not in List") 
 
@@ -93,11 +95,19 @@ def prompt_toolkit_function():
         text = prompt('Enter data to research: ', completer=api_data)
 
         if text in answers:
-            print(f'Data: {text}')
             return text
 
+        elif ((text not in answers) and ((text == "quit") or (text == "exit") or (text == "EXIT") or (text == "QUIT"))):
+            time.sleep(2)
+            print("----------------------------------------------------------")
+            print("You have chosen to quit")
+            print("Redirecting...")
+            print("----------------------------------------------------------")
+            time.sleep(1)
+            return text 
+
         else:
-            time.sleep(0.5)
+            time.sleep(0.75)
             print("----------------------------------------------------------")
             print(f"{text} is an invalid data entry")
             print("----------------------------------------------------------")
@@ -113,11 +123,14 @@ def calculate_usd_amount(amount, ticker):
         if x['symbol'] == ticker:
             price = float((x['quote']['USD']['price']))               
             
-
     usd_amount =int(amount) * price
+    
     print("Calculating...")
-    time.sleep(2)
-    print(f"You need ${usd_amount} in order to purchase {amount} ${ticker}")
+    print("-------------------------------------")
+    time.sleep(2.5)
+    print(f"Amount: {amount}")
+    print(f"Token: ${ticker}")
+    print(f"USD Needed: ${usd_amount}")
 
 
 def calculate_coin_amount(usd, ticker):
@@ -130,14 +143,42 @@ def calculate_coin_amount(usd, ticker):
         if x['symbol'] == ticker:
             price = float((x['quote']['USD']['price']))      
 
-    #work out % of the total price of the coin
     amount_of_coins = (float(usd) / price) 
 
-    #divide that % of the coin the want 
-
+    time.sleep(0.5)
     print("Calculating...")
-    time.sleep(2)
-    print(f"You can purchase {amount_of_coins} ${ticker} with ${usd}")
+    print("-------------------------------------")
+    time.sleep(3)
+    print(f"Balance: ${usd}")
+    print(f"Token: ${ticker}")
+    print(f"Amount Able to Buy: {amount_of_coins}")
+
+
+def convert_two_cryptos(amount, coin_one, coin_two):
+    """
+    Will convert an amount of one coin in terms of another
+    """
+    amount_of_coins = 0
+    price_of_coin_one = 0
+    price_of_coin_two = 0
+    coin_one_usd_value = 0
+
+    for x in coins:
+        if x['symbol'] == coin_one:
+            price_of_coin_one = float((x['quote']['USD']['price'])) 
+
+    for z in coins:
+        if z['symbol'] == coin_two:
+            price_of_coin_two = float((z['quote']['USD']['price'])) 
+
+    coin_one_usd_value = int(amount) * price_of_coin_one    
+    amount_of_coins = (float(coin_one_usd_value) / price_of_coin_two) 
+
+    time.sleep(0.5)
+    print("Calculating...")
+    print("-------------------------------------")
+    time.sleep(3)
+    print(f"{amount} ${coin_one} --> {amount_of_coins} ${coin_two}")
 
 
 

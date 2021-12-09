@@ -6,7 +6,7 @@ The purpose of CoinFrog is to allow users to gain an insight into all cryptocurr
 
 CoinFrog is a Python only programme which is run on a mock terminal. Once Run users will be navigated to the Main Menu where they can chose what they would like to do. The first option will allow them to view the 'Program Info' which will provide a description of what the program is and the features it has. The second option will allow them to 'Get Coin Info' where users enter a ticker and a description of the coin will appear. As well as this, users will be able to view the coins data e.g price, market cap, TVL etc.  
 
-The final option will navigate them to the 'Crypto Converter' where users will have two options. The first will ask the user to enter the USD amount they would like to spend and then the coin they would like to buy. The program will then calculate the amount of that coin they can buy with the USD available. The second option will allow the user to enter a coin and the amount they wish to buy and the program will calculate the USD needed to purchase it.    
+The final option will navigate them to the 'Crypto Converter' where users will have three options. The first will ask the user to enter the USD amount they would like to spend and then the coin they would like to buy. The program will then calculate the amount of that coin they can buy with the USD available. The second option will allow the user to enter a coin and the amount they wish to buy and the program will calculate the USD needed to purchase it. The third option will allow user to convert from one cryptocurrency to another (e.g. 2 $ETH = 425 $LINK) this way they can easily calculate how much of one coin is worth in another.     
 
 ---
 ![AmIResponsive]()
@@ -51,7 +51,7 @@ Features to be included:
 
 * The next option they can select will be the 'Get Coin Information' section where users are able to enter a ticker of the coin they wish to know more about and a brief description will be outputted to them. As well as this, they are able to see the coins live data by selecting from the options available.
 
-* The final option the user can select will be the 'Crypto Converter' section where users can enter the USD amount of a coin they are looking to buy and the program will calculate how much of that coin they are able to purchase with the USD available. Additionally, users can enter the amount of a certain coin they wish to purchase and the program will calculate the USD amout needed in order to purchase it. 
+* The final option the user can select will be the 'Crypto Converter' section where users can enter the USD amount of a coin they are looking to buy and the program will calculate how much of that coin they are able to purchase with the USD available. Additionally, users can enter the amount of a certain coin they wish to purchase and the program will calculate the USD amout needed in order to purchase it. Finally, users will be able to chose a coin they would like to compare to another coin (e.g. 1 $ETH = 905 $THETA).
 
 * ## Structure 
     
