@@ -78,29 +78,30 @@ def display_info():
     Outputs what the program is about and how to use each function
     """
     time.sleep(1)
-    print("||----------------------------------------------------------------------||")
+    print("|--------------------------------------------------------------------------|")
     typewriter(MESSAGE)
-    print("||----------------------------------------------------------------------||")
+    print("|--------------------------------------------------------------------------|")
 
+    time.sleep(4)
+    clear_terminal()
     main_menu()
   
 
-MESSAGE = "CoinFrog aims to make cryptocurrency research that little bit easier\n\
+MESSAGE = " CoinFrog aims to make cryptocurrency research that little bit easier\n\
                     It has two main functions:\n\
-\nThe first function allows the user to retrieve all types of live coin data \n\
-Simply enter the coins ticker (e.g BTC) and a brief description of the coin will appear\n\
-Additionally, you can chose data that you would like to see and the program will output it\n\
-\nThe second being a cryptocurrency converter function ~\n\
-Simply chose between Convert FIAT or Convert CRYPTO\n\
-\nIf Amount of Coins: Enter the amount of $dollars available\n\
-         Enter the ticker of the coin to buy\n\
-         And CoinFrog will calc how many coins you can purchase\n\
-\nIf Calculate USD: Enter the ticker of the coin to buy\n\
-           Enter amount of coins you wish to purchase\n\
-           And CoinFrog will calculate how much $dollars in needed\n\
-\n If Convert CRYPTO: Enter the amount and ticker a coin\n\
-            along with the coins you would like to convert it into\n\
-            and CoinFrog will calculate the conversion\n"            
+\nThe 'Get Coin Information' function allows you to retrieve all types of live coin data\n\
+Simply enter the coins ticker (e.g. BTC) and select the data you would like to view.\n\
+\nThe second being a Crypto Converter function ~\n\
+Chose between 'Calculate Amount of Coins', 'Calculate USD' or 'Convert Crypto':\n\
+\nCalculate Amount of Coins: Enter the amount of dollars available\n\
+        Enter the ticker of the coin you wish to buy\n\
+        And CoinFrog will calculate how many coins you can purchase\n\
+\nCalculate USD: Enter the ticker of the coin to buy\n\
+        Enter amount of coins you wish to purchase\n\
+        And CoinFrog will calculate how much money is needed\n\
+\nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)\n\
+        along with the coin you would like to convert it into (e.g. ETH)\n\
+        and CoinFrog will calculate the conversion between the two\n"            
 
 def typewriter(message):
     for char in message:
@@ -217,7 +218,7 @@ def convert_page():
           Select An Option:
       -  (1) Calculate Amount of Coins  -
       -  (2) Calculate USD needed       -
-      -  (3) Convert CRYPTO             -  
+      -  (3) Convert Crypto             -  
       -  (4) Exit to Main Menu          -
 
       ENTER '1' / '2' / '3' / '4'\n""")
