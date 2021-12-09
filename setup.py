@@ -234,7 +234,7 @@ def convert_page():
 
     print(f"""
 
-                        {Style.BRIGHT}{Fore.CYAN}Select An Option:
+                        {Style.BRIGHT}{Fore.CYAN}Select An Option{Fore.RESET}:
                     -  (1) Calculate Amount of Coins  -
                     -  (2) Calculate USD needed       -
                     -  (3) Convert Crypto             -  
