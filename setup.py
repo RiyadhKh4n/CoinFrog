@@ -69,7 +69,7 @@ def menu_selections():
     """
     screen_choice = ''
     while screen_choice not in ['1', '2', '3', '4']:
-        screen_choice = input('                            > ').lower().strip()
+        screen_choice = input('                        > ').lower().strip()
 
         if screen_choice == '1':
             clear_terminal()
@@ -179,16 +179,16 @@ def get_coin_data():
                     while exit_data is False:
                         time.sleep(1)
                         print(" Available Data:")                   
-                        print(f"- {Fore.CYAN}price{Fore.RESET}: latest average trade price across markets")
-                        print(f"- {Fore.CYAN}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                        print(f"- {Fore.CYAN}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                        print(f"- {Fore.CYAN}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
-                        print(f"- {Fore.CYAN}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
-                        print(f"- {Fore.CYAN}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
-                        print(f"- {Fore.CYAN}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")  
-                        print(f"- {Fore.CYAN}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")
-                        print(f"- {Fore.CYAN}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")
-                        print(f"- Enter {Fore.RED}'Quit'{Fore.RESET} to be redirected to the Main Menu")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}: latest average trade price across markets")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")  
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")
+                        print(f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")
+                        print(f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET} to be redirected to the Main Menu")
                         print("--------------------------------------------------------------")
                         
                         time.sleep(2)
@@ -293,7 +293,7 @@ def convert_page():
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
                         print("-------------------------------------")
-                        print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting you to Convert Page...")
+                        print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
                         time.sleep(5)
                         clear_terminal()
                         convert_page()
@@ -342,7 +342,7 @@ def convert_page():
                     calculate_usd_amount(amount, ticker)
                     print("-------------------------------------")
                     time.sleep(2)
-                    print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting you to Convert Page...")
+                    print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
                     time.sleep(5)
                     clear_terminal()
                     convert_page()
@@ -415,7 +415,7 @@ def convert_page():
                                             convert_two_cryptos(amount, ticker, ticker1)
                                             print("-------------------------------------")
                                             time.sleep(2)
-                                            print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting you to Convert Page...")
+                                            print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
                                             time.sleep(5)
                                             clear_terminal()
                                             convert_page()
