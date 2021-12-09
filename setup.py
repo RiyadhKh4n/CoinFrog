@@ -18,23 +18,23 @@ def title_screen():
     time.sleep(0.5)
 
     print("""
-        #######################
-        + Welcome to CoinFrog +
-        #######################\n""")
+                    #######################
+                    + Welcome to CoinFrog +
+                    #######################\n""")
 
 
     print("           ___-----___                  ")
     print("       ...;;;--'~~~`--;;;...            ")
-    print("     /;-~IN CRYPTO WE TRUST~-. \         ")
-    print("    //      ,;;;;;;;;           \        ")
-    print("  .//      ;;;;;    \            \       ")
-    print("  ||       ;;;;(   /.|           ||      ")
-    print("  ||       ;;;;;;;   _\          ||      ")
-    print("  ||       ';;  ;;;;=            ||      ")
-    print("  ||LIBERTY | ''\;;;;;;          ||      ")
-    print("   \     ,| '\  '|><| 2021      //       ")
-    print("    \    |     |      \  R     //        ")
-    print("      `;.,|.    |      '\.-'   /         ")
+    print("     /;-~IN CRYPTO WE TRUST~-.\         ")
+    print("    //      ,;;;;;;;;          \        ")
+    print("  .//       ;;;;;    \          \       ")
+    print("  ||        ;;;;(   /.|         ||      ")
+    print("  ||        ;;;;;;;   _\        ||      ")
+    print("  ||        ';;  ;;;;=          ||      ")
+    print("  || LIBERTY | ''\;;;;;;        ||      ")
+    print("   \      ,| '\  '|><| 2021    //       ")
+    print("    \     |     |      \  R   //        ")
+    print("      `;.,|.    |      '\.-'  /         ")
     print("       ~~;;;,._|___.,-;;;~'            ")
     print("           ''=--'                      ") 
 
@@ -49,6 +49,7 @@ def main_menu():
     Displays the menu for the user to interact with
     """
     print("""
+                CoinFrog
       -  (1) What is CoinFrog?    -
       -  (2) Get Coin Information -
       -  (3) Crypto Converter     -   
