@@ -26,8 +26,8 @@ def title_screen():
                             #######################\n""")
 
 
-    print("                                  _____-----_____              ")
-    print("                              o...;;;--'~~~`--;;;..o          ")
+    print("                                 __~~~-----~~~~__              ")
+    print("                              o...;;;--'~~~`--;;;..o           ")
     print("                            /;-~IN CRYPTO WE TRUST~-.\         ")
     print("                           //      ,;;;;;;;;          \        ")
     print("                         .//       ;;;;;    \          \       ")
@@ -69,7 +69,7 @@ def menu_selections():
     """
     screen_choice = ''
     while screen_choice not in ['1', '2', '3', '4']:
-        screen_choice = input('                             > ').lower().strip()
+        screen_choice = input('                            > ').lower().strip()
 
         if screen_choice == '1':
             clear_terminal()
