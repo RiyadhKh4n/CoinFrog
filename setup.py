@@ -175,22 +175,22 @@ def get_coin_data():
                 if true_or_false: 
                     clear_terminal()
                     exit_data = False
+                    time.sleep(1)
 
-                    while exit_data is False:
-                        time.sleep(1)
-                        print(" Available Data:")                   
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}: latest average trade price across markets")
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")  
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")
-                        print(f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")
-                        print(f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET} to be redirected to the Main Menu")
-                        print("--------------------------------------------------------------")
+                    print(" Available Data:")                   
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}: latest average trade price across markets")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")  
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")
+                    print(f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET} to be redirected to the Main Menu")
+                    print("--------------------------------------------------------------")
                         
+                    while exit_data is False:
                         time.sleep(2)
                         data_to_view = prompt_toolkit_function()
                 
