@@ -52,7 +52,9 @@ def validate_ticker(ticker):
 
         if ticker in tickerList:
             time.sleep(2)
-            print(f"{Fore.GREEN}{Style.BRIGHT}{ticker} exists in CoinMarketCap")
+            print(
+                f"{Fore.GREEN}{Style.BRIGHT}{ticker}"
+                "exists in CoinMarketCap")
             time.sleep(1)
             print("-------------------------------------")
             return True
@@ -60,7 +62,6 @@ def validate_ticker(ticker):
         else:
             time.sleep(2)
             print(f"{Fore.RED}{Style.BRIGHT}{ticker} is not a valid ticker")
-            
             return False
 
 
@@ -77,7 +78,7 @@ def validate_amount(amount):
         return False
 
 
-def display_coin_data(ticker,data):
+def display_coin_data(ticker, data):
     """
     Will display relevant data that user asks for
     """
@@ -87,10 +88,10 @@ def display_coin_data(ticker,data):
             if x['symbol'] == ticker:
                 print(x['symbol'], x['quote']['USD'][data])
     else:
-        print("Ticker not in List") 
+        print("Ticker not in List")
 
 
-def display_coin_data_extra(ticker,data):
+def display_coin_data_extra(ticker, data):
     """
     Will display extra data from the API which follows a different route
     """
@@ -100,40 +101,37 @@ def display_coin_data_extra(ticker,data):
             if x['symbol'] == ticker:
                 print(x['symbol'], x[data])
     else:
-        print("Ticker not in List") 
+        print("Ticker not in List")
 
 
 def prompt_toolkit_function():
     text = ''
     # other_function = 0
     answers = [
-        'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h','percent_change_24h',
-        'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap',
-        'circulating_supply','total_supply', 'max_supply', 'name']
+        'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h',
+        'percent_change_24h', 'percent_change_7d', 'market_cap',
+        'market_cap_dominance', 'fully_diluted_market_cap',
+        'circulating_supply', 'total_supply', 'max_supply', 'name', 'Quit']
     api_data = WordCompleter([
-        'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h', 'percent_change_24h',
-        'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap',
-        'circulating_supply','total_supply', 'max_supply', 'name'])
+        'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h',
+        'percent_change_24h', 'percent_change_7d', 'market_cap',
+        'market_cap_dominance', 'fully_diluted_market_cap',
+        'circulating_supply', 'total_supply', 'max_supply', 'name', 'Quit'])
 
     while text not in answers:
         text = prompt('Enter data to research: ', completer=api_data)
 
-        # if ((text == "name") or (text == "circulating_supply") or (text == "total_supply") or (text == "max_supply")):
-        #     other_function = 1
-        #     return other_function
-        #     return text
-
         if text in answers:
             return text
 
-        elif ((text not in answers) and ((text == "quit") or (text == "exit") or (text == "EXIT") or (text == "QUIT"))):
+        elif text == "Quit":
             time.sleep(2)
             print("----------------------------------------------------------")
             print(f"{Fore.GREEN}{Style.BRIGHT}You have chosen to quit")
             print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting...")
             print("----------------------------------------------------------")
             time.sleep(1)
-            return text 
+            return text
 
         else:
             time.sleep(0.75)
@@ -150,10 +148,10 @@ def calculate_usd_amount(amount, ticker):
     price = 0
     for x in coins:
         if x['symbol'] == ticker:
-            price = float((x['quote']['USD']['price']))               
-            
-    usd_amount =int(amount) * price
-    
+            price = float((x['quote']['USD']['price']))
+
+    usd_amount = int(amount) * price
+
     print("Calculating...")
     print("-------------------------------------")
     time.sleep(2.5)
@@ -170,9 +168,9 @@ def calculate_coin_amount(usd, ticker):
     price = 0
     for x in coins:
         if x['symbol'] == ticker:
-            price = float((x['quote']['USD']['price']))      
+            price = float((x['quote']['USD']['price']))
 
-    amount_of_coins = (float(usd) / price) 
+    amount_of_coins = (float(usd) / price)
 
     time.sleep(0.5)
     print("Calculating...")
@@ -194,20 +192,22 @@ def convert_two_cryptos(amount, coin_one, coin_two):
 
     for x in coins:
         if x['symbol'] == coin_one:
-            price_of_coin_one = float((x['quote']['USD']['price'])) 
+            price_of_coin_one = float((x['quote']['USD']['price']))
 
     for z in coins:
         if z['symbol'] == coin_two:
-            price_of_coin_two = float((z['quote']['USD']['price'])) 
+            price_of_coin_two = float((z['quote']['USD']['price']))
 
-    coin_one_usd_value = int(amount) * price_of_coin_one    
-    amount_of_coins = (float(coin_one_usd_value) / price_of_coin_two) 
+    coin_one_usd_value = int(amount) * price_of_coin_one
+    amount_of_coins = (float(coin_one_usd_value) / price_of_coin_two)
 
     time.sleep(0.5)
     print("Calculating...")
     print("-------------------------------------")
     time.sleep(3)
-    print(f"{amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins} ${coin_two}")
+    print(
+        f"{amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}"
+        "{amount_of_coins} ${coin_two}")
 
 
 def main():
@@ -215,5 +215,3 @@ def main():
 
 
 main()
-
-

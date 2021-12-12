@@ -113,19 +113,19 @@ def display_info():
 MESSAGE = """
 CoinFrog aims to make cryptocurrency research that little bit easier.
 \n\tIt has two main functions:
-\n\n'Get Coin Information' allows you to retrieve all types of live coin data.
-\nEnter the coins ticker (e.g. BTC) and select the data you would like to view.
-\n\nThe second being a Crypto Converter function:
-\nChose between 'Calculate Amount of Coins''Calculate USD' or 'Convert Crypto':
-\n\nCalculate Amount of Coins: Enter the amount of dollars available.
-\n\tEnter the ticker of the coin you wish to buy
-\n\tAnd CoinFrog will calculate how many coins you can purchase
-\n\nCalculate USD: Enter the ticker of the coin to buy.
-\n\tEnter amount of coins you wish to purchase
-\n\tAnd CoinFrog will calculate how much money is needed
-\n\nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)
-\n\talong with the coin you would like to convert it into (e.g. ETH)
-\n\tand CoinFrog will calculate the conversion between the two\n
+\n'Get Coin Information' allows you to retrieve all types of live coin data.
+Enter the coins ticker (e.g. BTC) and select the data you would like to view.
+\nThe second being a Crypto Converter function:
+Chose between 'Calculate Amount of Coins''Calculate USD' or 'Convert Crypto':
+\nCalculate Amount of Coins: Enter the amount of dollars available.
+\tEnter the ticker of the coin you wish to buy
+\tAnd CoinFrog will calculate how many coins you can purchase
+\nCalculate USD: Enter the ticker of the coin to buy.
+\tEnter amount of coins you wish to purchase
+\tAnd CoinFrog will calculate how much money is needed
+\nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)
+\talong with the coin you would like to convert it into (e.g. ETH)
+\tand CoinFrog will calculate the conversion between the two\n
 """
 
 
