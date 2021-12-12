@@ -180,9 +180,9 @@ Deploying the project using Heroku:
 * Click the "Create App" button
 * Once redirected, proceed to the settings tab
 * Click on the "config vars" button
-* Supply a KEY of PORT and it's value of 8000. The click the "add" button
+* Supply a KEY of `PORT` and it's value of `8000`. The click the "add" button
 * Next step is to add Buildpacks, click the "Add Buildpack" button
-* The python buildpack needs to be added first then the nodejs buildpack
+* The `python` buildpack needs to be added first then the `nodejs` buildpack
 * Once the buildpacks have completed, go to the deploy screen, once in the deploy screen, select GitHub as the deployment method and connect your GitHub profile
 * Search for the repository that you wish to deploy to Heroku and click "connect"
 * Once your repository is connected to Heroku you can choose to either manually or automatically deploy your app.
@@ -192,19 +192,19 @@ Deploying the project using Heroku:
 
 ## Making a Local Clone
 
-1. Log in to GitHub and locate the GitHub Repository
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/RiyadhKh4n/CoinFrog)
 2. Under the repository name, click "Clone or download".
 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 4. Open Git Bash
 5. Change the current working directory to the location where you want the cloned directory to be made.
-6. Type git clone, and then paste the URL you copied in Step 3.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
 
-    $ `git clone ADD NAME HERE` 
+    $ `git clone https://github.com/RiyadhKh4n/CoinFrog.git` 
 
 7. Press Enter. Your local clone will be created. 
 
-```
-$ git clone ADD NAME HERE
+```shell
+$ git clone https://github.com/RiyadhKh4n/CoinFrog.git
 > Cloning into `CI-Clone`...
 > remote: Counting objects: 10, done.
 > remote: Compressing objects: 100% (8/8), done.
@@ -214,7 +214,7 @@ $ git clone ADD NAME HERE
 
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)]()
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/RiyadhKh4n/CoinFrog)
 
 # Credits 
 
