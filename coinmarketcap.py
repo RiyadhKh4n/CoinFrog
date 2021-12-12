@@ -142,7 +142,7 @@ def prompt_toolkit_function():
             print(C("------------------------------------"
                     "----------------------"))
             print(C(f"{Fore.RED}{Style.BRIGHT}{text} is an"
-                    "invalid data entry"))
+                    " invalid data entry"))
             print(C("------------------------------------"
                     "----------------------"))
 
@@ -209,11 +209,11 @@ def convert_two_cryptos(amount, coin_one, coin_two):
     amount_of_coins = (float(coin_one_usd_value) / price_of_coin_two)
 
     time.sleep(0.5)
-    print(C(f"{Fore.YELLOW}{Style.BRIGHT}Calculating..."))
+    print(C(f"{Fore.YELLOW}{Style.BRIGHT}   Calculating..."))
     print(C("-------------------------------------"))
     time.sleep(3)
     print(C(
-        f"{amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins} ${coin_two}"))  # noqa
+        f"  {amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins} ${coin_two}"))  # noqa
 
 
 def main():

@@ -202,7 +202,7 @@ def get_coin_data():
                     clear_terminal()
                     exit_data = False
                     time.sleep(1)
-
+                    clear_terminal()
                     print("Available Data:")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: "
@@ -212,7 +212,7 @@ def get_coin_data():
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}: approximate total amount of coins in existence right now ")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}: maximum amount of coins that will ever exist in the lifetime of the currency")  # noqa
+                        f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}: maximum amount of coins that will ever exist")  # noqa
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}: latest average trade price across markets")  # noqa
                     print(
@@ -235,7 +235,7 @@ def get_coin_data():
                         f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")  # noqa
                     print(
                         f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
-                        "to be redirected to the Main Menu")
+                        " to be redirected to the Main Menu")
                     print(C("---------------------------------"
                           "-----------------------------"))
 
@@ -298,7 +298,7 @@ def convert_page():
     screen_choice = ''
 
     while screen_choice not in ['1', '2', '3', 'exit', 'quit', 'QUIT', 'EXIT']:
-        screen_choice = input('                     > ').strip()
+        screen_choice = input('                         > ').strip()
 
         if screen_choice == '1':
             clear_terminal()
@@ -318,7 +318,7 @@ def convert_page():
             while true_or_false is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "Enter "
+                print(C(Fore.CYAN + Style.BRIGHT + "    Enter "
                       "ticker of coin to purchase: "))
 
                 ticker = input('> $').upper()
@@ -362,7 +362,7 @@ def convert_page():
             while true_or_false is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "    Enter ticker of coin"
+                print(C(Fore.CYAN + Style.BRIGHT + "        Enter ticker of coin"
                       " to purchase: "))
                 ticker = input('> $').upper()
 
@@ -407,7 +407,7 @@ def convert_page():
                     input("Press Enter to return back to Convert Page")
                     time.sleep(2)
                     print(C(
-                        f"{Fore.YELLOW}{Style.BRIGHT}Redirecting"
+                        f"{Fore.YELLOW}{Style.BRIGHT}       Redirecting"
                         " you to Convert Page..."))
                     time.sleep(5)
                     clear_terminal()
@@ -504,7 +504,7 @@ def convert_page():
                                             print(C(
                                                 f"{Fore.YELLOW}{Style.BRIGHT}"
                                                 " Redirecting you to"
-                                                "Convert Page..."))
+                                                " Convert Page..."))
 
                                             time.sleep(5)
                                             clear_terminal()
