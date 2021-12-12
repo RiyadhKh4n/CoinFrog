@@ -26,10 +26,10 @@ def title_screen():
     print(C('+ Welcome to CoinFrog +'))
     print(C('#######################\n'))
 
-    print(C("__~~~-----~~~~__"))
-    print(C("o...;;;--'~~~`--;;;..o"))
-    print(C("/;-~IN CRYPTO WE TRUST~-.\ "))
-    print(C("//      ,;;;;;;;;          \ "))
+    print(C(" __~~~-----~~~~__"))
+    print(C(" o...;;;--'~~~`--;;;..o"))
+    print(C(" /;-~IN CRYPTO WE TRUST~-.\ "))
+    print(C(" //      ,;;;;;;;;          \ "))
     print(C(".//       ;;;;;    \          \ "))
     print(C("||        ;;;;(   /.|         ||"))
     print(C(" ||        ;;;;;;;   _\        ||"))
@@ -50,7 +50,7 @@ def main_menu():
     """
     Displays the menu for the user to interact with
     """
-
+    print("\n")
     print(C(f"{Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}"))
     print(C("-  (1) What is CoinFrog?    -"))
     print(C("-  (2) Get Coin Information -"))
@@ -112,15 +112,15 @@ def display_info():
 
 MESSAGE = """
 CoinFrog aims to make cryptocurrency research that little bit easier.
-\n\tIt has two main functions:
+\nIt has two main functions:
 \n'Get Coin Information' allows you to retrieve all types of live coin data.
 Enter the coins ticker (e.g. BTC) and select the data you would like to view.
 \nThe second being a Crypto Converter function:
 Chose between 'Calculate Amount of Coins''Calculate USD' or 'Convert Crypto':
-\nCalculate Amount of Coins: Enter the amount of dollars available.
+\nCalculate Amount of Coins: Enter the amount of dollars available
 \tEnter the ticker of the coin you wish to buy
 \tAnd CoinFrog will calculate how many coins you can purchase
-\nCalculate USD: Enter the ticker of the coin to buy.
+\nCalculate USD: Enter the ticker of the coin to buy
 \tEnter amount of coins you wish to purchase
 \tAnd CoinFrog will calculate how much money is needed
 \nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)
@@ -151,11 +151,11 @@ def get_coin_data():
     option = ''
     while option not in ['y', 'n']:
         true_or_false = None
-        print(Fore.CYAN + Style.BRIGHT + "Enter the ticker"
-              "of the coin you would like to research:")
+        print(C(Fore.CYAN + Style.BRIGHT + "Enter the ticker"
+              " of the coin you would like to research:"))
 
         ticker = input('> ').upper()
-        print("----------------------------------------------------------")
+        print(C("----------------------------------------------------------"))
 
         ticker_length = 0
         for x in ticker:
@@ -163,25 +163,25 @@ def get_coin_data():
 
         if ticker_length == 0:
             time.sleep(0.5)
-            print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
-            print("----------------------------------------------------------")
+            print(C(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!"))
+            print(C("----------------------------------------------------------"))
 
         elif ticker_length < 2:
             time.sleep(0.5)
-            print(Fore.RED + Style.BRIGHT + "Ticker must have"
-                  "2 characters minimum")
+            print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
+                  "2 characters minimum"))
 
-            print("----------------------------------------------------------")
+            print(C("----------------------------------------------------------"))
 
         else:
-            print(f"You chose {ticker} is this correct?")
-            print("Enter 'Y' for Yes and 'N' for No")
+            print(C(f"You chose {ticker} is this correct?"))
+            print(C("Enter 'Y' for Yes and 'N' for No"))
             choice = input('> ').lower().strip()
             time.sleep(1)
-            print("----------------------------------------------------------")
+            print(C("----------------------------------------------------------"))
 
             if choice == ("y"):
-                print(Fore.YELLOW + Style.BRIGHT + "Validating Ticker...")
+                print(C(Fore.YELLOW + Style.BRIGHT + "Validating Ticker..."))
                 time.sleep(1)
                 true_or_false = validate_ticker(ticker)
 
@@ -201,8 +201,7 @@ def get_coin_data():
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}:"
                         "approximate total amount of coins in existence right"
-                        "now (minus any coins that have been verifiably"
-                        "burned)")
+                        "now ")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}:"
                         "maximum amount of coins that will ever exist in the"
@@ -241,10 +240,10 @@ def get_coin_data():
                         "{Fore.RESET}: Value of coin if entire supply of"
                         "coins were in circulation")
                     print(
-                        f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'"
-                        "{Fore.RESET} to be redirected to the Main Menu")
-                    print("---------------------------------"
-                          "-----------------------------")
+                        f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
+                        "to be redirected to the Main Menu")
+                    print(C("---------------------------------"
+                          "-----------------------------"))
 
                     while exit_data is False:
 
@@ -264,31 +263,31 @@ def get_coin_data():
                         else:
                             time.sleep(1)
                             display_coin_data(ticker, data_to_view)
-                            print(
-                                "-------------------------------"
-                                "---------------------------")
+                            print(C(
+                                  "-------------------------------"
+                                  "---------------------------"))
 
                 else:
                     time.sleep(0.5)
-                    print("Please try again...")
-                    print("----------------------------------------"
-                          "------------------")
+                    print(C("Please try again..."))
+                    print(C("----------------------------------------"
+                          "------------------"))
             elif choice == ("n"):
-                print("Nevermind, try again...")
+                print(C("Nevermind, try again..."))
                 time.sleep(0.5)
 
             elif choice == ('EXIT' or 'exit' or 'quit' or 'QUIT'):
                 time.sleep(1.5)
-                print("-------------------------------------")
-                print(f"{Fore.GREEN}Redirecting to Main Menu...")
-                print("-------------------------------------")
+                print(C("-------------------------------------"))
+                print(C(f"{Fore.GREEN}Redirecting to Main Menu..."))
+                print(C("-------------------------------------"))
                 time.sleep(2)
                 clear_terminal()
                 main_menu()
 
             else:
                 time.sleep(0.5)
-                print(f"{choice} is an invalid option")
+                print(C(f"{choice} is an invalid option"))
 
 
 def convert_page():
@@ -314,10 +313,10 @@ def convert_page():
         if screen_choice == '1':
             clear_terminal()
             while amount_validated is False:
-                print("-------------------------------------")
+                print(C("-------------------------------------"))
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT + "Enter "
-                      "dollar amount available: ")
+                print(C(Fore.CYAN + Style.BRIGHT + "Enter "
+                      "dollar amount available: "))
 
                 usd_amount = input('> $').strip()
                 amount_validated = validate_amount(usd_amount)
@@ -327,10 +326,10 @@ def convert_page():
                     time.sleep(1)
 
             while true_or_false is False:
-                print("-------------------------------------")
+                print(C("-------------------------------------"))
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT + "Enter"
-                      "ticker of coin to purchase: ")
+                print(C(Fore.CYAN + Style.BRIGHT + "Enter "
+                      "ticker of coin to purchase: "))
 
                 ticker = input('> $').upper()
 
@@ -340,29 +339,30 @@ def convert_page():
 
                 if ticker_length == 0:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
+                    print(C(Fore.RED + Style.BRIGHT + "Ticker "
+                    "cannot be blank!"))
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT + "Ticker must have"
-                          "2 characters minimum")
+                    print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
+                          "2 characters minimum"))
 
                 else:
                     true_or_false = validate_ticker(ticker)
 
                     if true_or_false:
                         true_or_false = True
-                        print(f"Balance: ${usd_amount}")
-                        print(f"Token: ${ticker}")
-                        print("-------------------------------------")
+                        print(C(f"Balance: ${usd_amount}"))
+                        print(C(f"Token: ${ticker}"))
+                        print(C("-------------------------------------"))
                         time.sleep(1)
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
-                        print("-------------------------------------")
-                        input("Press Enter to return back to Convert Page")
-                        print(
+                        print(C("-------------------------------------"))
+                        input(C("Press Enter to return back to Convert Page"))
+                        print(C(
                             f"{Fore.YELLOW}{Style.BRIGHT}Redirecting"
-                            "you to Convert Page...")
+                            " you to Convert Page..."))
                         time.sleep(5)
                         clear_terminal()
                         convert_page()
@@ -370,11 +370,11 @@ def convert_page():
         elif screen_choice == '2':
             clear_terminal()
             while true_or_false is False:
-                print("-------------------------------------")
+                print(C("-------------------------------------"))
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT + "Enter ticker of coin"
-                      "to purchase: ")
-                ticker = input('> $').upper()
+                print(C(Fore.CYAN + Style.BRIGHT + "Enter ticker of coin"
+                      "to purchase: "))
+                ticker = input(C('> $')).upper()
 
                 ticker_length = 0
                 for x in ticker:
@@ -382,12 +382,12 @@ def convert_page():
 
                 if ticker_length == 0:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
+                    print(C(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!"))
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT + "Ticker must have "
-                          "2 characters minimum")
+                    print(C(Fore.RED + Style.BRIGHT + "Ticker must have "
+                          "2 characters minimum"))
 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -398,26 +398,26 @@ def convert_page():
 
             while amount_validated is False:
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT + "Enter amount"
-                      "of coins to buy: ")
-                amount = input('> ').strip()
+                print(C(Fore.CYAN + Style.BRIGHT + "Enter amount"
+                      "of coins to buy: "))
+                amount = input(C('> ')).strip()
                 amount_validated = validate_amount(amount)
 
                 if amount_validated:
                     amount_validated = True
                     time.sleep(2)
-                    print("-------------------------------------")
-                    print(f"Amount to Purchase: {amount}")
-                    print(f"Token Of Interest: ${ticker}")
+                    print(C("-------------------------------------"))
+                    print(C(f"Amount to Purchase: {amount}"))
+                    print(C(f"Token Of Interest: ${ticker}"))
                     time.sleep(2)
-                    print("-------------------------------------")
+                    print(C("-------------------------------------"))
                     calculate_usd_amount(amount, ticker)
-                    print("-------------------------------------")
-                    input("Press Enter to return back to Convert Page")
+                    print(C("-------------------------------------"))
+                    input(C("Press Enter to return back to Convert Page"))
                     time.sleep(2)
-                    print(
+                    print(C(
                         f"{Fore.YELLOW}{Style.BRIGHT}Redirecting"
-                        "you to Convert Page...")
+                        "you to Convert Page..."))
                     time.sleep(5)
                     clear_terminal()
                     convert_page()
@@ -425,10 +425,10 @@ def convert_page():
         elif screen_choice == '3':
             clear_terminal()
             while amount_validated is False:
-                print("-------------------------------------")
+                print(C("-------------------------------------"))
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT + "Enter Amount to Convert: ")
-                amount = input('> ').strip()
+                print(C(Fore.CYAN + Style.BRIGHT + "Enter Amount to Convert: "))
+                amount = input(C('> ')).strip()
                 amount_validated = validate_amount(amount)
 
                 if amount_validated:
@@ -436,10 +436,10 @@ def convert_page():
                     time.sleep(1)
 
                     while true_or_false is False:
-                        print("-------------------------------------")
+                        print(C("-------------------------------------"))
                         time.sleep(1)
-                        print(Fore.CYAN + Style.BRIGHT + "Enter Ticker: ")
-                        ticker = input('> $').upper()
+                        print(C(Fore.CYAN + Style.BRIGHT + "Enter Ticker: "))
+                        ticker = input(C('> $')).upper()
 
                         ticker_length = 0
                         for x in ticker:
@@ -447,31 +447,30 @@ def convert_page():
 
                         if ticker_length == 0:
                             time.sleep(1)
-                            print(Fore.RED + Style.BRIGHT + "Ticker"
-                                  "cannot be blank!")
+                            print(C(Fore.RED + Style.BRIGHT + "Ticker"
+                                  "cannot be blank!"))
 
                         elif ticker_length < 2:
                             time.sleep(1)
-                            print(Fore.RED + Style.BRIGHT + "Ticker must have"
-                                  "2 characters minimum")
+                            print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
+                                  "2 characters minimum"))
 
                         else:
                             true_or_false = validate_ticker(ticker)
 
                             if true_or_false is True:
                                 true_or_false = True
-                                print(f"Data so far {amount} ${ticker} -->")
+                                print(C(f"Data so far {amount} ${ticker} -->"))
                                 time.sleep(1)
 
                                 while true_or_false1 is False:
-                                    print("-----------------------------"
-                                          "--------")
+                                    print(C("-----------------------------"
+                                          "--------"))
                                     time.sleep(1)
-                                    print(f"{Fore.CYAN}{Style.BRIGHT}Enter"
-                                          "Coin to Convert"
-                                          "{amount} ${ticker} into: ")
+                                    print(C(
+                                        f"{Fore.CYAN}{Style.BRIGHT}Enter Coin to Convert {amount} ${ticker} into: "))
 
-                                    ticker1 = input('> $').upper()
+                                    ticker1 = input(C('> $')).upper()
 
                                     ticker_length = 0
                                     for x in ticker1:
@@ -479,13 +478,13 @@ def convert_page():
 
                                     if ticker_length == 0:
                                         time.sleep(1)
-                                        print(Fore.RED + Style.BRIGHT +
-                                              "Ticker cannot be blank!")
+                                        print(C(Fore.RED + Style.BRIGHT +
+                                              "Ticker cannot be blank!"))
                                     elif ticker_length < 2:
                                         time.sleep(1)
                                         print(
-                                            Fore.RED + Style.BRIGHT + "Ticker "
-                                            "must have 2 characters minimum")
+                                            C(Fore.RED + Style.BRIGHT + "Ticker "
+                                            "must have 2 characters minimum"))
 
                                     else:
                                         true_or_false = validate_ticker(
@@ -493,25 +492,23 @@ def convert_page():
 
                                         if true_or_false:
                                             true_or_false1 = True
-                                            print(
-                                                f"{amount} ${ticker} --> "
-                                                "{ticker1}")
-                                            print("------------------------"
-                                                  "-------------")
+                                            print(C(
+                                                f"{amount} ${ticker} --> {ticker1}"))
+                                            print(C("------------------------"
+                                                  "-------------"))
                                             time.sleep(1)
                                             convert_two_cryptos(
                                                 amount, ticker, ticker1)
-                                            print("-------------------------"
-                                                  "------------")
+                                            print(C("-------------------------"
+                                                  "------------"))
 
-                                            input("Press Enter to return back"
-                                                  "to Convert Page")
+                                            input(C("Press Enter to return back"
+                                                  "to Convert Page"))
 
                                             time.sleep(2)
-                                            print(
-                                                f"{Fore.YELLOW}"
-                                                "{Style.BRIGHT}Redirecting you"
-                                                "to Convert Page...")
+                                            print(C(
+                                                f"{Fore.YELLOW}{Style.BRIGHT}"
+                                                "Redirecting you to Convert Page..."))
 
                                             time.sleep(5)
                                             clear_terminal()
@@ -520,12 +517,12 @@ def convert_page():
         elif screen_choice == '4':
             print("\n")
             time.sleep(1.5)
-            print("-------------------------------------")
-            print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu...")
-            print("-------------------------------------")
+            print(C("-------------------------------------"))
+            print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu..."))
+            print(C("-------------------------------------"))
             time.sleep(2)
             clear_terminal()
             main_menu()
 
         else:
-            print(f"{Fore.RED}{screen_choice} is an Invalid option")
+            print(C(f"{Fore.RED}{screen_choice} is an Invalid option"))

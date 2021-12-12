@@ -11,6 +11,7 @@ colorama.init(autoreset=True)
 if os.path.exists("env.py"):
     import env  # noqa
 
+C = "{:^80}".format
 tickerList = []
 URL = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 
@@ -52,16 +53,16 @@ def validate_ticker(ticker):
 
         if ticker in tickerList:
             time.sleep(2)
-            print(
+            print(C(
                 f"{Fore.GREEN}{Style.BRIGHT}{ticker}"
-                "exists in CoinMarketCap")
+                " exists in CoinMarketCap"))
             time.sleep(1)
-            print("-------------------------------------")
+            print(C("-------------------------------------"))
             return True
 
         else:
             time.sleep(2)
-            print(f"{Fore.RED}{Style.BRIGHT}{ticker} is not a valid ticker")
+            print(C(f"{Fore.RED}{Style.BRIGHT}{ticker} is not a valid ticker"))
             return False
 
 
@@ -69,12 +70,12 @@ def validate_amount(amount):
     """
     Will validate is the users coin amount to ensure only contains numbers
     """
-    if isinstance(amount, int) or isinstance(amount, float):
-        print(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid")
+    if not(amount.isalpha()):
+        print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
         return True
 
     else:
-        print(f"{Fore.RED}{Style.BRIGHT}Amount must be a number!")
+        print(C(f"{Fore.RED}{Style.BRIGHT}Amount must be a number!"))
         return False
 
 
@@ -86,9 +87,9 @@ def display_coin_data(ticker, data):
     if ticker in tickerList:
         for x in coins:
             if x['symbol'] == ticker:
-                print(x['symbol'], x['quote']['USD'][data])
+                print(C(x['symbol'], x['quote']['USD'][data]))
     else:
-        print("Ticker not in List")
+        print(C(f"{Fore.RED}{Style.BRIGHT}Ticker not in List"))
 
 
 def display_coin_data_extra(ticker, data):
@@ -101,7 +102,7 @@ def display_coin_data_extra(ticker, data):
             if x['symbol'] == ticker:
                 print(x['symbol'], x[data])
     else:
-        print("Ticker not in List")
+         print(C(f"{Fore.RED}{Style.BRIGHT}Ticker not in List"))
 
 
 def prompt_toolkit_function():
@@ -111,15 +112,15 @@ def prompt_toolkit_function():
         'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h',
         'percent_change_24h', 'percent_change_7d', 'market_cap',
         'market_cap_dominance', 'fully_diluted_market_cap',
-        'circulating_supply', 'total_supply', 'max_supply', 'name', 'Quit']
+        'circulating_supply', 'total_supply', 'max_supply', 'name']
     api_data = WordCompleter([
         'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h',
         'percent_change_24h', 'percent_change_7d', 'market_cap',
         'market_cap_dominance', 'fully_diluted_market_cap',
-        'circulating_supply', 'total_supply', 'max_supply', 'name', 'Quit'])
+        'circulating_supply', 'total_supply', 'max_supply', 'name'])
 
     while text not in answers:
-        text = prompt('Enter data to research: ', completer=api_data)
+        text = prompt(C('Enter data to research: ', completer=api_data))
 
         if text in answers:
             return text
@@ -127,17 +128,17 @@ def prompt_toolkit_function():
         elif text == "Quit":
             time.sleep(2)
             print("----------------------------------------------------------")
-            print(f"{Fore.GREEN}{Style.BRIGHT}You have chosen to quit")
-            print(f"{Fore.GREEN}{Style.BRIGHT}Redirecting...")
-            print("----------------------------------------------------------")
+            print(C(f"{Fore.GREEN}{Style.BRIGHT}You have chosen to quit"))
+            print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting..."))
+            print(C("----------------------------------------------------------"))
             time.sleep(1)
             return text
 
         else:
             time.sleep(0.75)
-            print("----------------------------------------------------------")
-            print(f"{Fore.RED}{Style.BRIGHT}{text} is an invalid data entry")
-            print("----------------------------------------------------------")
+            print(C("----------------------------------------------------------"))
+            print(C(f"{Fore.RED}{Style.BRIGHT}{text} is an invalid data entry"))
+            print(C("----------------------------------------------------------"))
 
 
 def calculate_usd_amount(amount, ticker):
@@ -152,12 +153,12 @@ def calculate_usd_amount(amount, ticker):
 
     usd_amount = int(amount) * price
 
-    print("Calculating...")
-    print("-------------------------------------")
+    print(C("Calculating..."))
+    print(C("-------------------------------------"))
     time.sleep(2.5)
-    print(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount}")
-    print(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}")
-    print(f"USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}")
+    print(C(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount}"))
+    print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
+    print(C(f"USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}"))
 
 
 def calculate_coin_amount(usd, ticker):
@@ -173,12 +174,12 @@ def calculate_coin_amount(usd, ticker):
     amount_of_coins = (float(usd) / price)
 
     time.sleep(0.5)
-    print("Calculating...")
-    print("-------------------------------------")
+    print(C("Calculating..."))
+    print(C("-------------------------------------"))
     time.sleep(3)
-    print(f"Balance: {Fore.MAGENTA}{Style.BRIGHT}${usd}")
-    print(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}")
-    print(f"Amount Able to Buy: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}")
+    print(C(f"Balance: {Fore.MAGENTA}{Style.BRIGHT}${usd}"))
+    print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
+    print(C(f"Amount Able to Buy: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))
 
 
 def convert_two_cryptos(amount, coin_one, coin_two):
@@ -202,12 +203,11 @@ def convert_two_cryptos(amount, coin_one, coin_two):
     amount_of_coins = (float(coin_one_usd_value) / price_of_coin_two)
 
     time.sleep(0.5)
-    print("Calculating...")
-    print("-------------------------------------")
+    print(C("Calculating..."))
+    print(C("-------------------------------------"))
     time.sleep(3)
-    print(
-        f"{amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}"
-        "{amount_of_coins} ${coin_two}")
+    print(C(
+        f"{amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins} ${coin_two}"))
 
 
 def main():
