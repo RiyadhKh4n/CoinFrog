@@ -87,7 +87,8 @@ def display_coin_data(ticker, data):
     if ticker in tickerList:
         for x in coins:
             if x['symbol'] == ticker:
-                print(C(x['symbol'], x['quote']['USD'][data]))
+                print(x['symbol'], x['quote']['USD'][data])
+              
     else:
         print(C(f"{Fore.RED}{Style.BRIGHT}Ticker not in List"))
 
@@ -120,7 +121,7 @@ def prompt_toolkit_function():
         'circulating_supply', 'total_supply', 'max_supply', 'name'])
 
     while text not in answers:
-        text = prompt(C('Enter data to research: ', completer=api_data))
+        text = prompt('Enter data to research: ', completer=api_data)
 
         if text in answers:
             return text

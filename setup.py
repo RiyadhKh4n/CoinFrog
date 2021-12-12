@@ -56,7 +56,7 @@ def main_menu():
     print(C("-  (2) Get Coin Information -"))
     print(C("-  (3) Crypto Converter     -"))
     print(C("-  (4) Exit Program         -\n"))
-    print(C("Type '1', '2', '3' \n"))
+    print(C("Type '1', '2', '3' or '4' \n"))
 
     menu_selections()
 
@@ -86,7 +86,7 @@ def menu_selections():
 
         elif screen_choice == '4':
             clear_terminal()
-            # add message here
+            print(C(f"{Fore.GREEN}{Style.BRIGHT} Thank you for using CoinFrog!"))
 
         else:
             print(C(
@@ -195,8 +195,8 @@ def get_coin_data():
                         f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: "
                         "the name of the cryptocurrency")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply"
-                        "{Fore.RESET}: approximate number of coins currently"
+                        f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply {Fore.RESET}:"
+                        "approximate number of coins currently"
                         "in circulation")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}:"
@@ -213,31 +213,30 @@ def get_coin_data():
                         f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}:"
                         "rolling 24 hour adjusted trading volume")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h"
-                        "{Fore.RESET}: rolling 24 hour adjusted"
-                        "trading volume")
+                        f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}:"
+                        " rolling 24 hour adjusted trading volume")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h"
-                        "{Fore.RESET}: 1 hour trading price percentage"
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}:"
+                        "1 hour trading price percentage"
                         "change for each currency")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h"
-                        "{Fore.RESET}: 24 hour trading price percentage"
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h {Fore.RESET}:"
+                        "24 hour trading price percentage"
                         "change for each currency")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d"
-                        "{Fore.RESET}: 7 day trading price percentage"
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}:"
+                        "7 day trading price percentage"
                         "change for each currency")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}:"
                         "Market cap is the total value of a cryptocurrency")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance"
-                        "{Fore.RESET}: Measure in % how much of the total"
+                        f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}:"
+                        "Measure in % how much of the total"
                         "market cap is made of the coin")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap"
-                        "{Fore.RESET}: Value of coin if entire supply of"
+                        f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}:"
+                        "Value of coin if entire supply of"
                         "coins were in circulation")
                     print(
                         f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
@@ -374,7 +373,7 @@ def convert_page():
                 time.sleep(1)
                 print(C(Fore.CYAN + Style.BRIGHT + "Enter ticker of coin"
                       "to purchase: "))
-                ticker = input(C('> $')).upper()
+                ticker = input('> $').upper()
 
                 ticker_length = 0
                 for x in ticker:
@@ -400,7 +399,7 @@ def convert_page():
                 time.sleep(1)
                 print(C(Fore.CYAN + Style.BRIGHT + "Enter amount"
                       "of coins to buy: "))
-                amount = input(C('> ')).strip()
+                amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
                 if amount_validated:
@@ -428,7 +427,7 @@ def convert_page():
                 print(C("-------------------------------------"))
                 time.sleep(1)
                 print(C(Fore.CYAN + Style.BRIGHT + "Enter Amount to Convert: "))
-                amount = input(C('> ')).strip()
+                amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
                 if amount_validated:
@@ -439,7 +438,7 @@ def convert_page():
                         print(C("-------------------------------------"))
                         time.sleep(1)
                         print(C(Fore.CYAN + Style.BRIGHT + "Enter Ticker: "))
-                        ticker = input(C('> $')).upper()
+                        ticker = input('> $').upper()
 
                         ticker_length = 0
                         for x in ticker:
@@ -470,7 +469,7 @@ def convert_page():
                                     print(C(
                                         f"{Fore.CYAN}{Style.BRIGHT}Enter Coin to Convert {amount} ${ticker} into: "))
 
-                                    ticker1 = input(C('> $')).upper()
+                                    ticker1 = input('> $').upper()
 
                                     ticker_length = 0
                                     for x in ticker1:
