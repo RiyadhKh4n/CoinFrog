@@ -65,58 +65,58 @@ Features to be included:
 
 ### Program Flow Charts:
 
-![MainFunction](assets/images/flowcharts/mainfunctions.png)
+![MainFunction](documentation/flowcharts/mainfunctions.png)
 
 Crypto Converter:
 
-![CryptoConverter](assets/images/flowcharts/cryptoconverter.png)
+![CryptoConverter](documentation/flowcharts/cryptoconverter.png)
 
 Get Coin Information:
 
-![GetCoinInfo](assets/images/flowcharts/getcoininfo.png)
+![GetCoinInfo](documentation/flowcharts/getcoininfo.png)
 
 ## Design 
 
 Landing Page:
 - The page the user sees when the CoinFrog is launched
-![LandingPage](assets/images/readme/landingpage.png)
+![LandingPage](documentation/readme/landingpage.png)
 
 Main Menu:
 - The menu the user uses to navigate through the program
-![Menu](assets/images/readme/mainmenu.png)
+![Menu](documentation/readme/mainmenu.png)
 
 What is CoinFrog:
 - The page the user is navigated to if they want to learn about the program
-![WhatIsCoinFrog](assets/images/readme/getinfo.png)
+![WhatIsCoinFrog](documentation/readme/getinfo.png)
 
 Get Coin Information:
 - This is page the user is navigated to if the want to retrieve live coin data
-![LiveData](assets/images/readme/validate.png)
+![LiveData](documentation/readme/validate.png)
 
 
-![LiveData2](assets/images/readme/livedata.png)
+![LiveData2](documentation/readme/livedata.png)
 
 
-![LiveData3](assets/images/readme/error.png)
+![LiveData3](documentation/readme/error.png)
 
 
 
 Conversion Menu
 - The menu the user is taken to if they would like to complete a crypto conversion
 
-![ConvertMenu](assets/images/readme/convertmenu.png)
+![ConvertMenu](documentation/readme/convertmenu.png)
 
 Calculate Amount of Coins:
 
-![AmountOfCoins](assets/images/readme/amountofcoins.png)
+![AmountOfCoins](documentation/readme/amountofcoins.png)
 
 Calculate USD Needed:
 
-![CalcUSD](assets/images/readme/calcusd.png)
+![CalcUSD](documentation/readme/calcusd.png)
 
 Calculate Crypto:
 
-![CalcCrypto](assets/images/readme/convertcrypto.png)
+![CalcCrypto](documentation/readme/convertcrypto.png)
 
 
 # Features 
