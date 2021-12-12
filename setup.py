@@ -1,10 +1,10 @@
+from coinmarketcap import *
 import time
 import sys
 import os
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
-from coinmarketcap import *
 
 
 def clear_terminal():
@@ -25,7 +25,6 @@ def title_screen():
                             + Welcome to CoinFrog +
                             #######################\n""")
 
-
     print("                                 __~~~-----~~~~__              ")
     print("                              o...;;;--'~~~`--;;;..o           ")
     print("                            /;-~IN CRYPTO WE TRUST~-.\         ")
@@ -39,8 +38,7 @@ def title_screen():
     print("                           \     |     |      \  K   //        ")
     print("                            `;.,|.    |      '\.-'  /          ")
     print("                               ~~;;;,._|___.,-;;;~'            ")
-    print("                                    ''=--'''''''               ") 
-
+    print("                                    ''=--'''''''               ")
     time.sleep(5)
     clear_terminal()
 
@@ -52,13 +50,12 @@ def main_menu():
     Displays the menu for the user to interact with
     """
     print(f"""
-               
                                     {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
-                        -  (1) What is CoinFrog?    -                           
-                        -  (2) Get Coin Information -                          
-                        -  (3) Crypto Converter     - 
-                        -  (4) Exit Program         -                          
-                                                                        
+                        -  (1) What is CoinFrog?    -
+                        -  (2) Get Coin Information -
+                        -  (3) Crypto Converter     -
+                        -  (4) Exit Program         -
+
                         Type '1', '2', '3'\n""")
 
     menu_selections()
@@ -89,7 +86,7 @@ def menu_selections():
 
         elif screen_choice == '4':
             clear_terminal()
-            #add message here
+            # add message here
 
         else:
             print(f"                        >{Fore.RED} {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
@@ -100,14 +97,16 @@ def display_info():
     Outputs what the program is about and how to use each function
     """
     time.sleep(1)
-    print("|------------------------------------------------------------------------------|")
+    print(
+        "|---------------------------------------------------------------------"
+        "---------|")
     typewriter(MESSAGE)
     print("|------------------------------------------------------------------------------|")
 
     time.sleep(6)
     clear_terminal()
     main_menu()
-  
+
 
 MESSAGE = " CoinFrog aims to make cryptocurrency research that little bit easier\n\
                     It has two main functions:\n\
@@ -123,7 +122,8 @@ Chose between 'Calculate Amount of Coins', 'Calculate USD' or 'Convert Crypto':\
             And CoinFrog will calculate how much money is needed\n\
 \nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)\n\
             along with the coin you would like to convert it into (e.g. ETH)\n\
-            and CoinFrog will calculate the conversion between the two\n"            
+            and CoinFrog will calculate the conversion between the two\n"
+
 
 def typewriter(message):
     for char in message:
@@ -171,18 +171,18 @@ def get_coin_data():
             choice = input('> ').lower().strip()
             time.sleep(1)
             print("----------------------------------------------------------")
-     
+
             if choice == ("y"):
-                print(Fore.YELLOW + Style.BRIGHT +  "Validating Ticker...")
+                print(Fore.YELLOW + Style.BRIGHT + "Validating Ticker...")
                 time.sleep(1)
                 true_or_false = validate_ticker(ticker)
 
-                if true_or_false: 
+                if true_or_false:
                     clear_terminal()
                     exit_data = False
                     time.sleep(1)
 
-                    print(" Available Data:")  
+                    print(" Available Data:")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: the name of the cryptocurrency")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply{Fore.RESET}: approximate number of coins currently in circulation")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}: approximate total amount of coins in existence right now (minus any coins that have been verifiably burned)")
@@ -193,7 +193,7 @@ def get_coin_data():
                     print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")  
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")
                     print(f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET} to be redirected to the Main Menu")
@@ -209,7 +209,7 @@ def get_coin_data():
                         #     display_coin_data_extra(ticker, data_to_view)
                         #     print("----------------------------------------------------------")
                         
-                        if ((data_to_view == "quit") or (data_to_view == "QUIT") or (data_to_view == "exit") or (data_to_view == "EXIT")):
+                        if (data_to_view == "QUIT"):
                             exit_data = True
                             clear_terminal()
                             main_menu()
@@ -290,11 +290,12 @@ def convert_page():
 
                 if ticker_length == 0:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT +"Ticker cannot be blank!")
+                    print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT +"Ticker must have 2 characters minimum")
+                    print(Fore.RED + Style.BRIGHT + "Ticker must have"
+                    "2 characters minimum")
 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -419,17 +420,22 @@ def convert_page():
 
                                     elif ticker_length < 2:
                                         time.sleep(1)
-                                        print(Fore.RED + Style.BRIGHT +"Ticker must have 2 characters minimum")
+                                        print(
+                                            Fore.RED + Style.BRIGHT + "Ticker "
+                                            "must have 2 characters minimum")
                                     
                                     else:
                                         true_or_false = validate_ticker(ticker1)
 
                                         if true_or_false:
                                             true_or_false1 = True
-                                            print(f"{amount} ${ticker} --> {ticker1}")
+                                            print(
+                                                f"{amount} ${ticker} --> "
+                                                "{ticker1}")
                                             print("-------------------------------------")
                                             time.sleep(1)
-                                            convert_two_cryptos(amount, ticker, ticker1)
+                                            convert_two_cryptos(
+                                                amount, ticker, ticker1)
                                             print("-------------------------------------")
                                             input("Press Enter to return back to Convert Page")
                                             time.sleep(2)
@@ -448,15 +454,6 @@ def convert_page():
             time.sleep(2)
             clear_terminal()
             main_menu()
-    
+
         else:
             print(f"{Fore.RED}{screen_choice} is an Invalid option")
-
-
-            #   if ticker == 'EXIT' or 'QUIT':
-            #         print("-------------------------------------")
-            #         print("Taking you to Main Menu...")
-            #         time.sleep(2)
-            #         print("-------------------------------------")
-            #         clear_terminal()
-            #         main_menu()
