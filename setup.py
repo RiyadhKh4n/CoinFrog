@@ -56,7 +56,8 @@ def main_menu():
                                     {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
                         -  (1) What is CoinFrog?    -                           
                         -  (2) Get Coin Information -                          
-                        -  (3) Crypto Converter     -                           
+                        -  (3) Crypto Converter     - 
+                        -  (4) Exit Program         -                          
                                                                         
                         Type '1', '2', '3'\n""")
 
@@ -86,8 +87,12 @@ def menu_selections():
             convert_page()
             break
 
+        elif screen_choice == '4':
+            clear_terminal()
+            #add message here
+
         else:
-            print(f"                     >{Fore.RED} {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
+            print(f"                        >{Fore.RED} {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
 
 
 def display_info():
@@ -177,7 +182,11 @@ def get_coin_data():
                     exit_data = False
                     time.sleep(1)
 
-                    print(" Available Data:")                   
+                    print(" Available Data:")  
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: the name of the cryptocurrency")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply{Fore.RESET}: approximate number of coins currently in circulation")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}: approximate total amount of coins in existence right now (minus any coins that have been verifiably burned)")
+                    print(f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}: maximum amount of coins that will ever exist in the lifetime of the currency")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}: latest average trade price across markets")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
                     print(f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
@@ -191,9 +200,15 @@ def get_coin_data():
                     print("--------------------------------------------------------------")
                         
                     while exit_data is False:
+   
                         time.sleep(2)
                         data_to_view = prompt_toolkit_function()
-                
+                        
+                        # if other_function == 1:
+                        #     time.sleep(1)
+                        #     display_coin_data_extra(ticker, data_to_view)
+                        #     print("----------------------------------------------------------")
+                        
                         if ((data_to_view == "quit") or (data_to_view == "QUIT") or (data_to_view == "exit") or (data_to_view == "EXIT")):
                             exit_data = True
                             clear_terminal()
@@ -293,6 +308,7 @@ def convert_page():
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
                         print("-------------------------------------")
+                        input("Press Enter to return back to Convert Page")
                         print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
                         time.sleep(5)
                         clear_terminal()
@@ -312,7 +328,7 @@ def convert_page():
 
                 if ticker_length == 0:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT +"Ticker cannot be blank!")
+                    print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
 
                 elif ticker_length < 2:
                     time.sleep(1)
@@ -341,6 +357,7 @@ def convert_page():
                     print("-------------------------------------")
                     calculate_usd_amount(amount, ticker)
                     print("-------------------------------------")
+                    input("Press Enter to return back to Convert Page")
                     time.sleep(2)
                     print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
                     time.sleep(5)
@@ -414,6 +431,7 @@ def convert_page():
                                             time.sleep(1)
                                             convert_two_cryptos(amount, ticker, ticker1)
                                             print("-------------------------------------")
+                                            input("Press Enter to return back to Convert Page")
                                             time.sleep(2)
                                             print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
                                             time.sleep(5)

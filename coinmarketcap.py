@@ -90,12 +90,31 @@ def display_coin_data(ticker, data):
         print("Ticker not in List") 
 
 
+def display_coin_data_extra(ticker, data):
+    """
+    Will display extra data from the API which follows a different route
+    """
+
+    if ticker in tickerList:
+        for x in coins:
+            if x['symbol'] == ticker:
+                print(x['symbol'], x[data])
+    else:
+        print("Ticker not in List") 
+
+
 def prompt_toolkit_function():
     text = ''
-    answers = ['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h','percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap']
-    api_data = WordCompleter(['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap'])
+    # other_function = 0
+    answers = ['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h','percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap', 'circulating_supply','total_supply', 'max_supply', 'name']
+    api_data = WordCompleter(['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap', 'circulating_supply','total_supply', 'max_supply', 'name'])
     while text not in answers:
         text = prompt('Enter data to research: ', completer=api_data)
+
+        # if ((text == "name") or (text == "circulating_supply") or (text == "total_supply") or (text == "max_supply")):
+        #     other_function = 1
+        #     return other_function
+        #     return text
 
         if text in answers:
             return text
