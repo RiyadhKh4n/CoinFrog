@@ -86,9 +86,10 @@ def menu_selections():
 
         elif screen_choice == '4':
             clear_terminal()
-            print("\n\n\n")
+            print("\n\n\n\n\n\n")
             print(C(
                 f"{Fore.GREEN}{Style.BRIGHT} Thank you for using CoinFrog!"))
+            print_frog_image()
 
         else:
             print(C(
@@ -149,6 +150,23 @@ def typewriter(message):
 
         else:
             time.sleep(1)
+
+
+def print_frog_image():
+    print("                             ,-.___.-.             ")
+    print("                          ,-.(|)   (|),-.           ")
+    print("                          \_*._ ' '_.* _/           ")
+    print("                          /`-.`--' .-'\            ")
+    print("                     ,--./    `---'    \,--.       ")
+    print("                     \   |(  )     (  )|   /       ")
+    print("                      \  | ||       || |  /        ")
+    print("                       \ | /|\     /|\ | /         ")
+    print("                       /  \-._     _,-/  \         ")
+    print("                      //| \\  `---'  // ||\        ")
+    print("                     /,-.,-.\       /,-.,-.\       ")
+    print("                    o   o   o      o   o    o      ")
+
+
 
 
 def get_coin_data():
