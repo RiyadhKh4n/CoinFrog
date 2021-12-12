@@ -68,7 +68,7 @@ def validate_amount(amount):
     """
     Will validate is the users coin amount to ensure only contains numbers
     """
-    if amount.isnumeric():
+    if isinstance(amount, int) or isinstance(amount, float):
         print(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid")
         return True
 
@@ -77,7 +77,7 @@ def validate_amount(amount):
         return False
 
 
-def display_coin_data(ticker, data):
+def display_coin_data(ticker,data):
     """
     Will display relevant data that user asks for
     """
@@ -90,7 +90,7 @@ def display_coin_data(ticker, data):
         print("Ticker not in List") 
 
 
-def display_coin_data_extra(ticker, data):
+def display_coin_data_extra(ticker,data):
     """
     Will display extra data from the API which follows a different route
     """
@@ -106,8 +106,15 @@ def display_coin_data_extra(ticker, data):
 def prompt_toolkit_function():
     text = ''
     # other_function = 0
-    answers = ['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h','percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap', 'circulating_supply','total_supply', 'max_supply', 'name']
-    api_data = WordCompleter(['price', 'volume_24h', 'volume_change_24h', 'percent_change_1h', 'percent_change_24h', 'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap', 'circulating_supply','total_supply', 'max_supply', 'name'])
+    answers = [
+        'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h','percent_change_24h',
+        'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap',
+        'circulating_supply','total_supply', 'max_supply', 'name']
+    api_data = WordCompleter([
+        'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h', 'percent_change_24h',
+        'percent_change_7d', 'market_cap', 'market_cap_dominance', 'fully_diluted_market_cap',
+        'circulating_supply','total_supply', 'max_supply', 'name'])
+
     while text not in answers:
         text = prompt('Enter data to research: ', completer=api_data)
 

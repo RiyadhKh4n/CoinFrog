@@ -6,6 +6,7 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
+C = "{:^80}".format  
 
 def clear_terminal():
     """
@@ -20,25 +21,24 @@ def title_screen():
     """
     time.sleep(0.5)
 
-    print("""
-                            #######################
-                            + Welcome to CoinFrog +
-                            #######################\n""")
+    print(C('#######################'))
+    print(C('+ Welcome to CoinFrog +'))
+    print(C('#######################\n'))
 
-    print("                                 __~~~-----~~~~__              ")
-    print("                              o...;;;--'~~~`--;;;..o           ")
-    print("                            /;-~IN CRYPTO WE TRUST~-.\         ")
-    print("                           //      ,;;;;;;;;          \        ")
-    print("                         .//       ;;;;;    \          \       ")
-    print("                         ||        ;;;;(   /.|         ||      ")
-    print("                         ||        ;;;;;;;   _\        ||      ")
-    print("                         ||        ';;  ;;;;=          ||      ")
-    print("                         || RIYADH  | ''\;;;;;;        ||      ")
-    print("                          \      ,| '\  '|><| 2021    //       ")
-    print("                           \     |     |      \  K   //        ")
-    print("                            `;.,|.    |      '\.-'  /          ")
-    print("                               ~~;;;,._|___.,-;;;~'            ")
-    print("                                    ''=--'''''''               ")
+    print(C("__~~~-----~~~~__"))
+    print(C("o...;;;--'~~~`--;;;..o"))
+    print(C("/;-~IN CRYPTO WE TRUST~-.\ "))
+    print(C("//      ,;;;;;;;;          \ "))
+    print(C(".//       ;;;;;    \          \ "))
+    print(C("||        ;;;;(   /.|         ||"))
+    print(C(" ||        ;;;;;;;   _\        ||"))
+    print(C("||        ';;  ;;;;=          ||"))
+    print(C("|| RIYADH  | ''\;;;;;;        ||"))
+    print(C("\      ,| '\  '|><| 2021    //"))
+    print(C(" \     |     |      \  K   //"))
+    print(C("`;.,|.    |      '\.-'  /"))
+    print(C("~~;;;,._|___.,-;;;~'"))
+    print(C("''=--'''''''"))
     time.sleep(5)
     clear_terminal()
 
@@ -49,14 +49,13 @@ def main_menu():
     """
     Displays the menu for the user to interact with
     """
-    print(f"""
-                                    {Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}
-                        -  (1) What is CoinFrog?    -
-                        -  (2) Get Coin Information -
-                        -  (3) Crypto Converter     -
-                        -  (4) Exit Program         -
 
-                        Type '1', '2', '3'\n""")
+    print(C(f"{Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}"))
+    print(C("-  (1) What is CoinFrog?    -"))
+    print(C("-  (2) Get Coin Information -"))
+    print(C("-  (3) Crypto Converter     -"))
+    print(C("-  (4) Exit Program         -\n"))
+    print(C("Type '1', '2', '3' \n"))
 
     menu_selections()
 
@@ -98,32 +97,33 @@ def display_info():
     """
     time.sleep(1)
     print(
-        "|---------------------------------------------------------------------"
-        "---------|")
+        "|---------------------------------------------"
+        "---------------------------------|")
     typewriter(MESSAGE)
-    print("|------------------------------------------------------------------------------|")
+    print("|---------------------------------------------------"
+          "---------------------------|")
 
     time.sleep(6)
     clear_terminal()
     main_menu()
 
-
-MESSAGE = " CoinFrog aims to make cryptocurrency research that little bit easier\n\
-                    It has two main functions:\n\
-\n'Get Coin Information' allows you to retrieve all types of live coin data\n\
-Enter the coins ticker (e.g. BTC) and select the data you would like to view.\n\
-\nThe second being a Crypto Converter function:\n\
-Chose between 'Calculate Amount of Coins', 'Calculate USD' or 'Convert Crypto':\n\
-\nCalculate Amount of Coins: Enter the amount of dollars available\n\
-            Enter the ticker of the coin you wish to buy\n\
-            And CoinFrog will calculate how many coins you can purchase\n\
-\nCalculate USD: Enter the ticker of the coin to buy\n\
-            Enter amount of coins you wish to purchase\n\
-            And CoinFrog will calculate how much money is needed\n\
-\nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)\n\
-            along with the coin you would like to convert it into (e.g. ETH)\n\
-            and CoinFrog will calculate the conversion between the two\n"
-
+MESSAGE = """
+CoinFrog aims to make cryptocurrency research that little bit easier.
+\n\tIt has two main functions:
+\n\n'Get Coin Information' allows you to retrieve all types of live coin data.
+\nEnter the coins ticker (e.g. BTC) and select the data you would like to view.
+\n\nThe second being a Crypto Converter function:
+\nChose between 'Calculate Amount of Coins','Calculate USD' or 'Convert Crypto':
+\n\nCalculate Amount of Coins: Enter the amount of dollars available.
+\n\tEnter the ticker of the coin you wish to buy
+\n\tAnd CoinFrog will calculate how many coins you can purchase
+\n\nCalculate USD: Enter the ticker of the coin to buy.
+\n\tEnter amount of coins you wish to purchase
+\n\tAnd CoinFrog will calculate how much money is needed
+\n\nConvert Crypto: Enter the amount and ticker a coin (e.g. 5 $BTC)
+\n\talong with the coin you would like to convert it into (e.g. ETH)
+\n\tand CoinFrog will calculate the conversion between the two\n
+"""
 
 def typewriter(message):
     for char in message:
@@ -147,7 +147,9 @@ def get_coin_data():
     option = ''
     while option not in ['y', 'n']:
         true_or_false = None
-        print(Fore.CYAN + Style.BRIGHT + "Enter the ticker of the coin you would like to research:")
+        print(Fore.CYAN + Style.BRIGHT + "Enter the ticker"
+              "of the coin you would like to research:")
+
         ticker = input('> ').upper()
         print("----------------------------------------------------------")
 
@@ -162,7 +164,9 @@ def get_coin_data():
 
         elif ticker_length < 2:
             time.sleep(0.5)
-            print(Fore.RED + Style.BRIGHT + "Ticker must have 2 characters minimum")
+            print(Fore.RED + Style.BRIGHT + "Ticker must have"
+                  "2 characters minimum")
+
             print("----------------------------------------------------------")
 
         else:
@@ -182,33 +186,72 @@ def get_coin_data():
                     exit_data = False
                     time.sleep(1)
 
-                    print(" Available Data:")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: the name of the cryptocurrency")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply{Fore.RESET}: approximate number of coins currently in circulation")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}: approximate total amount of coins in existence right now (minus any coins that have been verifiably burned)")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}: maximum amount of coins that will ever exist in the lifetime of the currency")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}: latest average trade price across markets")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h{Fore.RESET}: 24 hour trading price percentage change for each currency")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}: Market cap is the total value of a cryptocurrency")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")
-                    print(f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")
-                    print(f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET} to be redirected to the Main Menu")
-                    print("--------------------------------------------------------------")
-                        
+                    print("Available Data:")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: "
+                        "the name of the cryptocurrency")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply"
+                        "{Fore.RESET}: approximate number of coins currently"
+                        "in circulation")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}:"
+                        "approximate total amount of coins in existence right"
+                        "now (minus any coins that have been verifiably"
+                        "burned)")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}:"
+                        "maximum amount of coins that will ever exist in the"
+                        "lifetime of the currency")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}:"
+                        "latest average trade price across markets")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}:"
+                        "rolling 24 hour adjusted trading volume")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h"
+                        "{Fore.RESET}: rolling 24 hour adjusted"
+                        "trading volume")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h"
+                        "{Fore.RESET}: 1 hour trading price percentage"
+                        "change for each currency")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h"
+                        "{Fore.RESET}: 24 hour trading price percentage"
+                        "change for each currency")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d"
+                        "{Fore.RESET}: 7 day trading price percentage"
+                        "change for each currency")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}:"
+                        "Market cap is the total value of a cryptocurrency")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance"
+                        "{Fore.RESET}: Measure in % how much of the total"
+                        "market cap is made of the coin")
+                    print(
+                        f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap"
+                        "{Fore.RESET}: Value of coin if entire supply of"
+                        "coins were in circulation")
+                    print(
+                        f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'"
+                        "{Fore.RESET} to be redirected to the Main Menu")
+                    print("---------------------------------"
+                          "-----------------------------")
+
                     while exit_data is False:
-   
+
                         time.sleep(2)
                         data_to_view = prompt_toolkit_function()
-                        
+
                         # if other_function == 1:
                         #     time.sleep(1)
                         #     display_coin_data_extra(ticker, data_to_view)
                         #     print("----------------------------------------------------------")
-                        
+
                         if (data_to_view == "QUIT"):
                             exit_data = True
                             clear_terminal()
@@ -217,13 +260,15 @@ def get_coin_data():
                         else:
                             time.sleep(1)
                             display_coin_data(ticker, data_to_view)
-                            print("----------------------------------------------------------")
+                            print(
+                                "-------------------------------"
+                                "---------------------------")
 
                 else:
                     time.sleep(0.5)
                     print("Please try again...")
-                    print("----------------------------------------------------------")
-
+                    print("----------------------------------------"
+                          "------------------")
             elif choice == ("n"):
                 print("Nevermind, try again...")
                 time.sleep(0.5)
@@ -252,7 +297,7 @@ def convert_page():
                         {Style.BRIGHT}{Fore.CYAN}Select An Option{Fore.RESET}:
                     -  (1) Calculate Amount of Coins  -
                     -  (2) Calculate USD needed       -
-                    -  (3) Convert Crypto             -  
+                    -  (3) Convert Crypto             -
                     -  (4) Exit to Main Menu          -
 
                     ENTER '1' / '2' / '3' / '4'\n""")
@@ -270,7 +315,9 @@ def convert_page():
             while amount_validated is False:
                 print("-------------------------------------")
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT +"Enter dollar amount available: ")
+                print(Fore.CYAN + Style.BRIGHT + "Enter "
+                      "dollar amount available: ")
+
                 usd_amount = input('> $').strip()
                 amount_validated = validate_amount(usd_amount)
 
@@ -281,7 +328,9 @@ def convert_page():
             while true_or_false is False:
                 print("-------------------------------------")
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT + "Enter ticker of coin to purchase: ")
+                print(Fore.CYAN + Style.BRIGHT + "Enter"
+                      "ticker of coin to purchase: ")
+
                 ticker = input('> $').upper()
 
                 ticker_length = 0
@@ -295,7 +344,7 @@ def convert_page():
                 elif ticker_length < 2:
                     time.sleep(1)
                     print(Fore.RED + Style.BRIGHT + "Ticker must have"
-                    "2 characters minimum")
+                          "2 characters minimum")
 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -310,7 +359,9 @@ def convert_page():
                         time.sleep(2)
                         print("-------------------------------------")
                         input("Press Enter to return back to Convert Page")
-                        print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
+                        print(
+                            f"{Fore.YELLOW}{Style.BRIGHT}Redirecting"
+                            "you to Convert Page...")
                         time.sleep(5)
                         clear_terminal()
                         convert_page()
@@ -320,7 +371,8 @@ def convert_page():
             while true_or_false is False:
                 print("-------------------------------------")
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT +"Enter ticker of coin to purchase: ")
+                print(Fore.CYAN + Style.BRIGHT + "Enter ticker of coin"
+                      "to purchase: ")
                 ticker = input('> $').upper()
 
                 ticker_length = 0
@@ -333,18 +385,20 @@ def convert_page():
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(Fore.RED + Style.BRIGHT + "Ticker must have 2 characters minimum")
-                
+                    print(Fore.RED + Style.BRIGHT + "Ticker must have "
+                          "2 characters minimum")
+
                 else:
                     true_or_false = validate_ticker(ticker)
 
                     if true_or_false:
                         true_or_false = True
                         time.sleep(1)
-           
+
             while amount_validated is False:
                 time.sleep(1)
-                print(Fore.CYAN + Style.BRIGHT +"Enter amount of coins to buy: ")
+                print(Fore.CYAN + Style.BRIGHT + "Enter amount"
+                      "of coins to buy: ")
                 amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
@@ -360,7 +414,9 @@ def convert_page():
                     print("-------------------------------------")
                     input("Press Enter to return back to Convert Page")
                     time.sleep(2)
-                    print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
+                    print(
+                        f"{Fore.YELLOW}{Style.BRIGHT}Redirecting"
+                        "you to Convert Page...")
                     time.sleep(5)
                     clear_terminal()
                     convert_page()
@@ -381,7 +437,7 @@ def convert_page():
                     while true_or_false is False:
                         print("-------------------------------------")
                         time.sleep(1)
-                        print(Fore.CYAN + Style.BRIGHT +"Enter Ticker: ")
+                        print(Fore.CYAN + Style.BRIGHT + "Enter Ticker: ")
                         ticker = input('> $').upper()
 
                         ticker_length = 0
@@ -390,12 +446,14 @@ def convert_page():
 
                         if ticker_length == 0:
                             time.sleep(1)
-                            print(Fore.RED + Style.BRIGHT +"Ticker cannot be blank!")
+                            print(Fore.RED + Style.BRIGHT + "Ticker"
+                                  "cannot be blank!")
 
                         elif ticker_length < 2:
                             time.sleep(1)
-                            print(Fore.RED + Style.BRIGHT +"Ticker must have 2 characters minimum")
-                        
+                            print(Fore.RED + Style.BRIGHT + "Ticker must have"
+                                  "2 characters minimum")
+
                         else:
                             true_or_false = validate_ticker(ticker)
 
@@ -405,9 +463,13 @@ def convert_page():
                                 time.sleep(1)
 
                                 while true_or_false1 is False:
-                                    print("-------------------------------------")
+                                    print("-----------------------------"
+                                          "--------")
                                     time.sleep(1)
-                                    print(f"{Fore.CYAN}{Style.BRIGHT}Enter Coin to Convert {amount} ${ticker} into: ")
+                                    print(f"{Fore.CYAN}{Style.BRIGHT}Enter"
+                                          "Coin to Convert"
+                                          "{amount} ${ticker} into: ")
+
                                     ticker1 = input('> $').upper()
 
                                     ticker_length = 0
@@ -416,34 +478,43 @@ def convert_page():
 
                                     if ticker_length == 0:
                                         time.sleep(1)
-                                        print(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!")
-
+                                        print(Fore.RED + Style.BRIGHT +
+                                              "Ticker cannot be blank!")
                                     elif ticker_length < 2:
                                         time.sleep(1)
                                         print(
                                             Fore.RED + Style.BRIGHT + "Ticker "
                                             "must have 2 characters minimum")
-                                    
+
                                     else:
-                                        true_or_false = validate_ticker(ticker1)
+                                        true_or_false = validate_ticker(
+                                            ticker1)
 
                                         if true_or_false:
                                             true_or_false1 = True
                                             print(
                                                 f"{amount} ${ticker} --> "
                                                 "{ticker1}")
-                                            print("-------------------------------------")
+                                            print("------------------------"
+                                                  "-------------")
                                             time.sleep(1)
                                             convert_two_cryptos(
                                                 amount, ticker, ticker1)
-                                            print("-------------------------------------")
-                                            input("Press Enter to return back to Convert Page")
+                                            print("-------------------------"
+                                                  "------------")
+
+                                            input("Press Enter to return back"
+                                                  "to Convert Page")
+
                                             time.sleep(2)
-                                            print(f"{Fore.YELLOW}{Style.BRIGHT}Redirecting you to Convert Page...")
+                                            print(
+                                                f"{Fore.YELLOW}"
+                                                "{Style.BRIGHT}Redirecting you"
+                                                "to Convert Page...")
+
                                             time.sleep(5)
                                             clear_terminal()
                                             convert_page()
-
 
         elif screen_choice == '4':
             print("\n")

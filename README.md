@@ -39,7 +39,7 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 
 * ## Development Method 
 
-    * When creating CoinFrog I will take a waterfall approach when developing. That is, creating sections of the program at a time and ensuring they work as intended before going onto the next section. I will be able to break up development by choosing small elements to work on daily, ensuring the website can be built and published in a timely fashion. As this project Python only all my time will be spent on developing and testing the logic behind the program. So I will work on developing each class and function within each class and getting them working before I move onto the next section of development. 
+When creating CoinFrog I will take a waterfall approach when developing. That is, creating sections of the program at a time and ensuring they work as intended before going onto the next section. I will be able to break up development by choosing small elements to work on daily, ensuring the website can be built and published in a timely fashion. As this project Python only all my time will be spent on developing and testing the logic behind the program. So I will work on developing each class and function within each class and getting them working before I move onto the next section of development. 
 
 * ## Scope
 
