@@ -208,49 +208,31 @@ def get_coin_data():
                         f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: "
                         " the name of the cryptocurrency")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply {Fore.RESET}:"
-                        " approximate number of coins currently"
-                        "in circulation")
+                        f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply {Fore.RESET}: approximate number of coins currently in circulation")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}:"
-                        " approximate total amount of coins in existence right"
-                        "now ")
+                        f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}: approximate total amount of coins in existence right now ")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}:"
-                        " maximum amount of coins that will ever exist in the"
-                        "lifetime of the currency")
+                        f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}: maximum amount of coins that will ever exist in the lifetime of the currency")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}:"
-                        " latest average trade price across markets")
+                        f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}: latest average trade price across markets")  # noqa
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}:"
                         " rolling 24 hour adjusted trading volume")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}:"
-                        " rolling 24 hour adjusted trading volume")
+                        f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}: rolling 24 hour adjusted trading volume")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}:"
-                        " 1 hour trading price percentage"
-                        "change for each currency")
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}: 1 hour trading price percentage change for each currency")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h {Fore.RESET}:"
-                        " 24 hour trading price percentage"
-                        "change for each currency")
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h {Fore.RESET}: 24 hour trading price percentage change for each currency")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}:"
-                        " 7 day trading price percentage"
-                        "change for each currency")
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}: 7 day trading price percentage change for each currency")  # noqa
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}:"
                         " Market cap is the total value of a cryptocurrency")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}:"
-                        " Measure in % how much of the total"
-                        "market cap is made of the coin")
+                        f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}: Measure in % how much of the total market cap is made of the coin")  # noqa
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}:"
-                        " Value of coin if entire supply of"
-                        "coins were in circulation")
+                        f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}: Value of coin if entire supply of coins were in circulation")  # noqa
                     print(
                         f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
                         "to be redirected to the Main Menu")
@@ -479,7 +461,7 @@ def convert_page():
                                           "--------"))
                                     time.sleep(1)
                                     print(C(
-                                        f"{Fore.CYAN}{Style.BRIGHT} Enter Coin to Convert {amount} ${ticker} into: "))
+                                        f"{Fore.CYAN}{Style.BRIGHT} Enter Coin to Convert {amount} ${ticker} into: "))  # noqa
 
                                     ticker1 = input('> $').upper()
 
@@ -505,7 +487,7 @@ def convert_page():
                                         if true_or_false:
                                             true_or_false1 = True
                                             print(C(
-                                                f"{amount} ${ticker} --> {ticker1}"))
+                                                f"{amount} ${ticker} --> {ticker1}"))  # noqa
                                             print(C("------------------------"
                                                   "-------------"))
                                             time.sleep(1)
@@ -515,8 +497,8 @@ def convert_page():
                                                   "------------"))
 
                                             input("Press Enter to "
-                                                    "return back"
-                                                    " to Convert Page")
+                                                  "return back"
+                                                  " to Convert Page")
 
                                             time.sleep(2)
                                             print(C(
