@@ -21,7 +21,7 @@ def get_ticker_list():
 
 tickerList[] is the list which will hold all the ticker in my params range. The function is simple, it iterates through data which holds the json file of all the latest listings. A variable 'ticker' is then created which stores each symbol within the API. Finally, tickerList is then appended to creating the list of tickers I can validate from. By printing out tickerList you can see the first 250 coins from CoinMarketCap.
 
-![tickerList](assets/images/testing/tickerlist.png)
+![tickerList](documentation/testing/tickerlist.png)
 
 The next step was to create the validate_ticker(ticker) function which would iterate through tickerList and check to see if the users input exists within the list.
 
@@ -44,7 +44,7 @@ def validate_ticker(ticker):
 
 get_ticker_list() takes in ticker (which is the user input) as a parameter. It iterates through tickerList and checks to see if ticker is an element within the list. If it is, it returns True and a print statement saying that it valid, else it returns False. This was I can use the returned value as a flag to ask the user to either enter a new ticker or allow them to move on with the program. 
 
-![validateTicker](assets/images/testing/validateticker.png)
+![validateTicker](documentation/testing/validateticker.png)
 
 ```
 def get_coin_data():
@@ -108,15 +108,15 @@ This function is responsible for handling the user input and is where the valida
 
 Below is an example of a valid input:
 
-![ValidInput](assets/images/testing/validinput.png)
+![ValidInput](documentation/testing/validinput.png)
 
 Below is an example of another valid input but where the user decided to change the ticker they would like research:
 
-![ValidInput2](assets/images/testing/validinput2.png)
+![ValidInput2](documentation/testing/validinput2.png)
 
 Here is shows what outputs when the users inputs are invalid:
 
-![ValidInput3](assets/images/testing/validinput3.png)
+![ValidInput3](documentation/testing/validinput3.png)
 
 --- 
 
@@ -143,7 +143,7 @@ def display_coin_data(ticker):
 
 Now the function takes in the ticker and assigns it to the 'symbol' which is needed in order get the correct data in the API. The variable price will now store the price of the ticker that the user entered which will then be printed to the console. The working function output can be seen below:
 
-![WorkingPriceFunctionality](assets/images/testing/workingpricefunction.png)
+![WorkingPriceFunctionality](documentation/testing/workingpricefunction.png)
  
 However as a extra validation step I want the function to ensure that the ticker the user entered also exists within tickerList in order to minimise the posibility of an invalid ticker being passed to the API which would result in an error. Therefore before the function iterates through data in order to retrieve the price I have implemented an if statement which would check if the ticker exists in tickerList. The function now looks like this:
 
@@ -161,7 +161,7 @@ The function will now output "Ticker not in List" if the user manages to break t
 
 The next step was to create the prompt_toolkit_function() which makes use of prompt_toolkit and WordCompleter. This is because when asking the user the data they would like to view, I have to ensure the input matches the API JSON file exactly. Which can be seen below:
  
-![JSONFile](assets/images/testing/apijson.png)
+![JSONFile](documentation/testing/apijson.png)
 
 The input must match exactly otherwise I wont be able to call the appropriate data. Thus by using WordCompleter I can ensure the correct input is passed to display_coin_data(ticker). I begin by creating a variable called 'answers' which holds a list of all the data the user is able to view. Then this same list is passed to WordCompleter which is stored in a variable called api_data. A while loop is created in order to validate that the users input conforms with the list in 'answers'. If not a message will appear telling them that their entry is invalid and will then ask the user the question again. The variable 'text' uses prompt_toolkit which asks the user a question and provides a list of potential data values they can chose from. If 'text' is in 'answers' then their input will be shown to them and 'text' is returned. The function is provided below:
 
