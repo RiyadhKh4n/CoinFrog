@@ -6,7 +6,8 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-C = "{:^80}".format  
+C = "{:^80}".format
+
 
 def clear_terminal():
     """
@@ -88,7 +89,9 @@ def menu_selections():
             # add message here
 
         else:
-            print(f"                        >{Fore.RED} {screen_choice} is an Invalid Choice. Please type '1', '2', '3' or '4'")
+            print(C(
+                f">{Fore.RED} {screen_choice} is an Invalid Choice."
+                " Please type '1', '2', '3' or '4'"))
 
 
 def display_info():
@@ -113,7 +116,7 @@ CoinFrog aims to make cryptocurrency research that little bit easier.
 \n\n'Get Coin Information' allows you to retrieve all types of live coin data.
 \nEnter the coins ticker (e.g. BTC) and select the data you would like to view.
 \n\nThe second being a Crypto Converter function:
-\nChose between 'Calculate Amount of Coins','Calculate USD' or 'Convert Crypto':
+\nChose between 'Calculate Amount of Coins''Calculate USD' or 'Convert Crypto':
 \n\nCalculate Amount of Coins: Enter the amount of dollars available.
 \n\tEnter the ticker of the coin you wish to buy
 \n\tAnd CoinFrog will calculate how many coins you can purchase
@@ -124,6 +127,7 @@ CoinFrog aims to make cryptocurrency research that little bit easier.
 \n\talong with the coin you would like to convert it into (e.g. ETH)
 \n\tand CoinFrog will calculate the conversion between the two\n
 """
+
 
 def typewriter(message):
     for char in message:
@@ -292,15 +296,12 @@ def convert_page():
     Function which handles the crypto conversion feature
     """
 
-    print(f"""
-
-                        {Style.BRIGHT}{Fore.CYAN}Select An Option{Fore.RESET}:
-                    -  (1) Calculate Amount of Coins  -
-                    -  (2) Calculate USD needed       -
-                    -  (3) Convert Crypto             -
-                    -  (4) Exit to Main Menu          -
-
-                    ENTER '1' / '2' / '3' / '4'\n""")
+    print(C(f"{Style.BRIGHT}{Fore.CYAN}Select An Option{Fore.RESET}:"))
+    print(C("-  (1) Calculate Amount of Coins  -"))
+    print(C("-  (2) Calculate USD needed       -"))
+    print(C("-  (3) Convert Crypto             -"))
+    print(C("-  (4) Exit to Main Menu          -\n"))
+    print(C("ENTER '1' / '2' / '3' / '4'\n"))
 
     true_or_false = False
     true_or_false1 = False
