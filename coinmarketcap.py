@@ -108,7 +108,7 @@ def display_coin_data_extra(ticker, data):
 
 def prompt_toolkit_function():
     text = ''
-    # other_function = 0
+
     answers = [
         'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h',
         'percent_change_24h', 'percent_change_7d', 'market_cap',
@@ -128,6 +128,7 @@ def prompt_toolkit_function():
 
         elif text == "Quit":
             time.sleep(2)
+            return text
             print(C("-----------------------"
                     "-----------------------------------"))
             print(C(f"{Fore.GREEN}{Style.BRIGHT}You have chosen to quit"))
@@ -135,7 +136,6 @@ def prompt_toolkit_function():
             print(C("--------------------------"
                     "--------------------------------"))
             time.sleep(1)
-            return text
 
         else:
             time.sleep(0.75)
@@ -157,9 +157,9 @@ def calculate_usd_amount(amount, ticker):
         if x['symbol'] == ticker:
             price = float((x['quote']['USD']['price']))
 
-    usd_amount = int(amount) * price
+    usd_amount = float(amount) * price
 
-    print(C("Calculating..."))
+    print(C(f"{Fore.YELLOW}{Style.BRIGHT}Calculating..."))
     print(C("-------------------------------------"))
     time.sleep(2.5)
     print(C(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount}"))
@@ -180,13 +180,12 @@ def calculate_coin_amount(usd, ticker):
     amount_of_coins = (float(usd) / price)
 
     time.sleep(0.5)
-    print(C("Calculating..."))
+    print(C(f"{Fore.YELLOW}{Style.BRIGHT}Calculating..."))
     print(C("-------------------------------------"))
     time.sleep(3)
     print(C(f"Balance: {Fore.MAGENTA}{Style.BRIGHT}${usd}"))
     print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
-    print(C(f"Amount Able to Buy:"
-            "{Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))
+    print(C(f"Amount Able to Buy: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))
 
 
 def convert_two_cryptos(amount, coin_one, coin_two):
@@ -206,11 +205,11 @@ def convert_two_cryptos(amount, coin_one, coin_two):
         if z['symbol'] == coin_two:
             price_of_coin_two = float((z['quote']['USD']['price']))
 
-    coin_one_usd_value = int(amount) * price_of_coin_one
+    coin_one_usd_value = float(amount) * price_of_coin_one
     amount_of_coins = (float(coin_one_usd_value) / price_of_coin_two)
 
     time.sleep(0.5)
-    print(C("Calculating..."))
+    print(C(f"{Fore.YELLOW}{Style.BRIGHT}Calculating..."))
     print(C("-------------------------------------"))
     time.sleep(3)
     print(C(

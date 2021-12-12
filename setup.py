@@ -51,7 +51,7 @@ def main_menu():
     Displays the menu for the user to interact with
     """
     print("\n")
-    print(C(f"{Style.BRIGHT}{Fore.GREEN}CoinFrog{Fore.RESET}"))
+    print(C(f"{Style.BRIGHT}{Fore.GREEN} CoinFrog{Fore.RESET}"))
     print(C("-  (1) What is CoinFrog?    -"))
     print(C("-  (2) Get Coin Information -"))
     print(C("-  (3) Crypto Converter     -"))
@@ -67,7 +67,7 @@ def menu_selections():
     """
     screen_choice = ''
     while screen_choice not in ['1', '2', '3', '4']:
-        screen_choice = input('                        > ').lower().strip()
+        screen_choice = input('                         > ').lower().strip()
 
         if screen_choice == '1':
             clear_terminal()
@@ -86,6 +86,7 @@ def menu_selections():
 
         elif screen_choice == '4':
             clear_terminal()
+            print("\n\n\n")
             print(C(
                 f"{Fore.GREEN}{Style.BRIGHT} Thank you for using CoinFrog!"))
 
@@ -108,8 +109,16 @@ def display_info():
           "---------------------------|")
 
     time.sleep(6)
+    print("\n")
+    input("Press Enter to go to Main Menu")
+    time.sleep(2)
+    print(C("-------------------------------------"))
+    print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu..."))
+    print(C("-------------------------------------"))
+    time.sleep(2)
     clear_terminal()
     main_menu()
+
 
 MESSAGE = """
 CoinFrog aims to make cryptocurrency research that little bit easier.
@@ -197,51 +206,50 @@ def get_coin_data():
                     print("Available Data:")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}name{Fore.RESET}: "
-                        "the name of the cryptocurrency")
+                        " the name of the cryptocurrency")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}circulating_supply {Fore.RESET}:"
-                        "approximate number of coins currently"
+                        " approximate number of coins currently"
                         "in circulation")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}total_supply{Fore.RESET}:"
-                        "approximate total amount of coins in existence right"
+                        " approximate total amount of coins in existence right"
                         "now ")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}max_supply{Fore.RESET}:"
-                        "maximum amount of coins that will ever exist in the"
+                        " maximum amount of coins that will ever exist in the"
                         "lifetime of the currency")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}price{Fore.RESET}:"
-                        "latest average trade price across markets")
+                        " latest average trade price across markets")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}volume_24h{Fore.RESET}:"
-                        "rolling 24 hour adjusted trading volume")
+                        " rolling 24 hour adjusted trading volume")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}:"
                         " rolling 24 hour adjusted trading volume")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}"
-                        "percent_change_1h{Fore.RESET}:"
-                        "1 hour trading price percentage"
+                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}:"
+                        " 1 hour trading price percentage"
                         "change for each currency")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}percent_change_24h {Fore.RESET}:"
-                        "24 hour trading price percentage"
+                        " 24 hour trading price percentage"
                         "change for each currency")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}percent_change_7d{Fore.RESET}:"
-                        "7 day trading price percentage"
+                        " 7 day trading price percentage"
                         "change for each currency")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}market_cap{Fore.RESET}:"
-                        "Market cap is the total value of a cryptocurrency")
+                        " Market cap is the total value of a cryptocurrency")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}market_cap_dominance{Fore.RESET}:"
-                        "Measure in % how much of the total"
+                        " Measure in % how much of the total"
                         "market cap is made of the coin")
                     print(
                         f"- {Fore.CYAN}{Style.BRIGHT}fully_diluted_market_cap{Fore.RESET}:"
-                        "Value of coin if entire supply of"
+                        " Value of coin if entire supply of"
                         "coins were in circulation")
                     print(
                         f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
@@ -254,12 +262,7 @@ def get_coin_data():
                         time.sleep(2)
                         data_to_view = prompt_toolkit_function()
 
-                        # if other_function == 1:
-                        #     time.sleep(1)
-                        #     display_coin_data_extra(ticker, data_to_view)
-                        #     print("----------------------------------------------------------")
-
-                        if (data_to_view == "QUIT"):
+                        if (data_to_view == "Quit"):
                             exit_data = True
                             clear_terminal()
                             main_menu()
@@ -283,7 +286,7 @@ def get_coin_data():
             elif choice == ('EXIT' or 'exit' or 'quit' or 'QUIT'):
                 time.sleep(1.5)
                 print(C("-------------------------------------"))
-                print(C(f"{Fore.GREEN}Redirecting to Main Menu..."))
+                print(C(f"{Fore.GREEN} Redirecting to Main Menu..."))
                 print(C("-------------------------------------"))
                 time.sleep(2)
                 clear_terminal()
@@ -298,8 +301,9 @@ def convert_page():
     """
     Function which handles the crypto conversion feature
     """
-
-    print(C(f"{Style.BRIGHT}{Fore.CYAN}Select An Option{Fore.RESET}:"))
+    print("\n")
+    print("\n")
+    print(C(f"{Style.BRIGHT}{Fore.CYAN} Select An Option{Fore.RESET}:"))
     print(C("-  (1) Calculate Amount of Coins  -"))
     print(C("-  (2) Calculate USD needed       -"))
     print(C("-  (3) Convert Crypto             -"))
@@ -363,9 +367,9 @@ def convert_page():
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
                         print(C("-------------------------------------"))
-                        input(C("Press Enter to return back to Convert Page"))
+                        input("Press Enter to return back to Convert Page")
                         print(C(
-                            f"{Fore.YELLOW}{Style.BRIGHT}Redirecting"
+                            f"{Fore.YELLOW}{Style.BRIGHT} Redirecting"
                             " you to Convert Page..."))
                         time.sleep(5)
                         clear_terminal()
@@ -376,8 +380,8 @@ def convert_page():
             while true_or_false is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "Enter ticker of coin"
-                      "to purchase: "))
+                print(C(Fore.CYAN + Style.BRIGHT + "    Enter ticker of coin"
+                      " to purchase: "))
                 ticker = input('> $').upper()
 
                 ticker_length = 0
@@ -404,7 +408,7 @@ def convert_page():
             while amount_validated is False:
                 time.sleep(1)
                 print(C(Fore.CYAN + Style.BRIGHT + "Enter amount"
-                      "of coins to buy: "))
+                      " of coins to buy: "))
                 amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
@@ -418,11 +422,11 @@ def convert_page():
                     print(C("-------------------------------------"))
                     calculate_usd_amount(amount, ticker)
                     print(C("-------------------------------------"))
-                    input(C("Press Enter to return back to Convert Page"))
+                    input("Press Enter to return back to Convert Page")
                     time.sleep(2)
                     print(C(
                         f"{Fore.YELLOW}{Style.BRIGHT}Redirecting"
-                        "you to Convert Page..."))
+                        " you to Convert Page..."))
                     time.sleep(5)
                     clear_terminal()
                     convert_page()
@@ -433,7 +437,7 @@ def convert_page():
                 print(C("-------------------------------------"))
                 time.sleep(1)
                 print(C(Fore.CYAN + Style.BRIGHT +
-                        "Enter Amount to Convert: "))
+                        " Enter Amount to Convert: "))
                 amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
@@ -475,8 +479,7 @@ def convert_page():
                                           "--------"))
                                     time.sleep(1)
                                     print(C(
-                                        f"{Fore.CYAN}{Style.BRIGHT}"
-                                        "Enter Coin to Convert {amount} ${ticker} into: "))
+                                        f"{Fore.CYAN}{Style.BRIGHT} Enter Coin to Convert {amount} ${ticker} into: "))
 
                                     ticker1 = input('> $').upper()
 
@@ -511,14 +514,14 @@ def convert_page():
                                             print(C("-------------------------"
                                                   "------------"))
 
-                                            input(C("Press Enter to "
+                                            input("Press Enter to "
                                                     "return back"
-                                                    "to Convert Page"))
+                                                    " to Convert Page")
 
                                             time.sleep(2)
                                             print(C(
                                                 f"{Fore.YELLOW}{Style.BRIGHT}"
-                                                "Redirecting you to"
+                                                " Redirecting you to"
                                                 "Convert Page..."))
 
                                             time.sleep(5)
