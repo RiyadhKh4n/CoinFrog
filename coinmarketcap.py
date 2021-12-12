@@ -88,7 +88,7 @@ def display_coin_data(ticker, data):
         for x in coins:
             if x['symbol'] == ticker:
                 print(x['symbol'], x['quote']['USD'][data])
-              
+
     else:
         print(C(f"{Fore.RED}{Style.BRIGHT}Ticker not in List"))
 
@@ -103,7 +103,7 @@ def display_coin_data_extra(ticker, data):
             if x['symbol'] == ticker:
                 print(x['symbol'], x[data])
     else:
-         print(C(f"{Fore.RED}{Style.BRIGHT}Ticker not in List"))
+        print(C(f"{Fore.RED}{Style.BRIGHT}Ticker not in List"))
 
 
 def prompt_toolkit_function():
@@ -128,18 +128,23 @@ def prompt_toolkit_function():
 
         elif text == "Quit":
             time.sleep(2)
-            print("----------------------------------------------------------")
+            print(C("-----------------------"
+                    "-----------------------------------"))
             print(C(f"{Fore.GREEN}{Style.BRIGHT}You have chosen to quit"))
             print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting..."))
-            print(C("----------------------------------------------------------"))
+            print(C("--------------------------"
+                    "--------------------------------"))
             time.sleep(1)
             return text
 
         else:
             time.sleep(0.75)
-            print(C("----------------------------------------------------------"))
-            print(C(f"{Fore.RED}{Style.BRIGHT}{text} is an invalid data entry"))
-            print(C("----------------------------------------------------------"))
+            print(C("------------------------------------"
+                    "----------------------"))
+            print(C(f"{Fore.RED}{Style.BRIGHT}{text} is an"
+                    "invalid data entry"))
+            print(C("------------------------------------"
+                    "----------------------"))
 
 
 def calculate_usd_amount(amount, ticker):
@@ -180,7 +185,8 @@ def calculate_coin_amount(usd, ticker):
     time.sleep(3)
     print(C(f"Balance: {Fore.MAGENTA}{Style.BRIGHT}${usd}"))
     print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
-    print(C(f"Amount Able to Buy: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))
+    print(C(f"Amount Able to Buy:"
+            "{Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))
 
 
 def convert_two_cryptos(amount, coin_one, coin_two):

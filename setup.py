@@ -86,7 +86,8 @@ def menu_selections():
 
         elif screen_choice == '4':
             clear_terminal()
-            print(C(f"{Fore.GREEN}{Style.BRIGHT} Thank you for using CoinFrog!"))
+            print(C(
+                f"{Fore.GREEN}{Style.BRIGHT} Thank you for using CoinFrog!"))
 
         else:
             print(C(
@@ -164,21 +165,24 @@ def get_coin_data():
         if ticker_length == 0:
             time.sleep(0.5)
             print(C(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!"))
-            print(C("----------------------------------------------------------"))
+            print(C("------------------------------"
+                    "----------------------------"))
 
         elif ticker_length < 2:
             time.sleep(0.5)
             print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
                   "2 characters minimum"))
 
-            print(C("----------------------------------------------------------"))
+            print(C("---------------------------------------"
+                    "-------------------"))
 
         else:
             print(C(f"You chose {ticker} is this correct?"))
             print(C("Enter 'Y' for Yes and 'N' for No"))
             choice = input('> ').lower().strip()
             time.sleep(1)
-            print(C("----------------------------------------------------------"))
+            print(C("-------------------------------"
+                    "---------------------------"))
 
             if choice == ("y"):
                 print(C(Fore.YELLOW + Style.BRIGHT + "Validating Ticker..."))
@@ -216,7 +220,8 @@ def get_coin_data():
                         f"- {Fore.CYAN}{Style.BRIGHT}volume_change_24h{Fore.RESET}:"
                         " rolling 24 hour adjusted trading volume")
                     print(
-                        f"- {Fore.CYAN}{Style.BRIGHT}percent_change_1h{Fore.RESET}:"
+                        f"- {Fore.CYAN}{Style.BRIGHT}"
+                        "percent_change_1h{Fore.RESET}:"
                         "1 hour trading price percentage"
                         "change for each currency")
                     print(
@@ -339,7 +344,7 @@ def convert_page():
                 if ticker_length == 0:
                     time.sleep(1)
                     print(C(Fore.RED + Style.BRIGHT + "Ticker "
-                    "cannot be blank!"))
+                            "cannot be blank!"))
 
                 elif ticker_length < 2:
                     time.sleep(1)
@@ -381,7 +386,8 @@ def convert_page():
 
                 if ticker_length == 0:
                     time.sleep(1)
-                    print(C(Fore.RED + Style.BRIGHT + "Ticker cannot be blank!"))
+                    print(C(Fore.RED + Style.BRIGHT +
+                            "Ticker cannot be blank!"))
 
                 elif ticker_length < 2:
                     time.sleep(1)
@@ -426,7 +432,8 @@ def convert_page():
             while amount_validated is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "Enter Amount to Convert: "))
+                print(C(Fore.CYAN + Style.BRIGHT +
+                        "Enter Amount to Convert: "))
                 amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
 
@@ -451,8 +458,9 @@ def convert_page():
 
                         elif ticker_length < 2:
                             time.sleep(1)
-                            print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
-                                  "2 characters minimum"))
+                            print(C(Fore.RED + Style.BRIGHT +
+                                    "Ticker must have"
+                                    "2 characters minimum"))
 
                         else:
                             true_or_false = validate_ticker(ticker)
@@ -467,7 +475,8 @@ def convert_page():
                                           "--------"))
                                     time.sleep(1)
                                     print(C(
-                                        f"{Fore.CYAN}{Style.BRIGHT}Enter Coin to Convert {amount} ${ticker} into: "))
+                                        f"{Fore.CYAN}{Style.BRIGHT}"
+                                        "Enter Coin to Convert {amount} ${ticker} into: "))
 
                                     ticker1 = input('> $').upper()
 
@@ -482,8 +491,9 @@ def convert_page():
                                     elif ticker_length < 2:
                                         time.sleep(1)
                                         print(
-                                            C(Fore.RED + Style.BRIGHT + "Ticker "
-                                            "must have 2 characters minimum"))
+                                            C(Fore.RED + Style.BRIGHT +
+                                              "Ticker must have 2 "
+                                              "characters minimum"))
 
                                     else:
                                         true_or_false = validate_ticker(
@@ -501,13 +511,15 @@ def convert_page():
                                             print(C("-------------------------"
                                                   "------------"))
 
-                                            input(C("Press Enter to return back"
-                                                  "to Convert Page"))
+                                            input(C("Press Enter to "
+                                                    "return back"
+                                                    "to Convert Page"))
 
                                             time.sleep(2)
                                             print(C(
                                                 f"{Fore.YELLOW}{Style.BRIGHT}"
-                                                "Redirecting you to Convert Page..."))
+                                                "Redirecting you to"
+                                                "Convert Page..."))
 
                                             time.sleep(5)
                                             clear_terminal()
