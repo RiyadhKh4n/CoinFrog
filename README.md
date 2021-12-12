@@ -190,6 +190,8 @@ Deploying the project using Heroku:
 * Manual deploys allow you to build a new version of your app whenever you click manual deploy
 * If your build is successful you will then be able to visit the live site by clicking the link that is provided to you by Heroku
 
+Command to add packages to requirements.txt, `pip3 freeze --local > requirements.txt` 
+
 ## Making a Local Clone
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/RiyadhKh4n/CoinFrog)
@@ -215,6 +217,9 @@ $ git clone https://github.com/RiyadhKh4n/CoinFrog.git
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/RiyadhKh4n/CoinFrog)
+
+You will need to also install all required packages in order to run this application on Heroku, refer to [requirements.txt](requirements.txt)
+* Command to install this apps requirements is `pip3 install -r requirements.txt`
 
 # Credits 
 
