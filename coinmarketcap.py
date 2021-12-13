@@ -114,6 +114,9 @@ def prompt_toolkit_function():
         'percent_change_24h', 'percent_change_7d', 'market_cap',
         'market_cap_dominance', 'fully_diluted_market_cap',
         'circulating_supply', 'total_supply', 'max_supply', 'name']
+
+    # second_answers = ['circulating_supply', 'total_supply', 'max_supply', 'name']
+
     api_data = WordCompleter([
         'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h',
         'percent_change_24h', 'percent_change_7d', 'market_cap',
@@ -122,7 +125,7 @@ def prompt_toolkit_function():
 
     while text not in answers:
         text = prompt('Enter data to research: ', completer=api_data)
-
+        
         if text in answers:
             return text
 
@@ -213,7 +216,7 @@ def convert_two_cryptos(amount, coin_one, coin_two):
     print(C("-------------------------------------"))
     time.sleep(3)
     print(C(
-        f"  {amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins} ${coin_two}"))  # noqa
+        f"          {amount} ${coin_one} --> {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins} ${coin_two}"))  # noqa
 
 
 def main():

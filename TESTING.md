@@ -7,7 +7,7 @@ ADD SS HERE
 
 The first issue I encountered is that I have validate the ticker the user enters before they can move on with the porgram. This is because if an invalid ticker is entered there will be no output as the API cannot be called. In order to do this, I have to check that the ticker they entered matches with a ticker present on CoinMarketCap, however this is where the issue lies. I was unable to simply pass in the variable which holds the users input into the API call as it would return an error. 
 
-Therefore, I decided that I would need to collect all the available tickers taken from my params (coinmarketcap.py line 9) and push them to a list. This list can then be iterated through against the users input where I can then validate whether their input is valid or not. As a result, I created a new function called get_ticker_list() that would do just this.   
+Therefore, I decided that I would need to collect all the available tickers taken from my params (coinmarketcap.py line 9) and push them to a list. This list can then be iterated through against the users input where I can then validate whether their input is valid or not. As a result, I created a new function called `get_ticker_list()` that would do just this.   
 
 ```
 tickerList = []
@@ -19,7 +19,7 @@ def get_ticker_list():
 
 ```
 
-tickerList[] is the list which will hold all the ticker in my params range. The function is simple, it iterates through data which holds the json file of all the latest listings. A variable 'ticker' is then created which stores each symbol within the API. Finally, tickerList is then appended to creating the list of tickers I can validate from. By printing out tickerList you can see the first 250 coins from CoinMarketCap.
+tickerList[] is the list which will hold all the ticker in my params range. The function is simple, it iterates through data which holds the json file of all the latest listings. A variable `ticker` is then created which stores each symbol within the API. Finally, tickerList is then appended to creating the list of tickers I can validate from. By printing out tickerList you can see the first 250 coins from CoinMarketCap.
 
 ![tickerList](documentation/testing/tickerlist.png)
 
@@ -42,7 +42,7 @@ def validate_ticker(ticker):
 
 ```
 
-get_ticker_list() takes in ticker (which is the user input) as a parameter. It iterates through tickerList and checks to see if ticker is an element within the list. If it is, it returns True and a print statement saying that it valid, else it returns False. This was I can use the returned value as a flag to ask the user to either enter a new ticker or allow them to move on with the program. 
+`get_ticker_list()` takes in `ticker` (which is the user input) as a parameter. It iterates through `tickerList` and checks to see if `ticker` is an element within the list. If it is, it returns `True` and a print statement saying that it is valid, else it returns `False`. This was I can use the returned value as a flag to ask the user to either enter a new ticker or allow them to move on with the program. 
 
 ![validateTicker](documentation/testing/validateticker.png)
 
@@ -104,7 +104,7 @@ def get_coin_data():
                 print(f"{choice} is an invalid option")
 ```
 
-This function is responsible for handling the user input and is where the validate_ticker(ticker) is called. It handles the input by asking for the ticker the user would like to know about. If 'ticker' (line 61) is empty then the appropriate output is displayed. Additionally, if the input is less than 3 characters a message will output as all tickers have 3 character minimum and would therefore be a void input. If it does meet these conditions then it asks the user to confirm their input and will ouput the neccessary response. If the response is 'y' then 'ticker' will then be passed to validate_ticker(ticker) to see if their input exists within the list.
+This function is responsible for handling the user input and is where the `validate_ticker(ticker)` is called. It handles the input by asking for the ticker the user would like to know about. If `ticker` is empty then the appropriate output is displayed. Additionally, if the input is less than 3 characters a message will output as all tickers have 3 character minimum and would therefore be a void input. If it does meet these conditions then it asks the user to confirm their input and will ouput the neccessary response. If the response is 'y' then `ticker` will then be passed to `validate_ticker(ticker)` to see if their input exists within the list.
 
 Below is an example of a valid input:
 
@@ -145,7 +145,7 @@ Now the function takes in the ticker and assigns it to the 'symbol' which is nee
 
 ![WorkingPriceFunctionality](documentation/testing/workingpricefunction.png)
  
-However as a extra validation step I want the function to ensure that the ticker the user entered also exists within tickerList in order to minimise the posibility of an invalid ticker being passed to the API which would result in an error. Therefore before the function iterates through data in order to retrieve the price I have implemented an if statement which would check if the ticker exists in tickerList. The function now looks like this:
+However as a extra validation step I want the function to ensure that the ticker the user entered also exists within `tickerList` in order to minimise the posibility of an invalid ticker being passed to the API which would result in an error. Therefore before the function iterates through data in order to retrieve the price, I have implemented an if statement which would check if the ticker exists in `tickerList`. The function now looks like this:
 
 ```
 def display_coin_data(ticker):
@@ -159,11 +159,11 @@ def display_coin_data(ticker):
 
 The function will now output "Ticker not in List" if the user manages to break the previous validation and tries to pass in an invalid ticker to the API, helping to minimise an error. I have also removed the price variable as eventually I want this function to be able to output all the available data in the API. 
 
-The next step was to create the prompt_toolkit_function() which makes use of prompt_toolkit and WordCompleter. This is because when asking the user the data they would like to view, I have to ensure the input matches the API JSON file exactly. Which can be seen below:
+The next step was to create the `prompt_toolkit_function()` which makes use of prompt_toolkit and WordCompleter. This is because when asking the user the data they would like to view, I have to ensure the input matches the API JSON file exactly. Which can be seen below:
  
 ![JSONFile](documentation/testing/apijson.png)
 
-The input must match exactly otherwise I wont be able to call the appropriate data. Thus by using WordCompleter I can ensure the correct input is passed to display_coin_data(ticker). I begin by creating a variable called 'answers' which holds a list of all the data the user is able to view. Then this same list is passed to WordCompleter which is stored in a variable called api_data. A while loop is created in order to validate that the users input conforms with the list in 'answers'. If not a message will appear telling them that their entry is invalid and will then ask the user the question again. The variable 'text' uses prompt_toolkit which asks the user a question and provides a list of potential data values they can chose from. If 'text' is in 'answers' then their input will be shown to them and 'text' is returned. The function is provided below:
+The input must match exactly otherwise I wont be able to call the appropriate data. Thus by using WordCompleter I can ensure the correct input is passed to `display_coin_data(ticker)`. I begin by creating a variable called `answers` which holds a list of all the data the user is able to view. Then this same list is passed to WordCompleter which is stored in a variable called `api_data`. A while loop is created in order to validate that the users input conforms with the list in `answers`. If not a message will appear telling them that their entry is invalid and will then ask the user the question again. The variable `text` uses prompt_toolkit which asks the user a question and provides a list of potential data values they can chose from. If `text in answers` then their input will be shown to them and `text` is returned. The function is provided below:
 
 ```
 def prompt_toolkit_function():
@@ -184,7 +184,7 @@ def prompt_toolkit_function():
             print("----------------------------------------------------------")
 ```
 
-By returning 'text' this can then be stored in a variable in setup.py which can then be passed to display_coin_data(ticker) which will now have ticker and data as parameters. As I am able to ensure the data the user wants to view matches the JSON format, this can be passed to the function instead of 'price' which was hard coded to only get the price of the coin. This way the user is now able to view all data in 'answers' where the one function (display_coin_data(ticker, data)) will print whatever the user wants to see. The updated function is below:
+By returning `text` this can then be stored in a variable in setup.py which can then be passed to `display_coin_data(ticker)` which will now have ticker and data as parameters. As I am able to ensure the data the user wants to view matches the JSON format, this can be passed to the function instead of 'price' which was hard coded to only get the price of the coin. This way the user is now able to view all data in `answers` where the one function `display_coin_data(ticker, data)` will print whatever the user wants to see. The updated function is below:
 
 ```
 

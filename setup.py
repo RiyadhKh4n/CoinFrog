@@ -479,7 +479,7 @@ def convert_page():
                                           "--------"))
                                     time.sleep(1)
                                     print(C(
-                                        f"{Fore.CYAN}{Style.BRIGHT} Enter Coin to Convert {amount} ${ticker} into: "))  # noqa
+                                        f"{Fore.CYAN}{Style.BRIGHT}         Enter Coin to Convert {amount} ${ticker} into: "))  # noqa
 
                                     ticker1 = input('> $').upper()
 
@@ -521,7 +521,7 @@ def convert_page():
                                             time.sleep(2)
                                             print(C(
                                                 f"{Fore.YELLOW}{Style.BRIGHT}"
-                                                " Redirecting you to"
+                                                "   Redirecting you to"
                                                 " Convert Page..."))
 
                                             time.sleep(5)
