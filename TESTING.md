@@ -6,8 +6,10 @@ Results for [run.py](run.py) ~
 ![run.py](documentation/testing/runpep8.png)
 
 Results for [setup.py](setup.py) ~
+![setup.py](documentation/testing/setuppep8.png)
 
 Results for [coinmarketcap.py](coinmarketcap.py) ~
+![cmc.py](documentation/testing/cmcpep8.png)
 
 # Website Testing (Solving Issues):
 
@@ -245,3 +247,6 @@ However to implement this function I would have to add an extra if statement in 
 ---
 
 # Bugs
+* Not so much a bug but the [API](https://coinmarketcap.com/api/) I am using only allows 333 calls per day as I am using the free version. Each time the program is run 10 credits (calls) are used which means the program can be called 33 times a day before going over the limit. The limit is a soft limit meaning it does let you go over the 333 per day however after a certain amount of calls the API stop allowing calls meaning the program would not work if the limit is reached. 
+
+* I have noticed that when the user selects option 1 form the main menu and the description of the program begins. Sometimes the program will freeze randomly and stop the text from outputting, the only way to get around this is to press the run button again in order to re-launch the program. I am unsure why this happens as it is not an error in the code but more of a problem with the mock terminal that it is being run on. 

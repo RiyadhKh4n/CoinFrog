@@ -123,7 +123,7 @@ def prompt_toolkit_function():
 
     while text not in answers:
         text = prompt('Enter data to research: ', completer=api_data)
-        
+
         if text in answers:
             return text
 
