@@ -267,6 +267,13 @@ def get_coin_data():
                             clear_terminal()
                             main_menu()
 
+                        if ((data_to_view == "circulating_supply") or (data_to_view == "total_supply") or (data_to_view == "max_supply") or (data_to_view == "name")):
+                            time.sleep(1)
+                            display_coin_data_extra(ticker, data_to_view)
+                            print(C(
+                                  "-------------------------------"
+                                  "---------------------------"))
+
                         else:
                             time.sleep(1)
                             display_coin_data(ticker, data_to_view)

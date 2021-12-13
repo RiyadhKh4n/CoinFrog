@@ -226,7 +226,15 @@ def display_coin_data_extra(ticker, data):
 
 Instead of going through `x['quote']['USD'][data]` which was needed for the other function, I just have to pass `x[data]` as the route to access the information is different. As a result of this new function the user is able to access data like circulating supply, total supply, max supply and the name of the coin.     
 
-However the implementation of this function is slightly more tricky as depending on the users choice from WordCompleter I would have to pass `data_to_view` from setup.py to either one of these two functions. 
+However to implement this function I would have to add an extra if statement in setup.py in order to check if the returned value is equal to either one of these new data points. If it is, then I would have to pass `data_to_view` to this new function else I would continue passing the data to the original function. The updated funciton can be viewed below:
+
+```
+ if ((data_to_view == "circulating_supply") or (data_to_view == "total_supply") 
+    or (data_to_view == "max_supply") or (data_to_view == "name")):
+    time.sleep(1)
+    display_coin_data_extra(ticker, data_to_view)
+        
+```
 
 ---
 
