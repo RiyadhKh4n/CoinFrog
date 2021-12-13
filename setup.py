@@ -331,7 +331,7 @@ def convert_page():
             while amount_validated is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "Enter "
+                print(C(Fore.CYAN + Style.BRIGHT + "    Enter "
                       "dollar amount available: "))
 
                 usd_amount = input('> $').strip()
@@ -344,8 +344,8 @@ def convert_page():
             while true_or_false is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "    Enter "
-                      "ticker of coin to purchase: "))
+                print(C(Fore.CYAN + Style.BRIGHT + "        Enter"
+                      " ticker of coin to purchase: "))
 
                 ticker = input('> $').upper()
 
@@ -379,7 +379,7 @@ def convert_page():
                         print(C(
                             f"{Fore.YELLOW}{Style.BRIGHT} Redirecting"
                             " you to Convert Page..."))
-                        time.sleep(5)
+                        time.sleep(3)
                         clear_terminal()
                         convert_page()
 
@@ -388,7 +388,7 @@ def convert_page():
             while true_or_false is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "      Enter ticker of coin"
+                print(C(Fore.CYAN + Style.BRIGHT + "        Enter ticker of coin"
                       " to purchase: "))
                 ticker = input('> $').upper()
 
@@ -415,7 +415,7 @@ def convert_page():
 
             while amount_validated is False:
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "Enter amount"
+                print(C(Fore.CYAN + Style.BRIGHT + "    Enter amount"
                       " of coins to buy: "))
                 amount = input('> ').strip()
                 amount_validated = validate_amount(amount)
@@ -435,7 +435,7 @@ def convert_page():
                     print(C(
                         f"{Fore.YELLOW}{Style.BRIGHT}       Redirecting"
                         " you to Convert Page..."))
-                    time.sleep(5)
+                    time.sleep(3)
                     clear_terminal()
                     convert_page()
 
@@ -532,7 +532,7 @@ def convert_page():
                                                 "   Redirecting you to"
                                                 " Convert Page..."))
 
-                                            time.sleep(5)
+                                            time.sleep(3)
                                             clear_terminal()
                                             convert_page()
 

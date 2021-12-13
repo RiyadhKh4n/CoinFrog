@@ -27,7 +27,7 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 
 1. I want to easily understand the purpose of the site and learn how to use the program.
 
-2. I want to be able to find out information of any cryptocurrency of their choice.
+2. I want to be able to find out live cryptocurrency information
 
 3. I want to be able to calculate the USD needed in order to purchase x amount of coins
 
@@ -35,9 +35,7 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 
 5. I want to be able to convert x amount of one coin into another coin
 
-6. As a Returning Visitor I want to see if there are new features added to the site 
-
-7. As a Frequent Visitor, I want to be able to select different fiat currencies to trade with 
+6. I want to see if there are new features added to the site 
 
 * ## Development Method 
 

@@ -238,11 +238,35 @@ However to implement this function I would have to add an extra if statement in 
     display_coin_data_extra(ticker, data_to_view)
         
 ```
-
 ---
 
 # Testing User Stories:
 
+1. I want to easily understand the purpose of the site and learn how to use the program.
+
+    ![WhatIsCoinFrog](documentation/readme/getinfo.png)
+
+2. I want to be able to find out live cryptocurrency information
+
+    ![btc](documentation/testing/btcprice1.png)
+
+    ![gp](documentation/testing/googleprice.png)
+
+3. I want to be able to calculate the USD needed in order to purchase x amount of coins
+
+    ![adaUSD](documentation/testing/adaf.png)
+
+4. I want to be able to calculate the Amount I can purchase with x amount of USD
+
+    ![solAmount](documentation/testing/solamount.png)
+
+5. I want to be able to convert x amount of one coin into another coin
+
+    ![CalcCrypto](documentation/readme/convertcrypto.png)
+
+6. I want to see if there are new features added to the site 
+
+    Any new features that have been added to the program will be visible in the Main Menu and will be added to the 'What is CoinFrog' section
 
 ---
 
