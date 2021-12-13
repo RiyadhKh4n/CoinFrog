@@ -163,6 +163,13 @@ Here describes the main features of the website and what the user can expect whe
 9. [CoinMarketCap](https://coinmarketcap.com/api/)
     * Used the CoinMarketCap API to retrieve live coin data
 
+10. [TinyPNG](https://tinypng.com/)
+    * This was used to compress all images used in the README.md
+
+11. [PEP8](http://pep8online.com/)
+    * Used to validate my Python code
+
+
 # Testing 
 
 Due to the size of the testing section for CoinFrog I have created [TESTING.md](TESTING.md). It also shows all tested screenshots, any errors/bugs I encountered, and how I fixed them when creating this project. This is also where you can find any responsiveness screenshots, and browser compatibility tests.
