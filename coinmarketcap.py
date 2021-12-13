@@ -89,6 +89,7 @@ def validate_amount(amount):
     # isinstance(amount, (float, int)) == True - just doesnt work
     # isnumeric() but that doesnt let floats
     # isaplha() but that lets punctuation
+    # tried a combination of all but wont work
 
     if not(amount.isalpha()):
         print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
