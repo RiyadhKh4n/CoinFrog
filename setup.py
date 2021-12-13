@@ -109,14 +109,14 @@ def display_info():
     print("|---------------------------------------------------"
           "---------------------------|")
 
-    time.sleep(6)
+    time.sleep(5)
     print("\n")
-    input("Press Enter to go to Main Menu")
-    time.sleep(2)
+    input(C("Press Enter to go to Main Menu\n"))
+    time.sleep(1)
     print(C("-------------------------------------"))
     print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu..."))
     print(C("-------------------------------------"))
-    time.sleep(2)
+    time.sleep(1)
     clear_terminal()
     main_menu()
 
@@ -179,7 +179,7 @@ def get_coin_data():
     option = ''
     while option not in ['y', 'n']:
         true_or_false = None
-        print(C(Fore.CYAN + Style.BRIGHT + "Enter the ticker"
+        print(C(Fore.CYAN + Style.BRIGHT + "        Enter the ticker"
               " of the coin you would like to research:"))
 
         ticker = input('> ').upper()
