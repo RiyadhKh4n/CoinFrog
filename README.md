@@ -94,10 +94,10 @@ Get Coin Information:
 ![LiveData](documentation/readme/validate.png)
 
 
-![LiveData2](documentation/readme/livedata.png)
+    ![LiveData2](documentation/readme/livedata.png)
 
 
-![LiveData3](documentation/readme/error.png)
+    ![LiveData3](documentation/readme/error.png)
 
 
 Conversion Menu ~
@@ -239,10 +239,12 @@ You will need to also install all required packages in order to run this applica
 * Command to install this apps requirements is `pip3 install -r requirements.txt`
 
 # Credits 
-
-## Content:
+All coin information is taken from [CoinMarketCap](https://coinmarketcap.com/)
 
 ## Code
+When developing CoinFrog I had to implement a third-party API which was something I had never done before as a result I used [this](https://www.youtube.com/watch?v=ECJjjZ_iijc&t=1s) YouTube video which explained how to retrieve data from the API and print it to the console.
+
+All other code is original
 
 ### Acknowledgements
 * Tim - My Mentor
