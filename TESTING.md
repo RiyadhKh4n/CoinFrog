@@ -1,7 +1,12 @@
-# Initial Testing
+# Testing
  
-Python Validator:
-ADD SS HERE
+[PEP8](http://pep8online.com/) Python Validator:
+
+Results for [run.py](run.py) ~
+
+Results for [setup.py](setup.py) ~
+
+Results for [coinmarketcap.py](coinmarketcap.py) ~
 
 # Website Testing (Solving Issues):
 
@@ -202,3 +207,32 @@ def display_coin_data(ticker, data):
         print("Ticker not in List") 
 ```
 
+I also want the user to have access to some extra data like the name, total supply and circulating supply however to do this I would have to create another function as the JSON path to access this data in the API is different. As a result I created `display_coin_data_extra(ticker, data)` which has the same functionality as `display_coin_data` but the path to access the data is different. An output of the function is below:
+
+```
+def display_coin_data_extra(ticker, data):
+    """
+    Will display extra data from the API which follows a different route
+    """
+
+    if ticker in tickerList:
+        for x in coins:
+            if x['symbol'] == ticker:
+                print(x['symbol'], x[data])
+    else:
+        print(C(f"{Fore.RED}{Style.BRIGHT}Ticker not in List"))
+
+```
+
+Instead of going through `x['quote']['USD'][data]` which was needed for the other function, I just have to pass `x[data]` as the route to access the information is different. As a result of this new function the user is able to access data like circulating supply, total supply, max supply and the name of the coin.     
+
+However the implementation of this function is slightly more tricky as depending on the users choice from WordCompleter I would have to pass `data_to_view` from setup.py to either one of these two functions. 
+
+---
+
+# Testing User Stories:
+
+
+---
+
+# Bugs
