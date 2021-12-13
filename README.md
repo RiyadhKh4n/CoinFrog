@@ -142,7 +142,7 @@ A feature that I didn't have enough time to implement was for the program to gen
 # Technologies 
 ## Languages Used
 
-- [Python](https://www.python.org/)
+- [Python](https://www.python.org/) - Python is an interpreted high-level general-purpose programming language
 
 ## Frameworks, Libraries & Programs Used:
 
@@ -184,7 +184,7 @@ A feature that I didn't have enough time to implement was for the program to gen
 
 Due to the size of the testing section for CoinFrog I have created [TESTING.md](TESTING.md). It also shows all tested screenshots, any errors/bugs I encountered, and how I fixed them when creating this project. This is also where you can find any responsiveness screenshots, and browser compatibility tests.
 
-[Link To Testing.md]()
+[Link To Testing.md](TESTING.md)
    
 # Deployment 
 
