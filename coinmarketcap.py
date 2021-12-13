@@ -1,5 +1,6 @@
 import os
 import json
+import string
 from requests import Request, Session
 from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
 import time
@@ -71,9 +72,31 @@ def validate_amount(amount):
     Will validate is the users coin amount to ensure only contains numbers
     """
     
-    if (not(amount.isalpha() and amount > 0)):
+    # if ((amount == "!") or (amount == "#") or (amount == "%") 
+    #     or (amount == "$") or (amount == "&") or (amount == "*")
+    #     or (amount == "(") or (amount == ")") or (amount == "-") 
+    #     or (amount == "_") or (amount == "+") or (amount == "=") 
+    #     or (amount == "{") or (amount == "}") or (amount == "]")
+    #     or (amount == "[") or (amount == "@") or (amount == "'")
+    #     or (amount == ";") or (amount == ":") or (amount == "#")
+    #     or (amount == "~") or (amount == ",") or (amount == "<")
+    #     or (amount == ">") or (amount == ".") or (amount == "?")
+    #     or (amount == "/") or (amount == "\ ") or (amount == "|")
+    #     or (amount == "`") or (amount == "¬") or (amount == '"')):   
+    #     print(C(f"{Fore.RED}{Style.BRIGHT}Invalid Input!"))
+    #     return False
+    
+    # isinstance(amount, (float, int)) == True - just doesnt work
+    # isnumeric() but that doesnt let floats
+    # isaplha() but that lets punctuation
+
+    if not(amount.isalpha()):
         print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
         return True
+
+    # elif (amount.isdigit()):
+    #     print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
+    #     return True
     
     else:
         print(C(f"{Fore.RED}{Style.BRIGHT}Amount must be a number!"))

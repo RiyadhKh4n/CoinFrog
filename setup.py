@@ -40,7 +40,7 @@ def title_screen():
     print(C("`;.,|.    |      '\.-'  /"))
     print(C("~~;;;,._|___.,-;;;~'"))
     print(C("''=--'''''''"))
-    time.sleep(4)
+    # time.sleep(4)
     clear_terminal()
 
     main_menu()
@@ -344,7 +344,7 @@ def convert_page():
                 if amount_length == 0:
                     print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
                     amount_validated = False
-
+        
                 else:
                     amount_validated = validate_amount(usd_amount)
                 
@@ -414,7 +414,7 @@ def convert_page():
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
+                    print(C(Fore.RED + Style.BRIGHT + "       Ticker must have"
                           " 2 characters minimum"))
 
                 else:
