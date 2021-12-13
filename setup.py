@@ -40,7 +40,7 @@ def title_screen():
     print(C("`;.,|.    |      '\.-'  /"))
     print(C("~~;;;,._|___.,-;;;~'"))
     print(C("''=--'''''''"))
-    time.sleep(5)
+    time.sleep(4)
     clear_terminal()
 
     main_menu()
@@ -336,8 +336,18 @@ def convert_page():
                       "dollar amount available: "))
 
                 usd_amount = input('> $').strip()
-                amount_validated = validate_amount(usd_amount)
+                
+                amount_length = 0
+                for x in usd_amount:
+                    amount_length = amount_length + 1
 
+                if amount_length == 0:
+                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
+                    amount_validated = False
+
+                else:
+                    amount_validated = validate_amount(usd_amount)
+                
                 if amount_validated:
                     amount_validated = True
                     time.sleep(1)
@@ -419,7 +429,18 @@ def convert_page():
                 print(C(Fore.CYAN + Style.BRIGHT + "    Enter amount"
                       " of coins to buy: "))
                 amount = input('> ').strip()
-                amount_validated = validate_amount(amount)
+                
+                amount_length = 0
+                for x in amount:
+                    amount_length = amount_length + 1
+
+                if amount_length == 0:
+                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
+                    amount_validated = False
+                    print(C("-------------------------------------"))
+
+                else:
+                    amount_validated = validate_amount(amount)
 
                 if amount_validated:
                     amount_validated = True
@@ -431,7 +452,7 @@ def convert_page():
                     print(C("-------------------------------------"))
                     calculate_usd_amount(amount, ticker)
                     print(C("-------------------------------------"))
-                    input("Press Enter to return back to Convert Page")
+                    input(C("Press Enter to return back to Convert Page\n"))
                     time.sleep(2)
                     print(C(
                         f"{Fore.YELLOW}{Style.BRIGHT}       Redirecting"
@@ -448,8 +469,17 @@ def convert_page():
                 print(C(Fore.CYAN + Style.BRIGHT +
                         " Enter Amount to Convert: "))
                 amount = input('> ').strip()
-                amount_validated = validate_amount(amount)
+                
+                amount_length = 0
+                for x in amount:
+                    amount_length = amount_length + 1
 
+                if amount_length == 0:
+                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
+                    amount_validated = False
+                else:
+                    amount_validated = validate_amount(amount)
+                
                 if amount_validated:
                     amount_validated = True
                     time.sleep(1)
@@ -523,9 +553,9 @@ def convert_page():
                                             print(C("-------------------------"
                                                   "------------"))
 
-                                            input("Press Enter to "
+                                            input(C("Press Enter to "
                                                   "return back"
-                                                  " to Convert Page")
+                                                  " to Convert Page\n"))
 
                                             time.sleep(2)
                                             print(C(

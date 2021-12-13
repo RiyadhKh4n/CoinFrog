@@ -70,18 +70,8 @@ def validate_amount(amount):
     """
     Will validate is the users coin amount to ensure only contains numbers
     """
-
-    amount_length = 0
-    for x in amount:
-        amount_length = amount_length + 1
-
-    if amount_length == 0:
-        time.sleep(0.5)
-        print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
-        print(C("------------------------------"
-                "----------------------------"))
     
-    elif not(amount.isalpha()):
+    if (not(amount.isalpha() and amount > 0)):
         print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
         return True
     
