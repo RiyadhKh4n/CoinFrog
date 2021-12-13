@@ -124,11 +124,20 @@ Here describes the main features of the website and what the user can expect whe
 
 ## Existing Features:
 
-The program is able 
+CoinFrog has several features:
 
+The 'Get Coin Information' feature allows the user to enter any ticker of their choice (as long as it is in the top 2000 coins on CoinMarketCap), the program will then display a list of data points the user can chose from. Depending on what the user choses e.g. name, total supply etc. the live data will be displayed to the user.
+
+The 'Crypto Converter' has three functions available to the user:
+The first is 'Calculate Amount of Coins' this asks the user to enter their dollar amount available and the coin they wish to buy. CoinFrog will then work out the amount of that coin they can purchase with the amount of dollars available
+
+The second is 'Calculate USD Needed' this asks the user to enter the coin of interest and the amount the wish to buy. CoinFrog will calculate how much USD is needed in order to purchase said amount of coins.
+
+The third is 'Crypto Converter', the program asks the user the amount and coin they wish to convert along with the coin they wish to convert it into (e.g. 5 $BTC into $ADA). CoinFrog will work out how much of x coin they can purchase with the amount they currently have. 
 
 ## Future Features:
 
+A feature that I didn't have enough time to implement was for the program to generate a description of the coin when in the 'Get Coin Information' section. I wanted the program to display the description before they chose the data they would like to view. However I found difficulty accessing this data from the API as the JSON route was different. 
 
 # Technologies 
 ## Languages Used

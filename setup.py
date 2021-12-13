@@ -88,8 +88,9 @@ def menu_selections():
             clear_terminal()
             print("\n\n\n\n\n\n")
             print(C(
-                f"{Fore.GREEN}{Style.BRIGHT} Thank you for using CoinFrog!"))
+                f"{Fore.GREEN}{Style.BRIGHT}    Thank you for using CoinFrog!"))
             print_frog_image()
+            break
 
         else:
             print(C(
@@ -153,18 +154,18 @@ def typewriter(message):
 
 
 def print_frog_image():
-    print("                              ,-.___.-.             ")
-    print("                           ,-.(|)   (|),-.          ")
-    print("                           \_*._ ' '_.* _/          ")
-    print("                            /`-.`--' .-'\            ")
-    print("                       ,--./    `---'    \,--.       ")
-    print("                       \   |(  )     (  )|   /       ")
-    print("                        \  | ||       || |  /        ")
-    print("                         \ | /|\     /|\ | /         ")
-    print("                         /  \-._     _,-/  \         ")
-    print("                        //| \\  `---'  // ||\        ")
-    print("                       /,-.,-.\       /,-.,-.\       ")
-    print("                      o   o   o      o   o    o      ")
+    print("                                 ,-.___.-.             ")
+    print("                              ,-.(|)   (|),-.          ")
+    print("                              \_*._ ' '_.* _/          ")
+    print("                               /`-.`--' .-'\            ")
+    print("                          ,--./    `---'    \,--.       ")
+    print("                          \   |(  )     (  )|   /       ")
+    print("                           \  | ||       || |  /        ")
+    print("                            \ | /|\     /|\ | /         ")
+    print("                            /  \-._     _,-/  \         ")
+    print("                           //| \\  `---'  // ||\        ")
+    print("                          /,-.,-.\       /,-.,-.\       ")
+    print("                          o   o   o      o   o   o      ")
 
 
 def get_coin_data():
@@ -177,7 +178,7 @@ def get_coin_data():
     option = ''
     while option not in ['y', 'n']:
         true_or_false = None
-        print(C(Fore.CYAN + Style.BRIGHT + "        Enter the ticker"
+        print(C(Fore.CYAN + Style.BRIGHT + "         Enter the ticker"
               " of the coin you would like to research:"))
 
         ticker = input('> ').upper()
@@ -302,7 +303,7 @@ def get_coin_data():
 
             else:
                 time.sleep(0.5)
-                print(C(f"{choice} is an invalid option"))
+                print(C(f"{Fore.RED}{Style.BRIGHT}{choice} is an invalid option"))
 
 
 def convert_page():
@@ -313,7 +314,7 @@ def convert_page():
     print("\n")
     print(C(f"{Style.BRIGHT}{Fore.CYAN} Select An Option{Fore.RESET}:"))
     print(C("-  (1) Calculate Amount of Coins  -"))
-    print(C("-  (2) Calculate USD needed       -"))
+    print(C("-  (2) Calculate USD Needed       -"))
     print(C("-  (3) Convert Crypto             -"))
     print(C("-  (4) Exit to Main Menu          -\n"))
     print(C("ENTER '1' / '2' / '3' / '4'\n"))
@@ -360,8 +361,8 @@ def convert_page():
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
-                          "2 characters minimum"))
+                    print(C(Fore.RED + Style.BRIGHT +   "Ticker must have"
+                          " 2 characters minimum"))
 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -375,7 +376,7 @@ def convert_page():
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
                         print(C("-------------------------------------"))
-                        input("Press Enter to return back to Convert Page")
+                        input(C("Press Enter to return back to Convert Page\n"))
                         print(C(
                             f"{Fore.YELLOW}{Style.BRIGHT} Redirecting"
                             " you to Convert Page..."))
@@ -403,8 +404,8 @@ def convert_page():
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(C(Fore.RED + Style.BRIGHT + "Ticker must have "
-                          "2 characters minimum"))
+                    print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
+                          " 2 characters minimum"))
 
                 else:
                     true_or_false = validate_ticker(ticker)
@@ -465,14 +466,14 @@ def convert_page():
 
                         if ticker_length == 0:
                             time.sleep(1)
-                            print(C(Fore.RED + Style.BRIGHT + "Ticker"
-                                  "cannot be blank!"))
+                            print(C(Fore.RED + Style.BRIGHT +   "Ticker"
+                                  " cannot be blank!"))
 
                         elif ticker_length < 2:
                             time.sleep(1)
                             print(C(Fore.RED + Style.BRIGHT +
-                                    "Ticker must have"
-                                    "2 characters minimum"))
+                                    "       Ticker must have"
+                                    " 2 characters minimum"))
 
                         else:
                             true_or_false = validate_ticker(ticker)

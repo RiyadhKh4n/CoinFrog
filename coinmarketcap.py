@@ -54,7 +54,7 @@ def validate_ticker(ticker):
         if ticker in tickerList:
             time.sleep(2)
             print(C(
-                f"{Fore.GREEN}{Style.BRIGHT}{ticker}"
+                f"  {Fore.GREEN}{Style.BRIGHT}{ticker}"
                 " exists in CoinMarketCap"))
             time.sleep(1)
             print(C("-------------------------------------"))
@@ -165,7 +165,7 @@ def calculate_usd_amount(amount, ticker):
     time.sleep(2.5)
     print(C(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount}"))
     print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
-    print(C(f"USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}"))
+    print(C(f"  USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}"))
 
 
 def calculate_coin_amount(usd, ticker):
@@ -186,7 +186,7 @@ def calculate_coin_amount(usd, ticker):
     time.sleep(3)
     print(C(f"Balance: {Fore.MAGENTA}{Style.BRIGHT}${usd}"))
     print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
-    print(C(f"      Amount Able to Buy: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))  # noqa
+    print(C(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))  # noqa
 
 
 def convert_two_cryptos(amount, coin_one, coin_two):
