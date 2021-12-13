@@ -9,7 +9,7 @@ CoinFrog is a Python only programme which is run on a mock terminal. Once Run us
 The final option will navigate them to the 'Crypto Converter' where users will have three options. The first will ask the user to enter the USD amount they would like to spend and then the coin they would like to buy. The program will then calculate the amount of that coin they can buy with the USD available. The second option will allow the user to enter a coin and the amount they wish to buy and the program will calculate the USD needed to purchase it. The third option will allow user to convert from one cryptocurrency to another (e.g. 2 $ETH = 425 $LINK) this way they can easily calculate how much of one coin is worth in another.     
 
 ---
-![AmIResponsive]()
+![AmIResponsive](documentation/readme/amiresponsive.png)
 ---
 
 # User Experience (UX) 
@@ -100,8 +100,7 @@ Get Coin Information:
 ![LiveData3](documentation/readme/error.png)
 
 
-
-Conversion Menu
+Conversion Menu ~
 - The menu the user is taken to if they would like to complete a crypto conversion
 
 ![ConvertMenu](documentation/readme/convertmenu.png)
@@ -124,6 +123,8 @@ Calculate Crypto:
 Here describes the main features of the website and what the user can expect when viewing ~
 
 ## Existing Features:
+
+The program is able 
 
 
 ## Future Features:
