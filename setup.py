@@ -167,8 +167,6 @@ def print_frog_image():
     print("                      o   o   o      o   o    o      ")
 
 
-
-
 def get_coin_data():
     """
     Function which allows users to enter coin they wish to know more about
@@ -267,7 +265,10 @@ def get_coin_data():
                             clear_terminal()
                             main_menu()
 
-                        if ((data_to_view == "circulating_supply") or (data_to_view == "total_supply") or (data_to_view == "max_supply") or (data_to_view == "name")):
+                        if ((data_to_view == "circulating_supply") or
+                                (data_to_view == "total_supply") or
+                                (data_to_view == "max_supply") or
+                                (data_to_view == "name")):
                             time.sleep(1)
                             display_coin_data_extra(ticker, data_to_view)
                             print(C(
@@ -387,7 +388,7 @@ def convert_page():
             while true_or_false is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "        Enter ticker of coin"
+                print(C(Fore.CYAN + Style.BRIGHT + "      Enter ticker of coin"
                       " to purchase: "))
                 ticker = input('> $').upper()
 

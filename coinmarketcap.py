@@ -115,8 +115,6 @@ def prompt_toolkit_function():
         'market_cap_dominance', 'fully_diluted_market_cap',
         'circulating_supply', 'total_supply', 'max_supply', 'name']
 
-    # second_answers = ['circulating_supply', 'total_supply', 'max_supply', 'name']
-
     api_data = WordCompleter([
         'price', 'volume_24h', 'volume_change_24h', 'percent_change_1h',
         'percent_change_24h', 'percent_change_7d', 'market_cap',
