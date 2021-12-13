@@ -2,9 +2,9 @@
 
 [Link to Live Site Here](https://coin-frog.herokuapp.com/)
 
-The purpose of CoinFrog is to allow users to gain an insight into all cryptocurrencies available on CoinMarketCap. They will be able to enter a coin they want to know more about and the programme will output the relevant information. CoinFrog also has a price converter function where users can calculate how much USD or coins to buy given what they want to find out.
+The purpose of CoinFrog is to allow users to gain an insight into all cryptocurrencies available on CoinMarketCap. They will be able to enter a coin they want to know more about and the programme will output the relevant information. CoinFrog also has a price converter function.
 
-CoinFrog is a Python only programme which is run on a mock terminal. Once Run users will be navigated to the Main Menu where they can chose what they would like to do. The first option will allow them to view the 'Program Info' which will provide a description of what the program is and the features it has. The second option will allow them to 'Get Coin Info' where users enter a ticker and a description of the coin will appear. As well as this, users will be able to view the coins data e.g price, market cap, TVL etc.  
+CoinFrog is a Python only programme which is run on a mock terminal. Once Run users will be navigated to the Main Menu where they can chose what they would like to do. The first option will allow them to vunderstand how the program works, providing a description of what the program is and the features it has. The second option will allow them to 'Get Coin Info' where users enter a ticker and will be able to view the coins data e.g name, price, market cap, TVL etc.  
 
 The final option will navigate them to the 'Crypto Converter' where users will have three options. The first will ask the user to enter the USD amount they would like to spend and then the coin they would like to buy. The program will then calculate the amount of that coin they can buy with the USD available. The second option will allow the user to enter a coin and the amount they wish to buy and the program will calculate the USD needed to purchase it. The third option will allow user to convert from one cryptocurrency to another (e.g. 2 $ETH = 425 $LINK) this way they can easily calculate how much of one coin is worth in another.     
 
@@ -27,15 +27,17 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 
 1. I want to easily understand the purpose of the site and learn how to use the program.
 
-2. I want to be able to find out information of any cryptocurrency of my choice.
+2. I want to be able to find out information of any cryptocurrency of their choice.
 
-3. I want to be able to calculate the USD / Coin amount needed to purchase the coin of my choice 
+3. I want to be able to calculate the USD needed in order to purchase x amount of coins
 
-4. As a returning visitor, I want to see if my coin description has been added.
+4. I want to be able to calculate how many coins I can purchase with x amount of USD
 
-5. As a Returning Visitor I want to see if there are new features added to the site 
+5. I want to be able to convert x amount of one coin into another coin
 
-6. As a Frequent Visitor, I want to be able to select different fiat currencies to trade with 
+6. As a Returning Visitor I want to see if there are new features added to the site 
+
+7. As a Frequent Visitor, I want to be able to select different fiat currencies to trade with 
 
 * ## Development Method 
 
