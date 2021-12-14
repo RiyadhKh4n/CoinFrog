@@ -238,6 +238,12 @@ However to implement this function I would have to add an extra if statement in 
     display_coin_data_extra(ticker, data_to_view)
         
 ```
+
+Another issue I encountered was my `validate_amount(amount)` function was not working as intended. The function is only meant to allow `int` or `floats` anything else should be caught and the function should return False. The condition I used to check if the user input was valid was `not(amount.isalpha())` which is `True` as long as the user input does not contain letters. This worked as it managed to catch invalid inputs and pass them to the else statement, however if `amount` had punctuation in it, then the condition would still be valid which would mean a non `float` would be passed to `calculate_usd_amount(amount, ticker)` or `calculate_coin_amount(amount, ticker)` causing an error as you cannot complete arithmetic with a non number value. As a result, I had to change the condition in order to stop punctuation from being passed to these functions. I decided to implement a `try-catch` instead which would convert `amount` to a `float` and return `True` if the condition is met, otherwise it would go to the `except ValueError` which would return `False`. After testing the function, it successfully prevented any letters or punctuation from being passed to the relevant function.
+
+![ValidateAmountProof](documentation/testing/testforvalidateamount.png)
+
+
 ---
 
 # Testing User Stories:
