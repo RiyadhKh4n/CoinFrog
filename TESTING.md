@@ -281,5 +281,9 @@ Another issue I encountered was my `validate_amount(amount)` function was not wo
 
 * I have noticed that when the user selects option 1 form the main menu and the description of the program begins. Sometimes the program will freeze randomly and stop the text from outputting, the only way to get around this is to press the run button again in order to re-launch the program. I am unsure why this happens as it is not an error in the code but more of a problem with the mock terminal that it is being run on. 
 
+* A bug that is out of my control is if the CoinMarketCap data has been hacked or corrupted. This was not something I thought I had to worry about however today (14/12/21) the website got hacked causing all the coin data to be incorrect, meaning if the data my program produces will also be incorrect. An image of the hacked site is below:
+
+![CMCBroken](documentation/testing/cmcbroken.png)
+
 ## Reason for using noqa
 On several lines of code in [setup.py](setup.py) and [coinmarketcap.py](coinmarketcap.py) I had use `# noqa` in order to remove the PEP8 errors where the lines were longer than 80 characters. I had to do this as the lines affected where often deeply nested and used f'strings. By trying to split the code across several lines it caused the actual formatting to break when being printed to the terminal, as a result I needed to apply `# noqa` on those lines in order for the code to execute correctly and to remove the error when validating the code through PEP8. I only used it when it was absolutely necessary and by instruction from my Mentor.  
