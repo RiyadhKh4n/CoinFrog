@@ -88,7 +88,7 @@ def menu_selections():
             clear_terminal()
             print("\n\n\n\n\n\n")
             print(C(
-                f"{Fore.GREEN}{Style.BRIGHT}    Thank you for using CoinFrog!"))
+                f"{Fore.GREEN}{Style.BRIGHT}    Thank you for using CoinFrog!"))  # noqa
             print_frog_image()
             break
 
@@ -108,12 +108,12 @@ def display_info():
         "---------------------------------|")
     typewriter(MESSAGE)
     print(
-        "|---------------------------------------------------"
-          "---------------------------|")
+         "|---------------------------------------------------"
+         "---------------------------|")
 
     time.sleep(5)
     print("\n")
-    input(C(f"{Fore.YELLOW}{Style.BRIGHT}Press Enter to go to Main Menu{Fore.RESET}\n"))
+    input(C(f"{Fore.YELLOW}{Style.BRIGHT}Press Enter to go to Main Menu{Fore.RESET}\n"))  # noqa
     time.sleep(1)
     print(C("-------------------------------------"))
     print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu..."))
@@ -255,7 +255,7 @@ def get_coin_data():
                         f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
                         " to be redirected to the Main Menu")
                     print("----------------------------------------------"
-                            "----------------------------------")
+                          "----------------------------------")
 
                     while exit_data is False:
 
@@ -274,15 +274,16 @@ def get_coin_data():
                             time.sleep(1)
                             display_coin_data_extra(ticker, data_to_view)
                             print(
-                            "----------------------------------------------"
-                            "----------------------------------")
+                                "------------------------------------"
+                                "--------------------------------------------")
 
                         else:
                             time.sleep(1)
                             display_coin_data(ticker, data_to_view)
                             print(
-                            "----------------------------------------------"
-                            "----------------------------------")
+                                "----------------------------------"
+                                "------------------------------"
+                                "----------------")
 
                 else:
                     time.sleep(0.5)
@@ -304,7 +305,7 @@ def get_coin_data():
 
             else:
                 time.sleep(0.5)
-                print(C(f"{Fore.RED}{Style.BRIGHT}{choice} is an invalid option"))
+                print(C(f"{Fore.RED}{Style.BRIGHT}{choice} is an invalid option"))  # noqa
 
 
 def convert_page():
@@ -336,18 +337,19 @@ def convert_page():
                       "dollar amount available: "))
 
                 usd_amount = input('> $').strip()
-                
+
                 amount_length = 0
                 for x in usd_amount:
                     amount_length = amount_length + 1
 
                 if amount_length == 0:
-                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
+                    print(C(Fore.RED + Style.BRIGHT + "Amount "
+                            "cannot be blank!"))
                     amount_validated = False
-        
+
                 else:
                     amount_validated = validate_amount(usd_amount)
-                
+
                 if amount_validated:
                     amount_validated = True
                     time.sleep(1)
@@ -371,7 +373,7 @@ def convert_page():
 
                 elif ticker_length < 2:
                     time.sleep(1)
-                    print(C(Fore.RED + Style.BRIGHT +   "Ticker must have"
+                    print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
                           " 2 characters minimum"))
 
                 else:
@@ -386,7 +388,8 @@ def convert_page():
                         calculate_coin_amount(usd_amount, ticker)
                         time.sleep(2)
                         print(C("-------------------------------------"))
-                        input(C("Press Enter to return back to Convert Page\n"))
+                        input(C("Press Enter to return back"
+                                "to Convert Page\n"))
                         print(C(
                             f"{Fore.YELLOW}{Style.BRIGHT}   Redirecting"
                             " you to Convert Page..."))
@@ -429,15 +432,16 @@ def convert_page():
                 print(C(Fore.CYAN + Style.BRIGHT + "    Enter amount"
                       " of coins to buy: "))
                 amount = input('> ').strip()
-                
+
                 amount_length = 0
                 for x in amount:
                     amount_length = amount_length + 1
 
                 if amount_length == 0:
-                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
+                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot"
+                            " be blank!"))
                     amount_validated = False
-                    print(C("-------------------------------------"))
+                    
 
                 else:
                     amount_validated = validate_amount(amount)
@@ -455,7 +459,7 @@ def convert_page():
                     input(C("Press Enter to return back to Convert Page\n"))
                     time.sleep(2)
                     print(C(
-                        f"{Fore.YELLOW}{Style.BRIGHT}       Redirecting"
+                        f"{Fore.YELLOW}{Style.BRIGHT}      Redirecting"
                         " you to Convert Page..."))
                     time.sleep(3)
                     clear_terminal()
@@ -469,17 +473,17 @@ def convert_page():
                 print(C(Fore.CYAN + Style.BRIGHT +
                         " Enter Amount to Convert: "))
                 amount = input('> ').strip()
-                
+
                 amount_length = 0
                 for x in amount:
                     amount_length = amount_length + 1
 
                 if amount_length == 0:
-                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))
+                    print(C(Fore.RED + Style.BRIGHT + "Amount cannot be blank!"))  # noqa
                     amount_validated = False
                 else:
                     amount_validated = validate_amount(amount)
-                
+
                 if amount_validated:
                     amount_validated = True
                     time.sleep(1)
@@ -496,7 +500,7 @@ def convert_page():
 
                         if ticker_length == 0:
                             time.sleep(1)
-                            print(C(Fore.RED + Style.BRIGHT +   "Ticker"
+                            print(C(Fore.RED + Style.BRIGHT + "    Ticker"
                                   " cannot be blank!"))
 
                         elif ticker_length < 2:
@@ -554,8 +558,8 @@ def convert_page():
                                                   "------------"))
 
                                             input(C("Press Enter to "
-                                                  "return back"
-                                                  " to Convert Page\n"))
+                                                    "return back"
+                                                    " to Convert Page\n"))
 
                                             time.sleep(2)
                                             print(C(
