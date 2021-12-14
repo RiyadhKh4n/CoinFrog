@@ -70,35 +70,12 @@ def validate_amount(amount):
     """
     Will validate is the users coin amount to ensure only contains numbers
     """
-    
-    # if ((amount == "!") or (amount == "#") or (amount == "%") 
-    #     or (amount == "$") or (amount == "&") or (amount == "*")
-    #     or (amount == "(") or (amount == ")") or (amount == "-") 
-    #     or (amount == "_") or (amount == "+") or (amount == "=") 
-    #     or (amount == "{") or (amount == "}") or (amount == "]")
-    #     or (amount == "[") or (amount == "@") or (amount == "'")
-    #     or (amount == ";") or (amount == ":") or (amount == "#")
-    #     or (amount == "~") or (amount == ",") or (amount == "<")
-    #     or (amount == ">") or (amount == ".") or (amount == "?")
-    #     or (amount == "/") or (amount == "\ ") or (amount == "|")
-    #     or (amount == "`") or (amount == "¬") or (amount == '"')):   
-    #     print(C(f"{Fore.RED}{Style.BRIGHT}Invalid Input!"))
-    #     return False
-    
-    # isinstance(amount, (float, int)) == True - just doesnt work
-    # isnumeric() but that doesnt let floats
-    # isaplha() but that lets punctuation
-    # tried a combination of all but wont work
-
-    if not(amount.isalpha()):
+    try:
+        amount = float(amount)
         print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
         return True
 
-    # elif (amount.isdigit()):
-    #     print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
-    #     return True
-    
-    else:
+    except ValueError:
         print(C(f"{Fore.RED}{Style.BRIGHT}Amount must be a number!"))
         return False
 
