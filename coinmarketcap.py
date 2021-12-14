@@ -54,7 +54,7 @@ def validate_ticker(ticker):
         if ticker in tickerList:
             time.sleep(2)
             print(C(
-                f"  {Fore.GREEN}{Style.BRIGHT}{ticker}"
+                f"  {Fore.GREEN}{Style.BRIGHT} {ticker}"
                 " exists in CoinMarketCap"))
             time.sleep(1)
             print(C("-------------------------------------"))
@@ -76,7 +76,7 @@ def validate_amount(amount):
         return True
 
     except ValueError:
-        print(C(f"{Fore.RED}{Style.BRIGHT}Amount must be a number!"))
+        print(C(f"{Fore.RED}{Style.BRIGHT}  Amount must be a number!"))
         return False
 
 
