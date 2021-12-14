@@ -21,7 +21,7 @@ The final option will navigate them to the 'Crypto Converter' where users will h
     To provide users an application they can go to when they want to find out more about a coin and also allow them to quickly calculate the coin or USD amount needed in order to successfully purchase the coin of their choice.
 
 * ## Target Audience
-    Crypto is for everyone so there is no specific target audience. However, the program does require you to have a basic understanding about crypto as it does ask users to enter a coin of their choice so it may not be suitable for someone who knows absolutely nothing about cryptocurrencies as they will not be able to get the most out of the program.
+    Crypto is for everyone so there is no specific target audience. However, the program does require you to have a basic understanding about crypto as it does ask users to enter a coin of their choice and provides data which is cryptocurrency specific, so the application is not targetted at people who have limited understanding about cryptocurrencies as they won't be able to get the most out of it. 
 
 * ## User Stories
 
@@ -39,7 +39,7 @@ The final option will navigate them to the 'Crypto Converter' where users will h
 
 * ## Development Method 
 
-When creating CoinFrog I will take a waterfall approach when developing. That is, creating sections of the program at a time and ensuring they work as intended before going onto the next section. I will be able to break up development by choosing small elements to work on daily, ensuring the website can be built and published in a timely fashion. As this project Python only all my time will be spent on developing and testing the logic behind the program. So I will work on developing each class and function within each class and getting them working before I move onto the next section of development. 
+When creating CoinFrog I will take a waterfall approach when developing. That is, creating sections of the program at a time and ensuring they work as intended before going onto the next section. I will be able to break up development by choosing small elements to work on daily, ensuring the program can be built and published in a timely fashion. As this project is Python only, all my time will be spent on developing and testing the logic behind the program. I will work on developing each class and function and getting them working before I move onto the next section of development. 
 
 * ## Scope
 
@@ -239,7 +239,7 @@ You will need to also install all required packages in order to run this applica
 * Command to install this apps requirements is `pip3 install -r requirements.txt`
 
 # Credits 
-All coin information is taken from [CoinMarketCap](https://coinmarketcap.com/)
+All coin data is taken from [CoinMarketCap](https://coinmarketcap.com/)
 
 ## Code
 When developing CoinFrog I had to implement a third-party API which was something I had never done before as a result I used [this](https://www.youtube.com/watch?v=ECJjjZ_iijc&t=1s) YouTube video which explained how to retrieve data from the API and print it to the console.

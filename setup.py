@@ -388,7 +388,7 @@ def convert_page():
                         print(C("-------------------------------------"))
                         input(C("Press Enter to return back to Convert Page\n"))
                         print(C(
-                            f"{Fore.YELLOW}{Style.BRIGHT} Redirecting"
+                            f"{Fore.YELLOW}{Style.BRIGHT}   Redirecting"
                             " you to Convert Page..."))
                         time.sleep(3)
                         clear_terminal()
