@@ -311,7 +311,6 @@ def convert_page():
     Function which handles the crypto conversion feature
     """
     print("\n")
-    print("\n")
     print(C(f"{Style.BRIGHT}{Fore.CYAN} Select An Option{Fore.RESET}:"))
     print(C("-  (1) Calculate Amount of Coins  -"))
     print(C("-  (2) Calculate USD Needed       -"))
