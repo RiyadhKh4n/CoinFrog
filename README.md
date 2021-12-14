@@ -103,7 +103,7 @@ Get Coin Information:
 Conversion Menu ~
 - The menu the user is taken to if they would like to complete a crypto conversion
 
-![ConvertMenu](documentation/readme/convertmenu.png)
+    ![ConvertMenu](documentation/readme/convertmenu.png)
 
 Calculate Amount of Coins:
 
@@ -117,6 +117,7 @@ Calculate Crypto:
 
 ![CalcCrypto](documentation/readme/convertcrypto.png)
 
+I wanted to include a favicon because I felt that it would help make the program feel more polished. As a result of Heroku not being able to host static files like images I had to use a web-hosted favicon from [favicon.cc](https://www.favicon.cc/). The actual icon I decided to use is linked [HERE](https://www.favicon.cc/?action=icon&file_id=686886). The limitation of using this is that the favicon will not display in Internet Explorer.
 
 # Features 
 
@@ -178,6 +179,9 @@ A feature that I didn't have enough time to implement was for the program to gen
 
 11. [PEP8](http://pep8online.com/)
     * Used to validate my Python code
+
+12. [favicon.cc](https://www.favicon.cc/)
+    * Used to generate the favicon address from the hosted site
 
 
 # Testing 
