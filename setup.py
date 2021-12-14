@@ -124,7 +124,7 @@ def display_info():
 
 
 MESSAGE = """
-  CoinFrog aims to make cryptocurrency research that little bit easier.
+CoinFrog aims to make cryptocurrency research that little bit easier.
 \nIt has two main functions:
 \n'Get Coin Information' allows you to retrieve all types of live coin data.
 Enter the coins ticker (e.g. BTC) and select the data you would like to view.
@@ -254,8 +254,7 @@ def get_coin_data():
                     print(
                         f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
                         " to be redirected to the Main Menu")
-                    print(
-                            "----------------------------------------------"
+                    print("----------------------------------------------"
                             "----------------------------------")
 
                     while exit_data is False:
@@ -274,16 +273,16 @@ def get_coin_data():
                                 (data_to_view == "name")):
                             time.sleep(1)
                             display_coin_data_extra(ticker, data_to_view)
-                            print(C(
-                                  "-------------------------------"
-                                  "---------------------------"))
+                            print(
+                            "----------------------------------------------"
+                            "----------------------------------")
 
                         else:
                             time.sleep(1)
                             display_coin_data(ticker, data_to_view)
-                            print(C(
-                                  "-------------------------------"
-                                  "---------------------------"))
+                            print(
+                            "----------------------------------------------"
+                            "----------------------------------")
 
                 else:
                     time.sleep(0.5)
