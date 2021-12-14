@@ -402,8 +402,8 @@ def convert_page():
             while true_or_false is False:
                 print(C("-------------------------------------"))
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "        Enter ticker of coin"
-                      " to purchase: "))
+                print(C(Fore.CYAN + Style.BRIGHT + "        Enter ticker of"
+                      " coin to purchase: "))
                 ticker = input('> $').upper()
 
                 ticker_length = 0
@@ -441,7 +441,6 @@ def convert_page():
                     print(C(Fore.RED + Style.BRIGHT + "Amount cannot"
                             " be blank!"))
                     amount_validated = False
-                    
 
                 else:
                     amount_validated = validate_amount(amount)
