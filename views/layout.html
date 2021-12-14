@@ -227,6 +227,12 @@
             text-decoration: none;
             color: black;
         }
+
+        @media only screen and (min-width: 751px){
+            #copy{
+                visibility: visible;
+            }
+        }
         
         @media screen and (max-width: 750px),
         (max-height: 750px) {
@@ -235,11 +241,12 @@
             }
         
             #content {
-                height: calc(100% - 18rem)
+                height: calc(100% - 18rem);
+                width: calc(100% - 18rem);
             }
 
             #copy{
-                display: none
+                visibility: hidden;
             }
 
         }
@@ -251,7 +258,7 @@
             }
 
             #copy{
-                display: none
+                visibility: hidden;
             }
 
         }
@@ -265,7 +272,7 @@
             }
 
             #copy{
-                display: none
+                visibility: hidden;
             }
         }
         
