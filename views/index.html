@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
 <meta charset="utf-8" />
 <title>CoinFrog</title>
@@ -13,6 +12,14 @@
     <div id="copy">
         &copy; <a class="linkedIn" target="_blank" href="https://www.linkedin.com/in/riyadh-khan-49213519a/">Riyadh Khan</a>
     </div>
+
+    <footer>
+        <p>
+            &#169;RiyadhK&#0160;
+            <a href="https://github.com/RiyadhKh4n/CoinFrog" target="_blank" title="GitHub"
+            rel="noopener" aria-label="GitHub"><i class="fab fa-github-alt"></i></a>
+        </p>
+    </footer>
 
     <script>
         var term = new Terminal({
@@ -35,5 +42,22 @@
         };
         // Set focus in the terminal
         document.getElementsByClassName("xterm-helper-textarea")[0].focus();
+
+        const content = document.getElementById("content");
+        const resize = document.createElement("section");
+        resize.innerHTML = `
+            <p>
+                Sorry, this site requires a minimum screen size...
+                <br>
+                750 pixels
+                <br>
+                &#215;
+                <br>
+                750 pixels
+            </p>
+        `;
+        content.insertBefore(resize, content.childNodes[1]);
+
+        src="https://kit.fontawesome.com/164cadf278.js" ;crossorigin="anonymous">
     </script>
 </body>
