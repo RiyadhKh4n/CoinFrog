@@ -123,12 +123,12 @@ def display_info():
 
 
 MESSAGE = """
-CoinFrog aims to make cryptocurrency research that little bit easier.
+  CoinFrog aims to make cryptocurrency research that little bit easier.
 \nIt has two main functions:
 \n'Get Coin Information' allows you to retrieve all types of live coin data.
 Enter the coins ticker (e.g. BTC) and select the data you would like to view.
 \nThe second being a Crypto Converter function:
-Chose between 'Calculate Amount of Coins''Calculate USD' or 'Convert Crypto':
+Choose either 'Calculate Amount of Coins' 'Calculate USD' or 'Convert Crypto':
 \nCalculate Amount of Coins: Enter the amount of dollars available
 \tEnter the ticker of the coin you wish to buy
 \tAnd CoinFrog will calculate how many coins you can purchase
