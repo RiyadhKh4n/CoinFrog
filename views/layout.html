@@ -32,7 +32,7 @@
             align-items: center;
         }
 
-        section{
+        section, noscript{
             text-align: center;
             padding: .5rem;
             box-shadow: .4rem .4rem .8rem cyan,
@@ -47,7 +47,7 @@
             flex-direction: column;
         }
 
-        section p {
+        noscript p, section p {
             font-family: Arial, monospace;
             margin: 1.5rem auto;
             max-width: 20rem;
@@ -243,8 +243,17 @@
             section {
                 display: none;
             }
-            
         }
+
+        @media screen and (max-width: 600px) {
+
+            noscript p {
+                width: 16rem;
+                font-size: 1.5rem;
+                margin: 1rem 0;
+            }
+        }
+        
     </style>
 </head>
 
