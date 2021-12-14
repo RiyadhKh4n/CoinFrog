@@ -77,7 +77,6 @@ def validate_amount(amount):
 
     except ValueError:
         print(C(f"{Fore.RED}{Style.BRIGHT}  Amount must be a number!"))
-        print(C("-------------------------------------"))
         return False
 
 
