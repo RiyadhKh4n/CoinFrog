@@ -35,19 +35,19 @@
         // Set focus in the terminal
         document.getElementsByClassName("xterm-helper-textarea")[0].focus();
 
-        // const content = document.getElementById("content");
-        // const resize = document.createElement("section");
-        // resize.innerHTML = `
-        //     <p>
-        //         Sorry, this site requires a minimum screen size...
-        //         <br>
-        //         750 pixels
-        //         <br>
-        //         &#215;
-        //         <br>
-        //         750 pixels
-        //     </p>
-        // `;
-        // content.insertBefore(resize, content.childNodes[1]);
+        const content = document.getElementById("content");
+        const resize = document.createElement("section");
+        resize.innerHTML = `
+            <p>
+                Sorry, this site requires a minimum screen size...
+                <br>
+                750 pixels
+                <br>
+                &#215;
+                <br>
+                750 pixels
+            </p>
+        `;
+        content.insertBefore(resize, content.childNodes[1]);
     </script>
 </body>
