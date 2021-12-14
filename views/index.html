@@ -6,13 +6,13 @@
 </head>
 
 <body>
-    <button onclick="window.location.reload()">Launch CoinFrog</button>
+    <button onclick="window.location.reload()">Run CoinFrog</button>
     <div id="terminal"></div>
 
     <div id="copy">
         &copy; <a class="linkedIn" target="_blank" href="https://www.linkedin.com/in/riyadh-khan-49213519a/">Riyadh Khan</a>
     </div>
-    
+
     <script>
         var term = new Terminal({
             cols: 80,
@@ -35,21 +35,19 @@
         // Set focus in the terminal
         document.getElementsByClassName("xterm-helper-textarea")[0].focus();
 
-        const content = document.getElementById("content");
-        const resize = document.createElement("section");
-        resize.innerHTML = `
-            <p>
-                Sorry, this site requires a minimum screen size...
-                <br>
-                750 pixels
-                <br>
-                &#215;
-                <br>
-                750 pixels
-            </p>
-        `;
-        content.insertBefore(resize, content.childNodes[1]);
-
-        src="https://kit.fontawesome.com/164cadf278.js" ;crossorigin="anonymous">
+        // const content = document.getElementById("content");
+        // const resize = document.createElement("section");
+        // resize.innerHTML = `
+        //     <p>
+        //         Sorry, this site requires a minimum screen size...
+        //         <br>
+        //         750 pixels
+        //         <br>
+        //         &#215;
+        //         <br>
+        //         750 pixels
+        //     </p>
+        // `;
+        // content.insertBefore(resize, content.childNodes[1]);
     </script>
 </body>
