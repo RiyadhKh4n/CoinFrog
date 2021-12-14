@@ -73,10 +73,12 @@ def validate_amount(amount):
     try:
         amount = float(amount)
         print(C(f"{Fore.GREEN}{Style.BRIGHT}Amount entered is valid"))
+        print(C("-------------------------------------"))
         return True
 
     except ValueError:
         print(C(f"{Fore.RED}{Style.BRIGHT}  Amount must be a number!"))
+        print(C("-------------------------------------"))
         return False
 
 

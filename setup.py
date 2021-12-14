@@ -113,7 +113,7 @@ def display_info():
 
     time.sleep(5)
     print("\n")
-    input(C("Press Enter to go to Main Menu\n"))
+    input(C(f"{Fore.YELLOW}{Style.BRIGHT}Press Enter to go to Main Menu{Fore.RESET}\n"))
     time.sleep(1)
     print(C("-------------------------------------"))
     print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu..."))
@@ -254,8 +254,9 @@ def get_coin_data():
                     print(
                         f"- Enter {Fore.RED}{Style.BRIGHT}'Quit'{Fore.RESET}"
                         " to be redirected to the Main Menu")
-                    print(C("---------------------------------"
-                          "-----------------------------"))
+                    print(
+                            "----------------------------------------------"
+                            "----------------------------------")
 
                     while exit_data is False:
 
