@@ -49,7 +49,7 @@ Features to be included:
 
 * The first option they can select will be the 'What is CoinFrog' section where they can learn what the program is about and the different functions of it thus allowing them to understand how the program works and what you can do with it. This is mainly for people who are not familiar with crypto as at first the program may be confusing however if you are familiar with cryptocurrencies then the program should be very simple to understand.  
 
-* The next option they can select will be the 'Get Coin Information' section where users are able to enter a ticker of the coin they wish to know more about and a brief description will be outputted to them. As well as this, they are able to see the coins live data by selecting from the options available.
+* The next option they can select will be the 'Get Coin Information' section where users are able to enter a ticker of the coin they wish to know more about and will be able to see the coins live data by selecting from the options available.
 
 * The final option the user can select will be the 'Crypto Converter' section where users can enter the USD amount of a coin they are looking to buy and the program will calculate how much of that coin they are able to purchase with the USD available. Additionally, users can enter the amount of a certain coin they wish to purchase and the program will calculate the USD amout needed in order to purchase it. Finally, users will be able to chose a coin they would like to compare to another coin (e.g. 1 $ETH = 905 $THETA).
 
