@@ -119,6 +119,10 @@ Calculate Crypto:
 
 ![CalcCrypto](documentation/readme/convertcrypto.png)
 
+Exit CoinFrog:
+
+![EndPage](documentation/readme/endpage.png)
+
 If the user is viewing the program on a device with a screen size of less than 750px x 750px:
 
 ![LessThan750px](documentation/readme/lessthan750px1.png)
@@ -160,10 +164,10 @@ A feature that I didn't have enough time to implement was for the program to gen
     * Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 
 3. [GitHub](https://github.com/):
-    * GitHub is used to store the projects code after being pushed from Git. It was also used to deploy the project (GitHub Pages)
+    * GitHub is used to store the projects code after being pushed from Git.
 
 4. [Google Developer Tools](https://developer.chrome.com/docs/devtools/):
-    * Used to test code throughout development
+    * Used to test the program throughout development
 
 5. [Os Library](https://docs.python.org/3/library/os.html)
     * Used to clear the console.
@@ -189,6 +193,14 @@ A feature that I didn't have enough time to implement was for the program to gen
 12. [favicon.cc](https://www.favicon.cc/)
     * Used to generate the favicon address from the hosted site
 
+13. [Colorama](https://pypi.org/project/colorama/)
+    * Used to colour the text that is outputted to the terminal 
+
+14. [PromptToolkit](https://github.com/prompt-toolkit/python-prompt-toolkit)
+    * Is a libary for building powerful interactive command line applications in Python
+
+15. [Requests](https://pypi.org/project/requests/)
+    * Allowed me to sent HTTP requests without having to manually add query to strings to the URLs
 
 # Testing 
 
@@ -253,6 +265,8 @@ All coin data is taken from [CoinMarketCap](https://coinmarketcap.com/)
 
 ## Code
 When developing CoinFrog I had to implement a third-party API which was something I had never done before as a result I used [this](https://www.youtube.com/watch?v=ECJjjZ_iijc&t=1s) YouTube video which explained how to retrieve data from the API and print it to the console.
+
+The code which displays when the users screen size is less than 750px x 750px was inspired by a fellow pupil from Slack. The HTML code is the same however the styling is different as I wanted it to match the rest of my site.
 
 All other code is original
 
