@@ -59,6 +59,8 @@ Features to be included:
 
     * run.py is what Heroku will run when the site is published so this is will act as my 'main' file and is responsible for running the game. Any other python files created will contain the relevant functions needed to run the game which will be imported and called in run.py 
 
+    * As a result of the terminal I am using to run the program on, which is supplied by Code Institute. The application does not run when the device you are viewing it on has a screen width of less than 750px x 750px. So if a user does try open the program on such device then a message will appear letting them know that it cannot be run on a device that small. Additionally, if JavaScipt is not enabled then the program is not able to run so I have a message that appears if this is the case. 
+
 * ## Flowcharts
 
 * I used [LucidChart](lucidchart.com) to help design the project and create the following flowcharts.
@@ -116,6 +118,10 @@ Calculate USD Needed:
 Calculate Crypto:
 
 ![CalcCrypto](documentation/readme/convertcrypto.png)
+
+If the user is viewing the program on a device with a screen size of less than 750px x 750px:
+
+![LessThan750px](documentation/readme/lessthan750px1.png)
 
 I wanted to include a favicon because I felt that it would help make the program feel more polished. As a result of Heroku not being able to host static files like images I had to use a web-hosted favicon from [favicon.cc](https://www.favicon.cc/). The actual icon I decided to use is linked [HERE](https://www.favicon.cc/?action=icon&file_id=686886). The limitation of using this is that the favicon will not display in Internet Explorer.
 
