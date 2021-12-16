@@ -128,7 +128,7 @@ def prompt_toolkit_function():
         if text in answers:
             return text
 
-        elif text == "Quit":
+        elif text == "Quit" or text == "quit":
             time.sleep(2)
             return text
             print(C("-----------------------"

@@ -262,7 +262,7 @@ def get_coin_data():
                         time.sleep(2)
                         data_to_view = prompt_toolkit_function()
 
-                        if (data_to_view == "Quit"):
+                        if (data_to_view == "Quit" or data_to_view == "quit"):
                             exit_data = True
                             clear_terminal()
                             main_menu()
