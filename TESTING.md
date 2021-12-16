@@ -11,6 +11,10 @@ Results for [setup.py](setup.py) ~
 Results for [coinmarketcap.py](coinmarketcap.py) ~
 ![cmc.py](documentation/testing/cmcpep8.png)
 
+[W3CValidator](https://validator.w3.org/) HTML Validator:
+
+![HTML](documentation/testing/w3cvalidator.png)
+
 # Website Testing (Solving Issues):
 
 The first issue I encountered is that I have validate the ticker the user enters before they can move on with the porgram. This is because if an invalid ticker is entered there will be no output as the API cannot be called. In order to do this, I have to check that the ticker they entered matches with a ticker present on CoinMarketCap, however this is where the issue lies. I was unable to simply pass in the variable which holds the users input into the API call as it would return an error. 
