@@ -434,7 +434,7 @@ def convert_page():
 
             while amount_validated is False:
                 time.sleep(1)
-                print(C(Fore.CYAN + Style.BRIGHT + "    Enter amount"
+                print(C(Fore.CYAN + Style.BRIGHT + "        Enter amount"
                       " of coins to buy: "))
                 amount = input('> ').strip()
 
@@ -463,7 +463,7 @@ def convert_page():
                     input(C("Press Enter to return back to Convert Page\n"))
                     time.sleep(2)
                     print(C(
-                        f"{Fore.YELLOW}{Style.BRIGHT}      Redirecting"
+                        f"{Fore.YELLOW}{Style.BRIGHT}          Redirecting"
                         " you to Convert Page..."))
                     time.sleep(3)
                     clear_terminal()

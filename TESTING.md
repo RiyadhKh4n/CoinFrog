@@ -285,6 +285,8 @@ Another issue I encountered was my `validate_amount(amount)` function was not wo
 
 * I have noticed that when the user selects option 1 form the main menu and the description of the program begins. Sometimes the program will freeze randomly and stop the text from outputting, the only way to get around this is to press the run button again in order to re-launch the program. I am unsure why this happens as it is not an error in the code but more of a problem with the mock terminal that it is being run on. 
 
+* Another bug that I uncovered was that when the user decides to quit the program - by pressing option '4' on the Main Menu - sometimes an input shows ` >`, this is not meant to appear as I have not coded this to happen. I notice that this happens every 1/5 times the program is run and I am unsure why this is occuring. If this does show and the user enters a character then the following code executes `print(C( f">{Fore.RED} {screen_choice} is an Invalid Choice."))`. They are unable to navigate off the page which was my intention however this input should not appear.
+
 * A bug that is out of my control is if the CoinMarketCap data has been hacked or corrupted. This was not something I thought I had to worry about however today (14/12/21) the website got hacked causing all the coin data to be incorrect, meaning if the data my program produces will also be incorrect. An image of the hacked site is below:
 
 ![CMCBroken](documentation/testing/cmcbroken.png)
