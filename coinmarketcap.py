@@ -166,7 +166,7 @@ def calculate_usd_amount(amount, ticker):
     time.sleep(2.5)
     print(C(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount}"))
     print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
-    print(C(f"  USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}"))
+    print(C(f"     USD Needed: {Fore.MAGENTA}{Style.BRIGHT}${usd_amount}"))
 
 
 def calculate_coin_amount(usd, ticker):
@@ -187,7 +187,7 @@ def calculate_coin_amount(usd, ticker):
     time.sleep(3)
     print(C(f"Balance: {Fore.MAGENTA}{Style.BRIGHT}${usd}"))
     print(C(f"Token: {Fore.MAGENTA}{Style.BRIGHT}${ticker}"))
-    print(C(f"Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))  # noqa
+    print(C(f"  Amount: {Fore.MAGENTA}{Style.BRIGHT}{amount_of_coins}"))
 
 
 def convert_two_cryptos(amount, coin_one, coin_two):

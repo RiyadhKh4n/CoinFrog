@@ -8,7 +8,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/xterm.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xterm/3.14.5/addons/attach/attach.js"></script>
-    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAgLzEABCApACIvMQAjLzEACB0pAAggKQAlLTQACyUvAEdpaAAOKC8AEyQsAE5kawBNZW4AD7TlAFJkawDX+v0Aes7xAP/+/wBCcYAAm97zAHzO8QB21/EAeNfxAFnM7ABcyu8AWs3vAAgYGwBVcHQACxohAAgfJwAKJC0Ab9bvAEtlbwAHuewAFCctABes4ABw2PUAFLDjABW05gATuOkAXGNpAB4rMAAcLDMAIS4wAAgeJQBDfpYAJC8zADRJSgBpz+0ABSUxAAkkLgCR2OwAatPwABMhJQBHZmoAI8jsAND3/wATIjEATWZqAFBhbQAhY3QAUWNqAAYQFwAsPkUABRUdAHvZ8ABaz+4AWWhwAFvR9AALGSAACRwpAA4aIwAIICwAm9HhACwvNABMXmUADiEvAD1JSwARIikADbXiAA+03wBw2O4AFEZeAFBlaAD//f8AVWNrABe03wBVZ24AHCovABstLwAbKzIAWs/vAAAkJwAavusAIy4yAAcgLQAKIScAiNv3AAkjLQBCZWkAKDI1ADO12QAIKS0AkN30AJHd9AASITAALb7rAFBiaQD8//0A/v/9AFBmbABQZG8AWszwAES83AADHCIAWs/wAB4tMADF7fYAXdDzAITW8gAIGygAIy8tAAgfKwDN8fkALjAwADO91wCX3u8AFq7hAFNiagAXJi4AVGJqAP///gCb3/IAd9bzAHjY8AB61vMABx4gAGDO7gBd0PQAUJKxAITZ8wAkLTEAYtLxAGPS8QBrzOgADSYvAA8mLwAUJCkAT2FoANL4/QAETHMAFLPfAP/8/wD+//8A////AFfI7wAPvOgAHykmABa66wBkxukAXtDsAAAjJwAWvu4ACB4qAKrm9gDM8v4AbtXyAAAuSABJamkAFq7aABQmMABQZWwAUmVsAFBpbwAXKTAAWGJsAFvO8ABez+oACRkcAB8tMwABJSUABh0oACEtMwAgu+YAJzIwAGTV8wAIKC4ADyYoAE1gZwBOYGcAEyMxABImMQAUJDQAUWRqAAQRFwAZJS4AF7HkAAUWHQBXaXAAWGlwABstNABczPQAhNjqABwwNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmpqaEVSTtXh4LFgREZqampqabUcdobQ5aTGhHRxsmpqag0hggaklfXHEI2IBo2yamUB6llZlt6oink+XpwU+EZgdHg2iB7rAwJFmXVAyHRGIU59bQr88EBSxCZKcf1wpDq8XNIy2b6Qzyq4KaiZfcsaAsIVoAssvTY10UjcnvkaUQ3NBEwNKfLguZH6JIUxGwSgZh4QDGw+VpV5JUXA1BLI6mx9nBq04dXsrErkYNllUvWN2Fip5AgCznRXJO0tUEcULi4qGYVrDd6ZELYJFEZqaP1WsMI8koI6Qx1XImpqamppOa24MCKggq5TCEZqampqaEREavD3GV7sREZqamgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=" rel="icon" type="image/x-icon" />
+    <link
+        href="data:image/x-icon;base64,AAABAAEAEBAAAAEACABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAgLzEABCApACIvMQAjLzEACB0pAAggKQAlLTQACyUvAEdpaAAOKC8AEyQsAE5kawBNZW4AD7TlAFJkawDX+v0Aes7xAP/+/wBCcYAAm97zAHzO8QB21/EAeNfxAFnM7ABcyu8AWs3vAAgYGwBVcHQACxohAAgfJwAKJC0Ab9bvAEtlbwAHuewAFCctABes4ABw2PUAFLDjABW05gATuOkAXGNpAB4rMAAcLDMAIS4wAAgeJQBDfpYAJC8zADRJSgBpz+0ABSUxAAkkLgCR2OwAatPwABMhJQBHZmoAI8jsAND3/wATIjEATWZqAFBhbQAhY3QAUWNqAAYQFwAsPkUABRUdAHvZ8ABaz+4AWWhwAFvR9AALGSAACRwpAA4aIwAIICwAm9HhACwvNABMXmUADiEvAD1JSwARIikADbXiAA+03wBw2O4AFEZeAFBlaAD//f8AVWNrABe03wBVZ24AHCovABstLwAbKzIAWs/vAAAkJwAavusAIy4yAAcgLQAKIScAiNv3AAkjLQBCZWkAKDI1ADO12QAIKS0AkN30AJHd9AASITAALb7rAFBiaQD8//0A/v/9AFBmbABQZG8AWszwAES83AADHCIAWs/wAB4tMADF7fYAXdDzAITW8gAIGygAIy8tAAgfKwDN8fkALjAwADO91wCX3u8AFq7hAFNiagAXJi4AVGJqAP///gCb3/IAd9bzAHjY8AB61vMABx4gAGDO7gBd0PQAUJKxAITZ8wAkLTEAYtLxAGPS8QBrzOgADSYvAA8mLwAUJCkAT2FoANL4/QAETHMAFLPfAP/8/wD+//8A////AFfI7wAPvOgAHykmABa66wBkxukAXtDsAAAjJwAWvu4ACB4qAKrm9gDM8v4AbtXyAAAuSABJamkAFq7aABQmMABQZWwAUmVsAFBpbwAXKTAAWGJsAFvO8ABez+oACRkcAB8tMwABJSUABh0oACEtMwAgu+YAJzIwAGTV8wAIKC4ADyYoAE1gZwBOYGcAEyMxABImMQAUJDQAUWRqAAQRFwAZJS4AF7HkAAUWHQBXaXAAWGlwABstNABczPQAhNjqABwwNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmpqaEVSTtXh4LFgREZqampqabUcdobQ5aTGhHRxsmpqag0hggaklfXHEI2IBo2yamUB6llZlt6oink+XpwU+EZgdHg2iB7rAwJFmXVAyHRGIU59bQr88EBSxCZKcf1wpDq8XNIy2b6Qzyq4KaiZfcsaAsIVoAssvTY10UjcnvkaUQ3NBEwNKfLguZH6JIUxGwSgZh4QDGw+VpV5JUXA1BLI6mx9nBq04dXsrErkYNllUvWN2Fip5AgCznRXJO0tUEcULi4qGYVrDd6ZELYJFEZqaP1WsMI8koI6Qx1XImpqamppOa24MCKggq5TCEZqampqaEREavD3GV7sREZqamgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+        rel="icon" type="image/x-icon" />
     <title>CoinFrog</title>
 
     <style>
@@ -19,14 +21,14 @@
             background-color: #a79cd9;
         }
 
-        #terminal{
+        #terminal {
             margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        #content{
+        #content {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -34,13 +36,14 @@
             margin-top: 25px;
         }
 
-        section, noscript{
+        section,
+        noscript {
             text-align: center;
             padding: .5rem;
             box-shadow: .4rem .4rem .6rem white,
-                        -.4rem .4rem .6rem white,
-                        .4rem -.4rem .6rem white,
-                        -.4rem -.4rem .6rem white;
+                -.4rem .4rem .6rem white,
+                .4rem -.4rem .6rem white,
+                -.4rem -.4rem .6rem white;
             background-color: #071404;
             color: #a79cd9;
             z-index: 5;
@@ -49,7 +52,8 @@
             flex-direction: column;
         }
 
-        noscript p, section p {
+        noscript p,
+        section p {
             font-family: Arial, monospace;
             margin: 1.5rem auto;
             max-width: 20rem;
@@ -205,7 +209,7 @@
             height: 50px;
             margin-top: 50px;
             margin-bottom: 50px;
-            background-color: #7F00FF ;
+            background-color: #7F00FF;
             border: 2px solid white;
             color: white;
             font-weight: bold;
@@ -213,18 +217,18 @@
             border-radius: 8px;
             box-shadow: rgba(0, 0, 0, 0.6) 0px 19px 38px, rgba(0, 0, 0, 0.6) 0px 15px 12px;
         }
-        
-        @media screen and (max-width: 705px){
+
+        @media screen and (max-width: 705px) {
             #terminal {
                 display: none;
             }
-        
+
             #content {
                 height: calc(100% - 18rem);
             }
         }
-        
-        @media screen and (min-width: 705px){
+
+        @media screen and (min-width: 705px) {
             section {
                 display: none;
             }
@@ -239,7 +243,6 @@
                 margin: 1rem 0;
             }
         }
-        
     </style>
 </head>
 

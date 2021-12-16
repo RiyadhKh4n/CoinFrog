@@ -39,7 +39,7 @@ def title_screen():
     print(C(" \     |     |      \  K   //"))
     print(C("`;.,|.    |      '\.-'  /"))
     print(C("~~;;;,._|___.,-;;;~'"))
-    print(C("''=--'''''''"))
+    print(C("''=-----'''''"))
     time.sleep(4)
     clear_terminal()
 
@@ -105,11 +105,11 @@ def display_info():
     time.sleep(1)
     print(
         "|---------------------------------------------"
-        "---------------------------------|")
+        "----------------------------------|")
     typewriter(MESSAGE)
     print(
-         "|---------------------------------------------------"
-         "---------------------------|")
+        "|---------------------------------------------"
+        "----------------------------------|")
 
     time.sleep(5)
     print("\n")
@@ -129,7 +129,7 @@ CoinFrog aims to make cryptocurrency research that little bit easier.
 \n'Get Coin Information' allows you to retrieve all types of live coin data.
 Enter the coins ticker (e.g. BTC) and select the data you would like to view.
 \nThe second being a Crypto Converter function:
-Choose either 'Calculate Amount of Coins' 'Calculate USD' or 'Convert Crypto':
+Choose either 'Calculate Amount of Coins', 'Calculate USD' or 'Convert Crypto':
 \nCalculate Amount of Coins: Enter the amount of dollars available
 \tEnter the ticker of the coin you wish to buy
 \tAnd CoinFrog will calculate how many coins you can purchase
@@ -266,7 +266,7 @@ def get_coin_data():
                             exit_data = True
                             time.sleep(1.5)
                             print(C("-------------------------------------"))
-                            print(C(f"{Fore.GREEN} Redirecting to Main Menu..."))  # noqa
+                            print(C(f"{Fore.GREEN}{Style.BRIGHT} Redirecting to Main Menu..."))  # noqa
                             print(C("-------------------------------------"))
                             time.sleep(2)
                             clear_terminal()
@@ -396,7 +396,7 @@ def convert_page():
                         input(C("Press Enter to return back"
                                 " to Convert Page\n"))
                         print(C(
-                            f"{Fore.YELLOW}{Style.BRIGHT}   Redirecting"
+                            f"{Fore.YELLOW}{Style.BRIGHT}       Redirecting"
                             " you to Convert Page..."))
                         time.sleep(3)
                         clear_terminal()
