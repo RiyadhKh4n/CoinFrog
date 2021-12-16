@@ -197,7 +197,7 @@ def get_coin_data():
 
         elif ticker_length < 2:
             time.sleep(0.5)
-            print(C(Fore.RED + Style.BRIGHT + "Ticker must have"
+            print(C(Fore.RED + Style.BRIGHT + "Ticker must have "
                   "2 characters minimum"))
 
             print(C("---------------------------------------"
