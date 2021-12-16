@@ -264,6 +264,11 @@ def get_coin_data():
 
                         if (data_to_view == "Quit" or data_to_view == "quit"):
                             exit_data = True
+                            time.sleep(1.5)
+                            print(C("-------------------------------------"))
+                            print(C(f"{Fore.GREEN} Redirecting to Main Menu..."))  # noqa
+                            print(C("-------------------------------------"))
+                            time.sleep(2)
                             clear_terminal()
                             main_menu()
 
