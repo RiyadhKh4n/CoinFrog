@@ -155,6 +155,8 @@ A feature that I didn't have enough time to implement was for the program to gen
 
 - [Python](https://www.python.org/) - Python is an interpreted high-level general-purpose programming language
 
+- I used GitHub [Project Board](https://github.com/RiyadhKh4n/CoinFrog/projects/1) to keep track of all the tasks necessary in order to build this application
+
 ## Frameworks, Libraries & Programs Used:
 
 1. [GitPod](https://www.gitpod.io/):
