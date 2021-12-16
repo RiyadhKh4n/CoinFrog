@@ -113,7 +113,7 @@ def display_info():
 
     time.sleep(5)
     print("\n")
-    input(C(f"{Fore.YELLOW}{Style.BRIGHT}Press Enter to go to Main Menu{Fore.RESET}\n"))  # noqa
+    input(C(f"{Fore.YELLOW}{Style.BRIGHT}       Press Enter to go to Main Menu{Fore.RESET}\n"))  # noqa
     time.sleep(1)
     print(C("-------------------------------------"))
     print(C(f"{Fore.GREEN}{Style.BRIGHT}Redirecting to Main Menu..."))
