@@ -127,7 +127,7 @@ If the user is viewing the program on a device with a screen size of less than 7
 
 ![LessThan750px](documentation/readme/lessthan750px1.png)
 
-I wanted to include a favicon because I felt that it would help make the program feel more polished. As a result of Heroku not being able to host static files like images I had to use a web-hosted favicon from [favicon.cc](https://www.favicon.cc/). The actual icon I decided to use is linked [HERE](https://www.favicon.cc/?action=icon&file_id=686886). The limitation of using this is that the favicon will not display in Internet Explorer.
+I wanted to include a favicon because I felt that it would help make the program feel more polished. As a result of Heroku not being able to host static files like images I had to use a web-hosted favicon from [favicon.cc](https://www.favicon.cc/). The actual icon I decided to use is linked [HERE](https://www.favicon.cc/?action=icon&file_id=686886). The limitation of using this is that the favicon will not display on Internet Explorer.
 
 # Features 
 
@@ -206,7 +206,7 @@ A feature that I didn't have enough time to implement was for the program to gen
 
 # Testing 
 
-Due to the size of the testing section for CoinFrog I have created [TESTING.md](TESTING.md). It also shows all tested screenshots, any errors/bugs I encountered, and how I fixed them when creating this project. This is also where you can find any responsiveness screenshots, and browser compatibility tests.
+Due to the size of the testing section for CoinFrog I have created [TESTING.md](TESTING.md). It ashows any errors/bugs I encountered, and how I fixed them when creating this project. This is also contains my testing for user stories and any bugs.
 
 [Link To Testing.md](TESTING.md)
    
